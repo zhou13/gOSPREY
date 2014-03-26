@@ -1,4 +1,4 @@
 gOSPREY
 =======
 
-Open Source Protein REdesign for You on a GPU!
+Open Source Protein REdesign for You on **a GPU**!
