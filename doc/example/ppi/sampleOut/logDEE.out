@@ -1,0 +1,2398 @@
+Parameter HELECT not set. Using default value true
+Parameter HVDW not set. Using default value true
+Parameter HSTERIC not set. Using default value false
+Parameter DISTDEPDIELECT not set. Using default value true
+Parameter DIELECTCONST not set. Using default value 6.0
+Parameter DODIHEDE not set. Using default value false
+Parameter DOSOLVATIONE not set. Using default value true
+Parameter SOLVSCALE not set. Using default value 0.5
+Parameter VDWMULT not set. Using default value 0.95
+Parameter STERICTHRESH not set. Using default value 0.4
+Parameter SOFTSTERICTHRESH not set. Using default value 1.5
+Parameter DATADIR set to /usr/project/dlab/Users/kroberts/Experiments/unitTests/ppis/datafiles
+Parameter FORCEFIELD not set. Using default value AMBER
+Parameter ENTROPYSCALE not set. Using default value 0.0
+Parameter ROTFILE not set. Using default value LovellRotamer.dat
+
+OSPREY Protein Redesign Software Version 2.0
+Copyright (C) 2001-2012 Bruce Donald Lab, Duke University
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Lesser General Public License for more details.
+
+There are additional restrictions imposed on the use and distribution
+of this open-source code, including: (A) this header must be included
+in any modification or extension of the code; (B) you are required to
+cite our papers in any publications that use this code.  The citation
+for the various different modules of our software, together with a
+complete list of requirements and restrictions are found in the
+document license.pdf enclosed with this distribution.
+
+OSPREY running on 30 processor(s)
+
+Performing DEE
+Parameter NUMMAXMUT not set. Using default value 1000
+Parameter ALGOPTION not set. Using default value 3
+Parameter DODACS not set. Using default value false
+Parameter SPLITFLAGS not set. Using default value false
+Parameter DISTRDACS not set. Using default value false
+Parameter DOMINIMIZE set to true
+Parameter MINIMIZEBB not set. Using default value false
+Parameter DOBACKRUBS not set. Using default value false
+Parameter APPROXMINGMEC not set. Using default value false
+Parameter PREPROCPAIRS not set. Using default value true
+Parameter SCALEINT not set. Using default value false
+Parameter MINENERGYMATRIXNAME not set. Using default value PDZexampleminM
+Parameter MAXENERGYMATRIXNAME not set. Using default value PDZexamplemaxM
+Parameter INITEW not set. Using default value 0
+Parameter LAMBDA not set. Using default value 0
+Parameter PRUNINGE not set. Using default value 100.0
+Parameter STERICE not set. Using default value 30.0
+Parameter PAIRST not set. Using default value 100.0
+Parameter GENINTERACTIONGRAPH not set. Using default value false
+Parameter OUTPUTCONFINFO not set. Using default value c_PDZexample
+Parameter OUTPUTPRUNEINFO not set. Using default value p_PDZexample
+Parameter ONLYSINGLESTRAND not set. Using default value -1
+Parameter TYPEDEP not set. Using default value false
+Parameter ADDWTROTS not set. Using default value false
+Parameter USEEREF not set. Using default value true
+Parameter RESUMESEARCH not set. Using default value false
+Parameter imindee set to true
+Parameter COFMAP0 not set. Using default value -1
+Parameter COFMAP1 not set. Using default value -1
+Parameter ADDWT set to true
+Loading precomputed energy matrix...Precomputed energy matrices not available..
+Parameter MINENERGYMATRIXNAME not set. Using default value PDZexampleminM
+Parameter MAXENERGYMATRIXNAME not set. Using default value PDZexamplemaxM
+Parameter DOMINIMIZE set to true
+Parameter MINIMIZEBB not set. Using default value false
+Parameter DOBACKRUBS not set. Using default value false
+Parameter MINENERGYMATRIXNAME set to PDZexampleminM_COM.dat
+Parameter MAXENERGYMATRIXNAME set to PDZexamplemaxM_COM.dat
+Parameter EREFMATRIXNAME not set. Using default value Eref
+Parameter TEMPLATEALWAYSON not set. Using default value false
+Parameter ADDWTROTS not set. Using default value false
+Parameter ONLYSINGLESTRAND set to -1
+Parameter TYPEDEP not set. Using default value false
+Parameter COFMAP0 not set. Using default value -1
+Parameter COFMAP1 not set. Using default value -1
+Parameter ADDWT set to true
+Run Name: PDZexample
+Precomputed Minimum Energy Matrix: PDZexampleminM_COM.dat
+Precomputed Maximum Energy Matrix: PDZexamplemaxM_COM.dat
+Num Residues Allowed to Mutate: 2
+Computing _All_ Rotamer-Rotamer Energies
+Starting minimum and maximum bound energy computation
+Parameter ADDWT set to true
+Parameter RESALLOWED0_0 not set. Using default value 
+Parameter RESALLOWED0_1 not set. Using default value 
+Parameter RESALLOWED0_2 not set. Using default value 
+Parameter RESALLOWED0_3 not set. Using default value 
+Parameter RESALLOWED0_4 not set. Using default value 
+Parameter RESALLOWED0_5 not set. Using default value 
+Parameter RESALLOWED0_6 not set. Using default value 
+Parameter RESALLOWED0_7 not set. Using default value 
+Parameter RESALLOWED0_8 not set. Using default value 
+Parameter RESALLOWED1_0 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY 
+Parameter RESALLOWED1_1 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter RESALLOWED1_2 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Number of possible mutation combinations: 66
+Length of mutArray: 80
+Sorting mutation list ... done
+Retrieving 0 of 80
+Sent to proc 1
+
+Retrieving 1 of 80
+Sent to proc 2
+
+Retrieving 2 of 80
+Sent to proc 3
+
+Retrieving 3 of 80
+Sent to proc 4
+
+Retrieving 4 of 80
+Sent to proc 5
+
+Retrieving 5 of 80
+Sent to proc 6
+
+Retrieving 6 of 80
+Sent to proc 7
+
+Retrieving 7 of 80
+Sent to proc 8
+
+Retrieving 8 of 80
+Sent to proc 9
+
+Retrieving 9 of 80
+Sent to proc 10
+
+Retrieving 10 of 80
+Sent to proc 11
+
+Retrieving 11 of 80
+Sent to proc 12
+
+Retrieving 12 of 80
+Sent to proc 13
+
+Retrieving 13 of 80
+Sent to proc 14
+
+Retrieving 14 of 80
+Sent to proc 15
+
+Retrieving 15 of 80
+Sent to proc 16
+
+Retrieving 16 of 80
+Sent to proc 17
+
+Retrieving 17 of 80
+Sent to proc 18
+
+Retrieving 18 of 80
+Sent to proc 19
+
+Retrieving 19 of 80
+Sent to proc 20
+
+Retrieving 20 of 80
+Sent to proc 21
+
+Retrieving 21 of 80
+Sent to proc 22
+
+Retrieving 22 of 80
+Sent to proc 23
+
+Retrieving 23 of 80
+Sent to proc 24
+
+Retrieving 24 of 80
+Sent to proc 25
+
+Retrieving 25 of 80
+Sent to proc 26
+
+Retrieving 26 of 80
+Sent to proc 27
+
+Retrieving 27 of 80
+Sent to proc 28
+
+Retrieving 28 of 80
+Sent to proc 29
+
+Finished: 27, Time: 0.11666666666666667
+Retrieving 29 of 80, Sent to proc 28
+
+Finished: 28, Time: 0.11666666666666667
+Retrieving 30 of 80, Sent to proc 29
+
+Finished: 21, Time: 0.11666666666666667
+Retrieving 31 of 80, Sent to proc 22
+
+Finished: 20, Time: 0.16666666666666666
+Retrieving 32 of 80, Sent to proc 21
+
+Finished: 15, Time: 0.18333333333333332
+Retrieving 33 of 80, Sent to proc 16
+
+Finished: 26, Time: 0.21666666666666667
+Retrieving 34 of 80, Sent to proc 27
+
+Finished: 34, Time: 0.08333333333333333
+Retrieving 35 of 80, Sent to proc 27
+
+Finished: 0, Time: 0.31666666666666665
+Retrieving 36 of 80, Sent to proc 1
+
+Finished: 33, Time: 0.15
+Retrieving 37 of 80, Sent to proc 16
+
+Finished: 35, Time: 0.08333333333333333
+Retrieving 38 of 80, Sent to proc 27
+
+Finished: 36, Time: 0.1
+Retrieving 39 of 80, Sent to proc 1
+
+..............
+.
+.
+.
+.
+.
+.
+.
+.
+.
+....................of 80, Sent to proc 12
+
+Finished: 22, Time: 0.5166666666666667
+Retrieving 41 of 80, Sent to proc 23
+
+Finished: 29, Time: 0.5
+Retrieving 42 of 80, Sent to proc 28
+
+Finished: 12, Time: 0.6166666666666667
+Retrieving 43 of 80, Sent to proc 13
+
+Finished: 17, Time: 0.6333333333333333
+Retrieving 44 of 80, Sent to proc 18
+
+Finished: 18, Time: 0.7
+Retrieving 45 of 80, Sent to proc 19
+
+Finished: 42, Time: 0.1
+Retrieving 46 of 80, Sent to proc 28
+
+Finished: 43, Time: 0.1
+Retrieving 47 of 80, Sent to proc 13
+
+Finished: 23, Time: 0.7166666666666667
+Retrieving 48 of 80, Sent to proc 24
+
+Finished: 44, Time: 0.08333333333333333
+Retrieving 49 of 80, Sent to proc 18
+
+Finished: 41, Time: 0.2
+Retrieving 50 of 80, Sent to proc 23
+
+Finished: 19, Time: 0.7333333333333333
+Retrieving 51 of 80, Sent to proc 20
+
+Finished: 30, Time: 0.65
+Retrieving 52 of 80, Sent to proc 29
+
+Finished: 45, Time: 0.08333333333333333
+Retrieving 53 of 80, Sent to proc 19
+
+Finished: 14, Time: 0.8166666666666667
+Retrieving 54 of 80, Sent to proc 15
+
+Finished: 51, Time: 0.1
+Retrieving 55 of 80, Sent to proc 20
+
+Finished: 37, Time: 0.5
+Retrieving 56 of 80, Sent to proc 16
+
+Finished: 52, Time: 0.1
+Retrieving 57 of 80, Sent to proc 29
+
+Finished: 24, Time: 0.8666666666666667
+Retrieving 58 of 80, Sent to proc 25
+
+Finished: 53, Time: 0.08333333333333333
+Retrieving 59 of 80, Sent to proc 19
+
+Finished: 25, Time: 0.8833333333333333
+Retrieving 60 of 80, Sent to proc 26
+
+Finished: 54, Time: 0.08333333333333333
+Retrieving 61 of 80, Sent to proc 15
+
+Finished: 32, Time: 0.7333333333333333
+Retrieving 62 of 80, Sent to proc 21
+
+Finished: 50, Time: 0.18333333333333332
+Retrieving 63 of 80, Sent to proc 23
+
+Finished: 7, Time: 0.9166666666666666
+Retrieving 64 of 80, Sent to proc 8
+
+Finished: 13, Time: 0.9166666666666666
+Retrieving 65 of 80, Sent to proc 14
+
+Finished: 55, Time: 0.1
+Retrieving 66 of 80, Sent to proc 20
+
+Finished: 31, Time: 0.8333333333333334
+Retrieving 67 of 80, Sent to proc 22
+
+Finished: 61, Time: 0.08333333333333333
+Retrieving 68 of 80, Sent to proc 15
+
+Finished: 62, Time: 0.08333333333333333
+Retrieving 69 of 80, Sent to proc 21
+
+Finished: 60, Time: 0.11666666666666667
+Retrieving 70 of 80, Sent to proc 26
+
+Finished: 63, Time: 0.08333333333333333
+Retrieving 71 of 80, Sent to proc 23
+
+Finished: 64, Time: 0.08333333333333333
+Retrieving 72 of 80, Sent to proc 8
+
+Finished: 65, Time: 0.08333333333333333
+Retrieving 73 of 80, Sent to proc 14
+
+Finished: 66, Time: 0.08333333333333333
+Retrieving 74 of 80, Sent to proc 20
+
+Finished: 72, Time: 0.08333333333333333
+Retrieving 75 of 80, Sent to proc 8
+
+Finished: 16, Time: 1.0833333333333333
+Retrieving 76 of 80, Sent to proc 17
+
+Finished: 73, Time: 0.08333333333333333
+Retrieving 77 of 80, Sent to proc 14
+
+Finished: 74, Time: 0.1
+Retrieving 78 of 80, Sent to proc 20
+
+Finished: 75, Time: 0.08333333333333333
+Retrieving 79 of 80, Sent to proc 8
+
+Finished: 71, Time: 0.18333333333333332
+Finished: 77, Time: 0.1
+Finished: 78, Time: 0.08333333333333333
+Finished: 46, Time: 0.5
+Finished: 57, Time: 0.38333333333333336
+F..........................
+....................66666666666667
+Finished: 38, Time: 0.9
+Finished: 56, Time: 0.45
+Finished: 67, Time: 0.5
+Finished: 76, Time: 0.36666666666666664
+Finished: 39, Time: 1.05
+Finished: 47, Time: 0.7666666666666667
+Finished: 40, Time: 1.0166666666666666
+Finished: 49, Time: 0.8666666666666667
+Finished: 48, Time: 0.9166666666666666
+Finished: 68, Time: 0.7
+Finished: 70, Time: 0.85
+Finished: 69, Time: 0.85
+.......................166666666666666
+.......................h....................3333333333
+...............................d: 9, Time: 5.033333333333333
+....................................................................Finis..........me: 10.05
+Finished: 1, Time: 10.15
+.....hed: ......e: 10.8
+.............................................................................................................................................................................................................33333333333
+...............................................283333333333335
+Finished: 6, Time: 27.7
+DONE: Pairwise energy matrix precomputation..
+PEM execution time: 27.742133333333335
+DONE: Pairwise energy matrix precomputation
+done
+Parameter ADDWT set to true
+Loading precomputed energy matrix...done
+Parameter ADDWT set to true
+Parameter RESALLOWED0_0 not set. Using default value 
+Parameter RESALLOWED0_1 not set. Using default value 
+Parameter RESALLOWED0_2 not set. Using default value 
+Parameter RESALLOWED0_3 not set. Using default value 
+Parameter RESALLOWED0_4 not set. Using default value 
+Parameter RESALLOWED0_5 not set. Using default value 
+Parameter RESALLOWED0_6 not set. Using default value 
+Parameter RESALLOWED0_7 not set. Using default value 
+Parameter RESALLOWED0_8 not set. Using default value 
+Parameter RESALLOWED1_0 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY 
+Parameter RESALLOWED1_1 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter RESALLOWED1_2 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter EREFMATRIXNAME not set. Using default value Eref
+5 4 7 7 4 5 8 5 27 194 194 194 
+
+Pruning all rotamers incompatible with the template..
+Number of rotamers pruned due to incompatibility with the template: 127
+
+5 1 5 2 4 4 3 5 25 142 188 143 
+Preprocessing pairs of rotamers, cutoff of 100.0
+
+Starting DEE cycle run: 1
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 335
+DEE: The minimum difference is 0.688448429107666
+
+Number of rotamers pruned this run: 35
+DEE: The minimum difference is 0.688448429107666
+
+Number of rotamers pruned this run: 1
+DEE: The minimum difference is 0.688448429107666
+
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.688448429107666
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 159
+DEE: The minimum difference is 0.6745893955230713
+
+Current run: 2
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 0.6745893955230713
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 38
+DEE: The minimum difference is 0.6999077796936035
+
+Current run: 2
+Number of rotamers pruned this run: 5
+DEE: The minimum difference is 0.6999368667602539
+
+Current run: 3
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999368667602539
+
+
+Starting pruning with Bounds
+
+Num pruned rot this run: 541
+Num pruned pairs this run: 318
+
+Starting DEE cycle run: 2
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.673398494720459
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 35
+DEE: The minimum difference is 0.6977429389953613
+
+Current run: 2
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 0.6977429389953613
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999368667602539
+
+
+Starting pruning with Bounds
+
+Num pruned rot this run: 0
+Num pruned pairs this run: 70
+
+Starting DEE cycle run: 3
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.673398494720459
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 0.6977429389953613
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999368667602539
+
+
+Starting pruning with Bounds
+
+Starting pruning with DEE (full pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 1452
+DEE: The minimum difference is 0.6998701095581055
+
+
+Starting pruning with DEE (2-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 9
+DEE: The minimum difference is 0.6999845504760742
+
+Current run: 2
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999845504760742
+
+
+Num pruned rot this run: 9
+Num pruned pairs this run: 2904
+
+Starting DEE cycle run: 4
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.673398494720459
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 0.6745893955230713
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6996011734008789
+
+
+Starting pruning with Bounds
+
+Starting pruning with DEE (full pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 52
+DEE: The minimum difference is 0.6979219913482666
+
+
+Starting pruning with DEE (2-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999845504760742
+
+
+Num pruned rot this run: 0
+Num pruned pairs this run: 104
+
+Starting DEE cycle run: 5
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.673398494720459
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 0.6745893955230713
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6996011734008789
+
+
+Starting pruning with Bounds
+
+Starting pruning with DEE (full pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 0.6979219913482666
+
+
+Starting pruning with DEE (2-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999845504760742
+
+
+Num pruned rot this run: 0
+Num pruned pairs this run: 0
+
+curLevel 0
+LEU(5 Rot): 0 2 0 true 0 2 1 true 0 2 2 true 0 2 3 true 0 2 4 false 
+NumWTRots: 1
+curLevel 1
+PHE(4 Rot): 1 4 0 false 1 4 1 true 1 4 2 true 1 4 3 true 
+NumWTRots: 1
+curLevel 2
+ASN(7 Rot): 2 18 0 false 2 18 1 true 2 18 2 true 2 18 3 true 2 18 4 false 2 18 5 false 2 18 6 false 
+NumWTRots: 4
+curLevel 3
+ILE(7 Rot): 3 3 0 false 3 3 1 false 3 3 2 true 3 3 3 true 3 3 4 true 3 3 5 true 3 3 6 true 
+NumWTRots: 2
+curLevel 4
+PHE(4 Rot): 4 4 0 true 4 4 1 false 4 4 2 false 4 4 3 true 
+NumWTRots: 2
+curLevel 5
+LEU(5 Rot): 5 2 0 true 5 2 1 false 5 2 2 true 5 2 3 false 5 2 4 false 
+NumWTRots: 3
+curLevel 6
+HID(8 Rot): 6 14 0 true 6 14 1 true 6 14 2 true 6 14 3 false 6 14 4 false 6 14 5 true 6 14 6 true 6 14 7 true 
+NumWTRots: 2
+curLevel 7
+LEU(5 Rot): 7 2 0 true 7 2 1 true 7 2 2 true 7 2 3 false 7 2 4 false 
+NumWTRots: 2
+curLevel 8
+LYS(27 Rot): 8 11 0 false 8 11 1 true 8 11 2 true 8 11 3 true 8 11 4 true 8 11 5 true 8 11 6 true 8 11 7 true 8 11 8 false 8 11 9 false 8 11 10 false 8 11 11 false 8 11 12 false 8 11 13 false 8 11 14 false 8 11 15 true 8 11 16 false 8 11 17 false 8 11 18 false 8 11 19 false 8 11 20 false 8 11 21 false 8 11 22 false 8 11 23 true 8 11 24 true 8 11 25 true 8 11 26 false 
+NumWTRots: 16
+curLevel 9
+ALA(1 Rot): 9 0 0 true 
+VAL(3 Rot): 9 1 0 true 9 1 1 true 9 1 2 true 
+LEU(5 Rot): 9 2 0 true 9 2 1 true 9 2 2 true 9 2 3 true 9 2 4 true 
+ILE(7 Rot): 9 3 0 true 9 3 1 true 9 3 2 true 9 3 3 true 9 3 4 true 9 3 5 false 9 3 6 true 
+PHE(4 Rot): 9 4 0 true 9 4 1 false 9 4 2 true 9 4 3 false 
+TYR(8 Rot): 9 5 0 true 9 5 1 true 9 5 2 false 9 5 3 false 9 5 4 true 9 5 5 true 9 5 6 true 9 5 7 true 
+TRP(7 Rot): 9 6 0 true 9 6 1 true 9 6 2 false 9 6 3 false 9 6 4 true 9 6 5 true 9 6 6 true 
+CYS(3 Rot): 9 7 0 true 9 7 1 false 9 7 2 true 
+MET(13 Rot): 9 8 0 true 9 8 1 true 9 8 2 false 9 8 3 false 9 8 4 true 9 8 5 true 9 8 6 true 9 8 7 false 9 8 8 false 9 8 9 true 9 8 10 true 9 8 11 true 9 8 12 true 
+SER(18 Rot): 9 9 0 true 9 9 1 true 9 9 2 true 9 9 3 true 9 9 4 true 9 9 5 true 9 9 6 true 9 9 7 true 9 9 8 true 9 9 9 true 9 9 10 true 9 9 11 false 9 9 12 true 9 9 13 true 9 9 14 true 9 9 15 true 9 9 16 true 9 9 17 true 
+THR(18 Rot): 9 10 0 true 9 10 1 true 9 10 2 true 9 10 3 true 9 10 4 true 9 10 5 true 9 10 6 true 9 10 7 true 9 10 8 true 9 10 9 true 9 10 10 true 9 10 11 true 9 10 12 true 9 10 13 true 9 10 14 true 9 10 15 true 9 10 16 true 9 10 17 true 
+LYS(27 Rot): 9 11 0 true 9 11 1 true 9 11 2 true 9 11 3 true 9 11 4 true 9 11 5 false 9 11 6 false 9 11 7 false 9 11 8 true 9 11 9 true 9 11 10 true 9 11 11 true 9 11 12 true 9 11 13 true 9 11 14 true 9 11 15 true 9 11 16 false 9 11 17 false 9 11 18 true 9 11 19 true 9 11 20 false 9 11 21 true 9 11 22 true 9 11 23 true 9 11 24 true 9 11 25 true 9 11 26 true 
+ARG(34 Rot): 9 12 0 true 9 12 1 true 9 12 2 true 9 12 3 true 9 12 4 true 9 12 5 true 9 12 6 true 9 12 7 false 9 12 8 true 9 12 9 false 9 12 10 false 9 12 11 true 9 12 12 true 9 12 13 true 9 12 14 true 9 12 15 true 9 12 16 true 9 12 17 true 9 12 18 true 9 12 19 true 9 12 20 false 9 12 21 true 9 12 22 true 9 12 23 true 9 12 24 true 9 12 25 false 9 12 26 true 9 12 27 true 9 12 28 true 9 12 29 true 9 12 30 true 9 12 31 false 9 12 32 true 9 12 33 true 
+HID(8 Rot): 9 14 0 true 9 14 1 true 9 14 2 true 9 14 3 false 9 14 4 true 9 14 5 true 9 14 6 false 9 14 7 true 
+HIE(8 Rot): 9 15 0 true 9 15 1 true 9 15 2 true 9 15 3 true 9 15 4 true 9 15 5 true 9 15 6 false 9 15 7 true 
+ASP(5 Rot): 9 16 0 true 9 16 1 true 9 16 2 true 9 16 3 false 9 16 4 true 
+GLU(8 Rot): 9 17 0 true 9 17 1 true 9 17 2 false 9 17 3 true 9 17 4 true 9 17 5 true 9 17 6 true 9 17 7 false 
+ASN(7 Rot): 9 18 0 true 9 18 1 true 9 18 2 true 9 18 3 true 9 18 4 true 9 18 5 true 9 18 6 true 
+GLN(9 Rot): 9 19 0 true 9 19 1 true 9 19 2 false 9 19 3 false 9 19 4 true 9 19 5 true 9 19 6 true 9 19 7 true 9 19 8 true 
+GLY(1 Rot): 9 20 0 true 
+NumWTRots: 0
+curLevel 10
+ALA(1 Rot): 10 0 0 true 
+VAL(3 Rot): 10 1 0 true 10 1 1 true 10 1 2 true 
+LEU(5 Rot): 10 2 0 true 10 2 1 true 10 2 2 true 10 2 3 true 10 2 4 true 
+ILE(7 Rot): 10 3 0 true 10 3 1 true 10 3 2 true 10 3 3 true 10 3 4 true 10 3 5 true 10 3 6 true 
+PHE(4 Rot): 10 4 0 true 10 4 1 false 10 4 2 true 10 4 3 true 
+TYR(8 Rot): 10 5 0 true 10 5 1 true 10 5 2 false 10 5 3 false 10 5 4 true 10 5 5 true 10 5 6 true 10 5 7 true 
+TRP(7 Rot): 10 6 0 false 10 6 1 true 10 6 2 false 10 6 3 false 10 6 4 true 10 6 5 true 10 6 6 false 
+CYS(3 Rot): 10 7 0 true 10 7 1 true 10 7 2 true 
+MET(13 Rot): 10 8 0 true 10 8 1 true 10 8 2 true 10 8 3 false 10 8 4 true 10 8 5 true 10 8 6 true 10 8 7 true 10 8 8 true 10 8 9 true 10 8 10 true 10 8 11 true 10 8 12 true 
+SER(18 Rot): 10 9 0 true 10 9 1 true 10 9 2 true 10 9 3 true 10 9 4 true 10 9 5 true 10 9 6 true 10 9 7 true 10 9 8 true 10 9 9 true 10 9 10 true 10 9 11 true 10 9 12 true 10 9 13 true 10 9 14 true 10 9 15 true 10 9 16 true 10 9 17 true 
+THR(18 Rot): 10 10 0 true 10 10 1 true 10 10 2 true 10 10 3 true 10 10 4 true 10 10 5 true 10 10 6 true 10 10 7 true 10 10 8 true 10 10 9 true 10 10 10 true 10 10 11 true 10 10 12 true 10 10 13 true 10 10 14 true 10 10 15 true 10 10 16 true 10 10 17 true 
+LYS(27 Rot): 10 11 0 true 10 11 1 true 10 11 2 true 10 11 3 true 10 11 4 true 10 11 5 true 10 11 6 false 10 11 7 true 10 11 8 false 10 11 9 true 10 11 10 true 10 11 11 false 10 11 12 false 10 11 13 false 10 11 14 true 10 11 15 true 10 11 16 true 10 11 17 true 10 11 18 true 10 11 19 true 10 11 20 true 10 11 21 true 10 11 22 true 10 11 23 true 10 11 24 true 10 11 25 true 10 11 26 true 
+ARG(34 Rot): 10 12 0 true 10 12 1 true 10 12 2 true 10 12 3 true 10 12 4 true 10 12 5 true 10 12 6 true 10 12 7 false 10 12 8 false 10 12 9 true 10 12 10 false 10 12 11 false 10 12 12 false 10 12 13 true 10 12 14 true 10 12 15 false 10 12 16 false 10 12 17 true 10 12 18 false 10 12 19 false 10 12 20 true 10 12 21 false 10 12 22 true 10 12 23 true 10 12 24 true 10 12 25 false 10 12 26 true 10 12 27 true 10 12 28 true 10 12 29 false 10 12 30 false 10 12 31 false 10 12 32 true 10 12 33 true 
+HID(8 Rot): 10 14 0 true 10 14 1 true 10 14 2 true 10 14 3 false 10 14 4 false 10 14 5 true 10 14 6 true 10 14 7 true 
+HIE(8 Rot): 10 15 0 true 10 15 1 true 10 15 2 true 10 15 3 false 10 15 4 true 10 15 5 true 10 15 6 true 10 15 7 true 
+ASP(5 Rot): 10 16 0 true 10 16 1 true 10 16 2 true 10 16 3 true 10 16 4 true 
+GLU(8 Rot): 10 17 0 true 10 17 1 true 10 17 2 true 10 17 3 true 10 17 4 true 10 17 5 true 10 17 6 true 10 17 7 true 
+ASN(7 Rot): 10 18 0 true 10 18 1 true 10 18 2 true 10 18 3 true 10 18 4 true 10 18 5 true 10 18 6 true 
+GLN(9 Rot): 10 19 0 true 10 19 1 true 10 19 2 true 10 19 3 false 10 19 4 true 10 19 5 true 10 19 6 true 10 19 7 true 10 19 8 true 
+GLY(1 Rot): 10 20 0 true 
+NumWTRots: 4
+curLevel 11
+ALA(1 Rot): 11 0 0 true 
+VAL(3 Rot): 11 1 0 true 11 1 1 true 11 1 2 false 
+LEU(5 Rot): 11 2 0 true 11 2 1 true 11 2 2 true 11 2 3 true 11 2 4 true 
+ILE(7 Rot): 11 3 0 true 11 3 1 true 11 3 2 true 11 3 3 true 11 3 4 true 11 3 5 true 11 3 6 true 
+PHE(4 Rot): 11 4 0 true 11 4 1 true 11 4 2 true 11 4 3 true 
+TYR(8 Rot): 11 5 0 true 11 5 1 true 11 5 2 true 11 5 3 true 11 5 4 true 11 5 5 true 11 5 6 true 11 5 7 true 
+TRP(7 Rot): 11 6 0 true 11 6 1 true 11 6 2 true 11 6 3 true 11 6 4 true 11 6 5 true 11 6 6 true 
+CYS(3 Rot): 11 7 0 true 11 7 1 true 11 7 2 true 
+MET(13 Rot): 11 8 0 true 11 8 1 true 11 8 2 true 11 8 3 true 11 8 4 true 11 8 5 true 11 8 6 true 11 8 7 true 11 8 8 true 11 8 9 true 11 8 10 true 11 8 11 true 11 8 12 true 
+SER(18 Rot): 11 9 0 true 11 9 1 true 11 9 2 true 11 9 3 true 11 9 4 true 11 9 5 true 11 9 6 true 11 9 7 true 11 9 8 true 11 9 9 true 11 9 10 true 11 9 11 true 11 9 12 true 11 9 13 true 11 9 14 true 11 9 15 true 11 9 16 true 11 9 17 true 
+THR(18 Rot): 11 10 0 true 11 10 1 true 11 10 2 true 11 10 3 true 11 10 4 true 11 10 5 true 11 10 6 true 11 10 7 true 11 10 8 true 11 10 9 true 11 10 10 true 11 10 11 true 11 10 12 true 11 10 13 true 11 10 14 true 11 10 15 true 11 10 16 true 11 10 17 true 
+LYS(27 Rot): 11 11 0 true 11 11 1 true 11 11 2 true 11 11 3 true 11 11 4 true 11 11 5 true 11 11 6 true 11 11 7 true 11 11 8 true 11 11 9 true 11 11 10 true 11 11 11 true 11 11 12 true 11 11 13 true 11 11 14 true 11 11 15 true 11 11 16 true 11 11 17 true 11 11 18 true 11 11 19 true 11 11 20 true 11 11 21 true 11 11 22 true 11 11 23 true 11 11 24 true 11 11 25 true 11 11 26 true 
+ARG(34 Rot): 11 12 0 true 11 12 1 true 11 12 2 true 11 12 3 true 11 12 4 true 11 12 5 true 11 12 6 true 11 12 7 true 11 12 8 true 11 12 9 true 11 12 10 true 11 12 11 true 11 12 12 true 11 12 13 true 11 12 14 true 11 12 15 true 11 12 16 true 11 12 17 true 11 12 18 true 11 12 19 true 11 12 20 true 11 12 21 true 11 12 22 true 11 12 23 true 11 12 24 true 11 12 25 true 11 12 26 true 11 12 27 true 11 12 28 true 11 12 29 true 11 12 30 true 11 12 31 true 11 12 32 true 11 12 33 true 
+HID(8 Rot): 11 14 0 true 11 14 1 true 11 14 2 true 11 14 3 true 11 14 4 true 11 14 5 true 11 14 6 true 11 14 7 true 
+HIE(8 Rot): 11 15 0 true 11 15 1 true 11 15 2 true 11 15 3 true 11 15 4 true 11 15 5 true 11 15 6 true 11 15 7 true 
+ASP(5 Rot): 11 16 0 true 11 16 1 true 11 16 2 true 11 16 3 true 11 16 4 false 
+GLU(8 Rot): 11 17 0 true 11 17 1 true 11 17 2 true 11 17 3 true 11 17 4 true 11 17 5 false 11 17 6 true 11 17 7 false 
+ASN(7 Rot): 11 18 0 true 11 18 1 true 11 18 2 true 11 18 3 true 11 18 4 true 11 18 5 false 11 18 6 true 
+GLN(9 Rot): 11 19 0 true 11 19 1 true 11 19 2 true 11 19 3 true 11 19 4 true 11 19 5 true 11 19 6 true 11 19 7 false 11 19 8 true 
+GLY(1 Rot): 11 20 0 false 
+NumWTRots: 1
+ASTAR PRUNING INFO: Total Rots before pruning for each residue: 
+5 4 7 7 4 5 8 5 27 194 194 194 
+Total number of rotamers before pruning: 654 
+ASTAR PRUNING INFO: Total Rots non-pruned for each residue 
+1 1 4 2 2 3 2 2 16 33 31 7 
+Total number of rotamers after pruning: 104 
+2 4 18 3 4 2 14 2 11 10 6 1 
+pruneIndex 654
+(0 2 4) (1 4 0) (2 18 0) (2 18 4) (2 18 5) (2 18 6) (3 3 0) (3 3 1) (4 4 1) (4 4 2) (5 2 1) (5 2 3) (5 2 4) (6 14 3) (6 14 4) (7 2 3) (7 2 4) (8 11 0) (8 11 8) (8 11 9) (8 11 10) (8 11 11) (8 11 12) (8 11 13) (8 11 14) (8 11 16) (8 11 17) (8 11 18) (8 11 19) (8 11 20) (8 11 21) (8 11 22) (8 11 26) (9 3 5) (9 4 1) (9 4 3) (9 5 2) (9 5 3) (9 6 2) (9 6 3) (9 7 1) (9 8 2) (9 8 3) (9 8 7) (9 8 8) (9 9 11) (9 11 5) (9 11 6) (9 11 7) (9 11 16) (9 11 17) (9 11 20) (9 12 7) (9 12 9) (9 12 10) (9 12 20) (9 12 25) (9 12 31) (9 14 3) (9 14 6) (9 15 6) (9 16 3) (9 17 2) (9 17 7) (9 19 2) (9 19 3) (10 4 1) (10 5 2) (10 5 3) (10 6 0) (10 6 2) (10 6 3) (10 6 6) (10 8 3) (10 11 6) (10 11 8) (10 11 11) (10 11 12) (10 11 13) (10 12 7) (10 12 8) (10 12 10) (10 12 11) (10 12 12) (10 12 15) (10 12 16) (10 12 18) (10 12 19) (10 12 21) (10 12 25) (10 12 29) (10 12 30) (10 12 31) (10 14 3) (10 14 4) (10 15 3) (10 19 3) (11 1 2) (11 16 4) (11 17 5) (11 17 7) (11 18 5) (11 19 7) (11 20 0) curIndexRed 104
+confNum: 1
+curConf: 0 0 2 1 0 0 1 1 11 2 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 3 2 2 -1328.9928 -1311.6372 -1311.6372
+confNum: 2
+curConf: 0 0 2 1 0 0 1 0 11 2 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 3 2 2 -1328.9305 -1308.031 -1311.6372
+confNum: 3
+curConf: 0 0 2 1 0 0 1 1 11 11 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 8 2 2 -1328.8723 -1315.4701 -1315.4701
+confNum: 4
+curConf: 0 0 2 1 0 0 1 1 12 2 4 0 
+actualConf: 4 0 5 1 1 1 4 4 20 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 3 2 2 -1328.8263 -1311.1597 -1315.4701
+confNum: 5
+curConf: 0 0 2 1 0 0 1 0 11 11 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 8 2 2 -1328.8102 -1311.8612 -1315.4701
+confNum: 6
+curConf: 0 0 2 1 0 0 1 0 12 2 4 0 
+actualConf: 4 0 5 1 1 1 4 3 20 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 3 2 2 -1328.7612 -1307.5609 -1315.4701
+confNum: 7
+curConf: 0 0 2 1 0 0 1 1 13 25 4 0 
+actualConf: 4 0 5 1 1 1 4 4 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 4 21 3 2 2 -1328.7294 -1311.7356 -1315.4701
+confNum: 8
+curConf: 0 0 2 1 0 1 1 1 11 2 2 0 
+actualConf: 4 0 5 1 1 3 4 4 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 3 2 -1328.7228 -1318.99 -1318.99
+confNum: 9
+curConf: 0 0 2 1 0 0 1 1 12 11 4 0 
+actualConf: 4 0 5 1 1 1 4 4 20 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 8 2 2 -1328.6943 -1314.9569 -1318.99
+confNum: 10
+curConf: 0 0 2 1 0 0 1 0 13 25 4 0 
+actualConf: 4 0 5 1 1 1 4 3 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 3 21 3 2 2 -1328.6672 -1308.1378 -1318.99
+confNum: 11
+curConf: 0 0 2 1 0 1 1 0 11 2 2 0 
+actualConf: 4 0 5 1 1 3 4 3 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 3 2 -1328.6604 -1315.3738 -1318.99
+confNum: 12
+curConf: 0 0 2 1 0 0 1 1 11 10 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 7 2 2 -1328.6603 -1315.1458 -1318.99
+confNum: 13
+curConf: 0 0 2 1 0 0 1 1 11 26 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 6 2 2 -1328.6508 -1314.4323 -1318.99
+confNum: 14
+curConf: 0 0 2 1 0 0 1 0 12 11 4 0 
+actualConf: 4 0 5 1 1 1 4 3 20 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 8 2 2 -1328.6294 -1311.3608 -1318.99
+confNum: 15
+curConf: 0 0 2 1 0 1 1 1 11 2 5 0 
+actualConf: 4 0 5 1 1 3 4 4 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 3 2 -1328.6154 -1318.7218 -1318.99
+confNum: 16
+curConf: 0 0 2 1 0 1 1 1 11 11 2 0 
+actualConf: 4 0 5 1 1 3 4 4 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 3 2 -1328.6025 -1322.8077 -1322.8077
+confNum: 17
+curConf: 0 0 2 1 0 0 1 0 11 10 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 7 2 2 -1328.5981 -1311.5265 -1322.8077
+confNum: 18
+curConf: 0 0 2 1 0 1 1 1 11 2 1 0 
+actualConf: 4 0 5 1 1 3 4 4 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 2 2 -1328.5952 -1318.8824 -1322.8077
+confNum: 19
+curConf: 0 0 2 1 0 0 1 0 11 26 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 6 2 2 -1328.5903 -1310.8181 -1322.8077
+0 -121.49433135986328 11 0 0 2 1 0 0 1 1 12 10 4 12 20
+confNum: 20
+curConf: 0 0 2 1 0 0 1 1 12 10 4 0 
+actualConf: 4 0 5 1 1 1 4 4 20 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 7 2 2 -1328.5706 -1314.7771 -1322.8077
+confNum: 21
+curConf: 0 0 2 1 0 1 1 0 11 2 5 0 
+actualConf: 4 0 5 1 1 3 4 3 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 3 2 -1328.5532 -1315.1283 -1322.8077
+confNum: 22
+curConf: 0 0 2 1 0 0 1 1 13 25 4 4 
+actualConf: 4 0 5 1 1 1 4 4 21 151 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 18 
+curRot: 4 0 5 1 1 1 4 4 21 3 2 5 -1328.5493 -1310.5559 -1322.8077
+confNum: 23
+curConf: 0 0 2 1 0 1 1 0 11 11 2 0 
+actualConf: 4 0 5 1 1 3 4 3 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 8 3 2 -1328.5403 -1319.2031 -1322.8077
+confNum: 24
+curConf: 0 0 2 1 0 1 1 0 11 2 1 0 
+actualConf: 4 0 5 1 1 3 4 3 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 2 2 -1328.5331 -1315.2683 -1322.8077
+confNum: 25
+curConf: 0 0 2 1 0 1 1 1 12 2 2 0 
+actualConf: 4 0 5 1 1 3 4 4 20 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 3 3 2 -1328.5215 -1318.5945 -1322.8077
+confNum: 26
+curConf: 0 0 2 1 0 0 1 0 12 10 4 0 
+actualConf: 4 0 5 1 1 1 4 3 20 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 7 2 2 -1328.5056 -1311.1814 -1322.8077
+confNum: 27
+curConf: 0 0 2 1 0 1 1 1 11 11 5 0 
+actualConf: 4 0 5 1 1 3 4 4 19 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 3 2 -1328.4949 -1322.5374 -1322.8077
+confNum: 28
+curConf: 0 0 2 1 0 1 1 1 11 11 1 0 
+actualConf: 4 0 5 1 1 3 4 4 19 46 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 2 2 Pruning time: 0.36541666666666667
+Enumeration/DACS time: 8.6839
+DEE execution time: 9.049316666666666
+DEE done
+Total execution time: 9.094133333333334
+Loading precomputed energy matrix...done
+Parameter ADDWT set to true
+Parameter RESALLOWED0_0 not set. Using default value 
+Parameter RESALLOWED0_1 not set. Using default value 
+Parameter RESALLOWED0_2 not set. Using default value 
+Parameter RESALLOWED0_3 not set. Using default value 
+Parameter RESALLOWED0_4 not set. Using default value 
+Parameter RESALLOWED0_5 not set. Using default value 
+Parameter RESALLOWED0_6 not set. Using default value 
+Parameter RESALLOWED0_7 not set. Using default value 
+Parameter RESALLOWED0_8 not set. Using default value 
+Parameter RESALLOWED1_0 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY 
+Parameter RESALLOWED1_1 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter RESALLOWED1_2 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter EREFMATRIXNAME not set. Using default value Eref
+5 4 7 7 4 5 8 5 27 194 194 194 
+
+Pruning all rotamers incompatible with the template..
+Number of rotamers pruned due to incompatibility with the template: 127
+
+5 1 5 2 4 4 3 5 25 142 188 143 
+Preprocessing pairs of rotamers, cutoff of 100.0
+
+Starting DEE cycle run: 1
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 165
+DEE: The minimum difference is 6.318763971328735
+
+Number of rotamers pruned this run: 10
+DEE: The minimum difference is 6.318763971328735
+
+Number of rotamers pruned this run: 1
+DEE: The minimum difference is 6.318763971328735
+
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.318763971328735
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 381
+DEE: The minimum difference is 6.384048938751221
+
+Current run: 2
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 6.384048938751221
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 2
+DEE: The minimum difference is 6.3843889236450195
+
+Current run: 2
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.3843889236450195
+
+
+Starting pruning with Bounds
+
+Num pruned rot this run: 305
+Num pruned pairs this run: 762
+
+Starting DEE cycle run: 2
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 5.984482765197754
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 6.384048938751221
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.3843889236450195
+
+
+Starting pruning with Bounds
+
+Starting pruning with DEE (full pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 6016
+DEE: The minimum difference is 6.384866237640381
+
+
+Starting pruning with DEE (2-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 1
+DEE: The minimum difference is 6.385052680969238
+
+Current run: 2
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.385052680969238
+
+
+Num pruned rot this run: 1
+Num pruned pairs this run: 12032
+
+Starting DEE cycle run: 3
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 5.984482765197754
+
+
+Starting pruning with DEE (mb pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 
+Pos1 11: Number of pairs pruned this run: 0
+DEE: The minimum difference is 5.755810499191284
+
+
+Starting pruning with Bounding Flags
+Current run: 1
+
+Number of pairs pruned this run: 0
+
+minE: 9.999999680285692E37 maxE: -9.999999680285692E37 pruningE: 100.0 Ew: 0.20000000298023224 Ec: 9.999999680285692E37
+Number of pruned pairs: 0
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.3843889236450195
+
+
+Starting pruning with Bounds
+
+Starting pruning with DEE (full pairs)
+Current run: 1
+
+Pos1 0: 1 2 3 4 5 6 7 8 9 10 11 
+Pos1 1: 2 3 4 5 6 7 8 9 10 11 
+Pos1 2: 3 4 5 6 7 8 9 10 11 
+Pos1 3: 4 5 6 7 8 9 10 11 
+Pos1 4: 5 6 7 8 9 10 11 
+Pos1 5: 6 7 8 9 10 11 
+Pos1 6: 7 8 9 10 11 
+Pos1 7: 8 9 10 11 
+Pos1 8: 9 10 11 
+Pos1 9: 10 11 
+Pos1 10: 11 Parameter HELECT not set. Using default value true
+Parameter HVDW not set. Using default value true
+Parameter HSTERIC not set. Using default value false
+Parameter DISTDEPDIELECT not set. Using default value true
+Parameter DIELECTCONST not set. Using default value 6.0
+Parameter DODIHEDE not set. Using default value false
+Parameter DOSOLVATIONE not set. Using default value true
+Parameter SOLVSCALE not set. Using default value 0.5
+Parameter VDWMULT not set. Using default value 0.95
+Parameter STERICTHRESH not set. Using default value 0.4
+Parameter SOFTSTERICTHRESH not set. Using default value 1.5
+Parameter DATADIR set to /usr/project/dlab/Users/kroberts/Experiments/unitTests/ppis/datafiles
+Parameter FORCEFIELD not set. Using default value AMBER
+Parameter ENTROPYSCALE not set. Using default value 0.0
+Parameter ROTFILE not set. Using default value LovellRotamer.dat
+
+OSPREY Protein Redesign Software Version 2.0
+Copyright (C) 2001-2012 Bruce Donald Lab, Duke University
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Lesser General Public License for more details.
+
+There are additional restrictions imposed on the use and distribution
+of this open-source code, including: (A) this header must be included
+in any modification or extension of the code; (B) you are required to
+cite our papers in any publications that use this code.  The citation
+for the various different modules of our software, together with a
+complete list of requirements and restrictions are found in the
+document license.pdf enclosed with this distribution.
+
+OSPREY running on 2 processor(s)
+
+Performing DEE
+Parameter NUMMAXMUT not set. Using default value 1000
+Parameter ALGOPTION set to 1
+Parameter DODACS not set. Using default value false
+Parameter SPLITFLAGS not set. Using default value false
+Parameter DISTRDACS not set. Using default value false
+Parameter DOMINIMIZE set to true
+Parameter MINIMIZEBB not set. Using default value false
+Parameter DOBACKRUBS not set. Using default value false
+Parameter APPROXMINGMEC set to true
+Parameter PREPROCPAIRS not set. Using default value true
+Parameter SCALEINT not set. Using default value false
+Parameter MINENERGYMATRIXNAME not set. Using default value PDZexampleminM
+Parameter MAXENERGYMATRIXNAME not set. Using default value PDZexamplemaxM
+Parameter INITEW set to 0.2
+Parameter LAMBDA set to 1
+Parameter PRUNINGE not set. Using default value 100.0
+Parameter STERICE not set. Using default value 30.0
+Parameter PAIRST not set. Using default value 100.0
+Parameter GENINTERACTIONGRAPH not set. Using default value false
+Parameter OUTPUTCONFINFO not set. Using default value c_PDZexample
+Parameter OUTPUTPRUNEINFO not set. Using default value p_PDZexample
+Parameter ONLYSINGLESTRAND not set. Using default value -1
+Parameter TYPEDEP not set. Using default value false
+Parameter ADDWTROTS not set. Using default value false
+Parameter USEEREF not set. Using default value true
+Parameter RESUMESEARCH not set. Using default value false
+Parameter imindee set to true
+Parameter COFMAP0 not set. Using default value -1
+Parameter COFMAP1 not set. Using default value -1
+Parameter ADDWT set to true
+Loading precomputed energy matrix...done
+Parameter ADDWT set to true
+Parameter RESALLOWED0_0 not set. Using default value 
+Parameter RESALLOWED0_1 not set. Using default value 
+Parameter RESALLOWED0_2 not set. Using default value 
+Parameter RESALLOWED0_3 not set. Using default value 
+Parameter RESALLOWED0_4 not set. Using default value 
+Parameter RESALLOWED0_5 not set. Using default value 
+Parameter RESALLOWED0_6 not set. Using default value 
+Parameter RESALLOWED0_7 not set. Using default value 
+Parameter RESALLOWED0_8 not set. Using default value 
+Parameter RESALLOWED1_0 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY 
+Parameter RESALLOWED1_1 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter RESALLOWED1_2 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter EREFMATRIXNAME not set. Using default value Eref
+5 4 7 7 4 5 8 5 27 194 194 194 
+
+Pruning all rotamers incompatible with the template..
+Number of rotamers pruned due to incompatibility with the template: 127
+
+5 1 5 2 4 4 3 5 25 142 188 143 
+Preprocessing pairs of rotamers, cutoff of 100.0
+
+Starting DEE cycle run: 1
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 335
+DEE: The minimum difference is 0.688448429107666
+
+Number of rotamers pruned this run: 35
+DEE: The minimum difference is 0.688448429107666
+
+Number of rotamers pruned this run: 1
+DEE: The minimum difference is 0.688448429107666
+
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.688448429107666
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 38
+DEE: The minimum difference is 0.6999077796936035
+
+Current run: 2
+Number of rotamers pruned this run: 5
+DEE: The minimum difference is 0.6999368667602539
+
+Current run: 3
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999368667602539
+
+
+Starting pruning with Bounds
+
+Num pruned rot this run: 541
+Num pruned pairs this run: 0
+
+Starting DEE cycle run: 2
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.673398494720459
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 0.6999368667602539
+
+
+Starting pruning with Bounds
+
+Num pruned rot this run: 0
+Num pruned pairs this run: 0
+
+curLevel 0
+LEU(5 Rot): 0 2 0 true 0 2 1 true 0 2 2 true 0 2 3 true 0 2 4 false 
+NumWTRots: 1
+curLevel 1
+PHE(4 Rot): 1 4 0 false 1 4 1 true 1 4 2 true 1 4 3 true 
+NumWTRots: 1
+curLevel 2
+ASN(7 Rot): 2 18 0 false 2 18 1 true 2 18 2 true 2 18 3 true 2 18 4 false 2 18 5 false 2 18 6 false 
+NumWTRots: 4
+curLevel 3
+ILE(7 Rot): 3 3 0 false 3 3 1 false 3 3 2 true 3 3 3 true 3 3 4 true 3 3 5 true 3 3 6 true 
+NumWTRots: 2
+curLevel 4
+PHE(4 Rot): 4 4 0 true 4 4 1 false 4 4 2 false 4 4 3 true 
+NumWTRots: 2
+curLevel 5
+LEU(5 Rot): 5 2 0 true 5 2 1 false 5 2 2 true 5 2 3 false 5 2 4 false 
+NumWTRots: 3
+curLevel 6
+HID(8 Rot): 6 14 0 true 6 14 1 true 6 14 2 true 6 14 3 false 6 14 4 false 6 14 5 true 6 14 6 true 6 14 7 true 
+NumWTRots: 2
+curLevel 7
+LEU(5 Rot): 7 2 0 true 7 2 1 true 7 2 2 true 7 2 3 false 7 2 4 false 
+NumWTRots: 2
+curLevel 8
+LYS(27 Rot): 8 11 0 false 8 11 1 true 8 11 2 true 8 11 3 true 8 11 4 true 8 11 5 true 8 11 6 true 8 11 7 true 8 11 8 false 8 11 9 false 8 11 10 false 8 11 11 false 8 11 12 false 8 11 13 false 8 11 14 false 8 11 15 true 8 11 16 false 8 11 17 false 8 11 18 false 8 11 19 false 8 11 20 false 8 11 21 false 8 11 22 false 8 11 23 true 8 11 24 true 8 11 25 true 8 11 26 false 
+NumWTRots: 16
+curLevel 9
+ALA(1 Rot): 9 0 0 true 
+VAL(3 Rot): 9 1 0 true 9 1 1 true 9 1 2 true 
+LEU(5 Rot): 9 2 0 true 9 2 1 true 9 2 2 true 9 2 3 true 9 2 4 true 
+ILE(7 Rot): 9 3 0 true 9 3 1 true 9 3 2 true 9 3 3 true 9 3 4 true 9 3 5 false 9 3 6 true 
+PHE(4 Rot): 9 4 0 true 9 4 1 false 9 4 2 true 9 4 3 false 
+TYR(8 Rot): 9 5 0 true 9 5 1 true 9 5 2 false 9 5 3 false 9 5 4 true 9 5 5 true 9 5 6 true 9 5 7 true 
+TRP(7 Rot): 9 6 0 true 9 6 1 true 9 6 2 false 9 6 3 false 9 6 4 true 9 6 5 true 9 6 6 true 
+CYS(3 Rot): 9 7 0 true 9 7 1 false 9 7 2 true 
+MET(13 Rot): 9 8 0 true 9 8 1 true 9 8 2 false 9 8 3 false 9 8 4 true 9 8 5 true 9 8 6 true 9 8 7 false 9 8 8 false 9 8 9 true 9 8 10 true 9 8 11 true 9 8 12 true 
+SER(18 Rot): 9 9 0 true 9 9 1 true 9 9 2 true 9 9 3 true 9 9 4 true 9 9 5 true 9 9 6 true 9 9 7 false 9 9 8 true 9 9 9 true 9 9 10 false 9 9 11 false 9 9 12 true 9 9 13 true 9 9 14 true 9 9 15 true 9 9 16 true 9 9 17 true 
+THR(18 Rot): 9 10 0 true 9 10 1 true 9 10 2 true 9 10 3 true 9 10 4 true 9 10 5 true 9 10 6 true 9 10 7 true 9 10 8 true 9 10 9 true 9 10 10 true 9 10 11 true 9 10 12 true 9 10 13 true 9 10 14 true 9 10 15 true 9 10 16 true 9 10 17 true 
+LYS(27 Rot): 9 11 0 true 9 11 1 true 9 11 2 true 9 11 3 true 9 11 4 true 9 11 5 false 9 11 6 false 9 11 7 false 9 11 8 true 9 11 9 true 9 11 10 true 9 11 11 true 9 11 12 true 9 11 13 true 9 11 14 true 9 11 15 true 9 11 16 false 9 11 17 false 9 11 18 true 9 11 19 true 9 11 20 false 9 11 21 true 9 11 22 true 9 11 23 true 9 11 24 true 9 11 25 true 9 11 26 true 
+ARG(34 Rot): 9 12 0 true 9 12 1 true 9 12 2 true 9 12 3 true 9 12 4 true 9 12 5 true 9 12 6 true 9 12 7 false 9 12 8 true 9 12 9 false 9 12 10 false 9 12 11 true 9 12 12 true 9 12 13 true 9 12 14 true 9 12 15 true 9 12 16 true 9 12 17 true 9 12 18 true 9 12 19 true 9 12 20 false 9 12 21 true 9 12 22 true 9 12 23 true 9 12 24 true 9 12 25 false 9 12 26 true 9 12 27 true 9 12 28 true 9 12 29 true 9 12 30 true 9 12 31 false 9 12 32 false 9 12 33 false 
+HID(8 Rot): 9 14 0 true 9 14 1 true 9 14 2 true 9 14 3 false 9 14 4 true 9 14 5 true 9 14 6 false 9 14 7 true 
+HIE(8 Rot): 9 15 0 true 9 15 1 true 9 15 2 true 9 15 3 false 9 15 4 true 9 15 5 true 9 15 6 false 9 15 7 true 
+ASP(5 Rot): 9 16 0 true 9 16 1 true 9 16 2 true 9 16 3 false 9 16 4 true 
+GLU(8 Rot): 9 17 0 true 9 17 1 true 9 17 2 false 9 17 3 true 9 17 4 true 9 17 5 true 9 17 6 true 9 17 7 false 
+ASN(7 Rot): 9 18 0 true 9 18 1 true 9 18 2 true 9 18 3 true 9 18 4 true 9 18 5 true 9 18 6 true 
+GLN(9 Rot): 9 19 0 true 9 19 1 true 9 19 2 false 9 19 3 false 9 19 4 true 9 19 5 true 9 19 6 true 9 19 7 true 9 19 8 true 
+GLY(1 Rot): 9 20 0 true 
+NumWTRots: 0
+curLevel 10
+ALA(1 Rot): 10 0 0 true 
+VAL(3 Rot): 10 1 0 true 10 1 1 true 10 1 2 true 
+LEU(5 Rot): 10 2 0 true 10 2 1 true 10 2 2 true 10 2 3 true 10 2 4 true 
+ILE(7 Rot): 10 3 0 true 10 3 1 true 10 3 2 true 10 3 3 true 10 3 4 true 10 3 5 true 10 3 6 true 
+PHE(4 Rot): 10 4 0 true 10 4 1 false 10 4 2 true 10 4 3 true 
+TYR(8 Rot): 10 5 0 true 10 5 1 true 10 5 2 false 10 5 3 false 10 5 4 true 10 5 5 true 10 5 6 true 10 5 7 true 
+TRP(7 Rot): 10 6 0 false 10 6 1 true 10 6 2 false 10 6 3 false 10 6 4 true 10 6 5 true 10 6 6 false 
+CYS(3 Rot): 10 7 0 true 10 7 1 true 10 7 2 true 
+MET(13 Rot): 10 8 0 true 10 8 1 true 10 8 2 true 10 8 3 false 10 8 4 true 10 8 5 true 10 8 6 true 10 8 7 true 10 8 8 true 10 8 9 true 10 8 10 true 10 8 11 true 10 8 12 true 
+SER(18 Rot): 10 9 0 true 10 9 1 true 10 9 2 true 10 9 3 true 10 9 4 true 10 9 5 true 10 9 6 true 10 9 7 true 10 9 8 true 10 9 9 true 10 9 10 true 10 9 11 true 10 9 12 true 10 9 13 true 10 9 14 true 10 9 15 true 10 9 16 true 10 9 17 true 
+THR(18 Rot): 10 10 0 true 10 10 1 true 10 10 2 true 10 10 3 true 10 10 4 true 10 10 5 true 10 10 6 true 10 10 7 true 10 10 8 true 10 10 9 true 10 10 10 true 10 10 11 true 10 10 12 true 10 10 13 true 10 10 14 true 10 10 15 true 10 10 16 true 10 10 17 true 
+LYS(27 Rot): 10 11 0 true 10 11 1 true 10 11 2 true 10 11 3 true 10 11 4 true 10 11 5 true 10 11 6 false 10 11 7 true 10 11 8 false 10 11 9 false 10 11 10 true 10 11 11 false 10 11 12 false 10 11 13 false 10 11 14 true 10 11 15 true 10 11 16 true 10 11 17 true 10 11 18 true 10 11 19 true 10 11 20 true 10 11 21 true 10 11 22 true 10 11 23 true 10 11 24 true 10 11 25 true 10 11 26 true 
+ARG(34 Rot): 10 12 0 true 10 12 1 true 10 12 2 true 10 12 3 true 10 12 4 true 10 12 5 true 10 12 6 true 10 12 7 false 10 12 8 false 10 12 9 true 10 12 10 false 10 12 11 false 10 12 12 false 10 12 13 true 10 12 14 true 10 12 15 false 10 12 16 false 10 12 17 true 10 12 18 false 10 12 19 false 10 12 20 true 10 12 21 false 10 12 22 true 10 12 23 true 10 12 24 true 10 12 25 false 10 12 26 true 10 12 27 true 10 12 28 true 10 12 29 false 10 12 30 false 10 12 31 false 10 12 32 true 10 12 33 true 
+HID(8 Rot): 10 14 0 true 10 14 1 true 10 14 2 true 10 14 3 false 10 14 4 false 10 14 5 true 10 14 6 true 10 14 7 true 
+HIE(8 Rot): 10 15 0 true 10 15 1 true 10 15 2 true 10 15 3 false 10 15 4 true 10 15 5 true 10 15 6 true 10 15 7 true 
+ASP(5 Rot): 10 16 0 true 10 16 1 true 10 16 2 true 10 16 3 true 10 16 4 true 
+GLU(8 Rot): 10 17 0 true 10 17 1 true 10 17 2 true 10 17 3 true 10 17 4 true 10 17 5 true 10 17 6 true 10 17 7 true 
+ASN(7 Rot): 10 18 0 true 10 18 1 true 10 18 2 true 10 18 3 true 10 18 4 true 10 18 5 true 10 18 6 true 
+GLN(9 Rot): 10 19 0 true 10 19 1 true 10 19 2 true 10 19 3 false 10 19 4 true 10 19 5 true 10 19 6 true 10 19 7 true 10 19 8 true 
+GLY(1 Rot): 10 20 0 true 
+NumWTRots: 4
+curLevel 11
+ALA(1 Rot): 11 0 0 true 
+VAL(3 Rot): 11 1 0 true 11 1 1 true 11 1 2 false 
+LEU(5 Rot): 11 2 0 true 11 2 1 true 11 2 2 true 11 2 3 true 11 2 4 true 
+ILE(7 Rot): 11 3 0 true 11 3 1 true 11 3 2 true 11 3 3 true 11 3 4 true 11 3 5 true 11 3 6 true 
+PHE(4 Rot): 11 4 0 true 11 4 1 true 11 4 2 true 11 4 3 true 
+TYR(8 Rot): 11 5 0 true 11 5 1 true 11 5 2 true 11 5 3 true 11 5 4 true 11 5 5 true 11 5 6 true 11 5 7 true 
+TRP(7 Rot): 11 6 0 true 11 6 1 true 11 6 2 true 11 6 3 true 11 6 4 true 11 6 5 true 11 6 6 true 
+CYS(3 Rot): 11 7 0 true 11 7 1 true 11 7 2 false 
+MET(13 Rot): 11 8 0 true 11 8 1 true 11 8 2 true 11 8 3 true 11 8 4 true 11 8 5 true 11 8 6 true 11 8 7 true 11 8 8 true 11 8 9 true 11 8 10 true 11 8 11 true 11 8 12 true 
+SER(18 Rot): 11 9 0 true 11 9 1 true 11 9 2 true 11 9 3 true 11 9 4 true 11 9 5 true 11 9 6 true 11 9 7 true 11 9 8 true 11 9 9 true 11 9 10 true 11 9 11 true 11 9 12 true 11 9 13 true 11 9 14 true 11 9 15 true 11 9 16 true 11 9 17 true 
+THR(18 Rot): 11 10 0 true 11 10 1 true 11 10 2 true 11 10 3 true 11 10 4 true 11 10 5 true 11 10 6 true 11 10 7 true 11 10 8 true 11 10 9 true 11 10 10 true 11 10 11 true 11 10 12 true 11 10 13 true 11 10 14 true 11 10 15 true 11 10 16 true 11 10 17 true 
+LYS(27 Rot): 11 11 0 true 11 11 1 true 11 11 2 true 11 11 3 true 11 11 4 true 11 11 5 true 11 11 6 true 11 11 7 true 11 11 8 true 11 11 9 true 11 11 10 true 11 11 11 true 11 11 12 true 11 11 13 true 11 11 14 true 11 11 15 true 11 11 16 true 11 11 17 true 11 11 18 true 11 11 19 true 11 11 20 true 11 11 21 true 11 11 22 true 11 11 23 true 11 11 24 true 11 11 25 true 11 11 26 true 
+ARG(34 Rot): 11 12 0 true 11 12 1 true 11 12 2 true 11 12 3 true 11 12 4 true 11 12 5 true 11 12 6 true 11 12 7 true 11 12 8 true 11 12 9 true 11 12 10 true 11 12 11 true 11 12 12 true 11 12 13 true 11 12 14 true 11 12 15 true 11 12 16 true 11 12 17 true 11 12 18 true 11 12 19 true 11 12 20 true 11 12 21 true 11 12 22 true 11 12 23 true 11 12 24 true 11 12 25 true 11 12 26 true 11 12 27 true 11 12 28 true 11 12 29 true 11 12 30 true 11 12 31 true 11 12 32 true 11 12 33 true 
+HID(8 Rot): 11 14 0 true 11 14 1 true 11 14 2 true 11 14 3 true 11 14 4 true 11 14 5 true 11 14 6 true 11 14 7 true 
+HIE(8 Rot): 11 15 0 true 11 15 1 true 11 15 2 true 11 15 3 true 11 15 4 true 11 15 5 true 11 15 6 true 11 15 7 true 
+ASP(5 Rot): 11 16 0 true 11 16 1 true 11 16 2 true 11 16 3 true 11 16 4 false 
+GLU(8 Rot): 11 17 0 true 11 17 1 true 11 17 2 true 11 17 3 true 11 17 4 true 11 17 5 false 11 17 6 true 11 17 7 false 
+ASN(7 Rot): 11 18 0 true 11 18 1 true 11 18 2 true 11 18 3 true 11 18 4 false 11 18 5 false 11 18 6 true 
+GLN(9 Rot): 11 19 0 true 11 19 1 true 11 19 2 true 11 19 3 true 11 19 4 true 11 19 5 true 11 19 6 true 11 19 7 false 11 19 8 false 
+GLY(1 Rot): 11 20 0 false 
+NumWTRots: 1
+ASTAR PRUNING INFO: Total Rots before pruning for each residue: 
+5 4 7 7 4 5 8 5 27 194 194 194 
+Total number of rotamers before pruning: 654 
+ASTAR PRUNING INFO: Total Rots non-pruned for each residue 
+1 1 4 2 2 3 2 2 16 38 32 10 
+Total number of rotamers after pruning: 113 
+2 4 18 3 4 2 14 2 11 10 6 1 
+pruneIndex 654
+(0 2 4) (1 4 0) (2 18 0) (2 18 4) (2 18 5) (2 18 6) (3 3 0) (3 3 1) (4 4 1) (4 4 2) (5 2 1) (5 2 3) (5 2 4) (6 14 3) (6 14 4) (7 2 3) (7 2 4) (8 11 0) (8 11 8) (8 11 9) (8 11 10) (8 11 11) (8 11 12) (8 11 13) (8 11 14) (8 11 16) (8 11 17) (8 11 18) (8 11 19) (8 11 20) (8 11 21) (8 11 22) (8 11 26) (9 3 5) (9 4 1) (9 4 3) (9 5 2) (9 5 3) (9 6 2) (9 6 3) (9 7 1) (9 8 2) (9 8 3) (9 8 7) (9 8 8) (9 9 7) (9 9 10) (9 9 11) (9 11 5) (9 11 6) (9 11 7) (9 11 16) (9 11 17) (9 11 20) (9 12 7) (9 12 9) (9 12 10) (9 12 20) (9 12 25) (9 12 31) (9 12 32) (9 12 33) (9 14 3) (9 14 6) (9 15 3) (9 15 6) (9 16 3) (9 17 2) (9 17 7) (9 19 2) (9 19 3) (10 4 1) (10 5 2) (10 5 3) (10 6 0) (10 6 2) (10 6 3) (10 6 6) (10 8 3) (10 11 6) (10 11 8) (10 11 9) (10 11 11) (10 11 12) (10 11 13) (10 12 7) (10 12 8) (10 12 10) (10 12 11) (10 12 12) (10 12 15) (10 12 16) (10 12 18) (10 12 19) (10 12 21) (10 12 25) (10 12 29) (10 12 30) (10 12 31) (10 14 3) (10 14 4) (10 15 3) (10 19 3) (11 1 2) (11 7 2) (11 16 4) (11 17 5) (11 17 7) (11 18 4) (11 18 5) (11 19 7) (11 19 8) (11 20 0) curIndexRed 113
+confNum: 1
+curConf: 0 0 2 1 0 0 1 1 11 2 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 3 2 2 -1328.9928 -1311.6372 -1311.6372
+confNum: 2
+curConf: 0 0 2 1 0 0 1 0 11 2 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 3 2 2 -1328.9305 -1308.031 -1311.6372
+confNum: 3
+curConf: 0 0 2 1 0 0 1 1 11 11 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 8 2 2 -1328.8723 -1315.4701 -1315.4701
+confNum: 4
+curConf: 0 0 2 1 0 0 1 1 12 2 4 0 
+actualConf: 4 0 5 1 1 1 4 4 20 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 3 2 2 -1328.8263 -1311.1597 -1315.4701
+confNum: 5
+curConf: 0 0 2 1 0 0 1 0 11 11 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 8 2 2 -1328.8102 -1311.8612 -1315.4701
+confNum: 6
+curConf: 0 0 2 1 0 0 1 0 12 2 4 0 
+actualConf: 4 0 5 1 1 1 4 3 20 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 3 2 2 -1328.7612 -1307.5609 -1315.4701
+confNum: 7
+curConf: 0 0 2 1 0 0 1 1 13 29 4 0 
+actualConf: 4 0 5 1 1 1 4 4 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 4 21 3 2 2 -1328.7294 -1311.7356 -1315.4701
+confNum: 8
+curConf: 0 0 2 1 0 1 1 1 11 2 2 0 
+actualConf: 4 0 5 1 1 3 4 4 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 3 2 -1328.7228 -1318.99 -1318.99
+confNum: 9
+curConf: 0 0 2 1 0 0 1 1 12 11 4 0 
+actualConf: 4 0 5 1 1 1 4 4 20 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 8 2 2 -1328.6943 -1314.9569 -1318.99
+confNum: 10
+curConf: 0 0 2 1 0 0 1 0 13 29 4 0 
+actualConf: 4 0 5 1 1 1 4 3 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 3 21 3 2 2 -1328.6672 -1308.1378 -1318.99
+confNum: 11
+curConf: 0 0 2 1 0 1 1 0 11 2 2 0 
+actualConf: 4 0 5 1 1 3 4 3 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 3 2 -1328.6604 -1315.3738 -1318.99
+confNum: 12
+curConf: 0 0 2 1 0 0 1 1 11 10 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 7 2 2 -1328.6603 -1315.1458 -1318.99
+confNum: 13
+curConf: 0 0 2 1 0 0 1 1 11 30 4 0 
+actualConf: 4 0 5 1 1 1 4 4 19 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 6 2 2 -1328.6508 -1314.4323 -1318.99
+confNum: 14
+curConf: 0 0 2 1 0 0 1 0 12 11 4 0 
+actualConf: 4 0 5 1 1 1 4 3 20 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 8 2 2 -1328.6294 -1311.3608 -1318.99
+confNum: 15
+curConf: 0 0 2 1 0 1 1 1 11 2 5 0 
+actualConf: 4 0 5 1 1 3 4 4 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 3 2 -1328.6154 -1318.7218 -1318.99
+confNum: 16
+curConf: 0 0 2 1 0 1 1 1 11 11 2 0 
+actualConf: 4 0 5 1 1 3 4 4 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 3 2 -1328.6025 -1322.8077 -1322.8077
+confNum: 17
+curConf: 0 0 2 1 0 0 1 0 11 10 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 7 2 2 -1328.5981 -1311.5265 -1322.8077
+confNum: 18
+curConf: 0 0 2 1 0 1 1 1 11 2 1 0 
+actualConf: 4 0 5 1 1 3 4 4 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 2 2 -1328.5952 -1318.8824 -1322.8077
+confNum: 19
+curConf: 0 0 2 1 0 0 1 0 11 30 4 0 
+actualConf: 4 0 5 1 1 1 4 3 19 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 6 2 2 -1328.5903 -1310.8181 -1322.8077
+0 -121.49433135986328 11 0 0 2 1 0 0 1 1 12 10 4 12 20
+confNum: 20
+curConf: 0 0 2 1 0 0 1 1 12 10 4 0 
+actualConf: 4 0 5 1 1 1 4 4 20 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 7 2 2 -1328.5706 -1314.7771 -1322.8077
+confNum: 21
+curConf: 0 0 2 1 0 1 1 0 11 2 5 0 
+actualConf: 4 0 5 1 1 3 4 3 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 3 2 -1328.5532 -1315.1283 -1322.8077
+confNum: 22
+curConf: 0 0 2 1 0 0 1 1 13 29 4 6 
+actualConf: 4 0 5 1 1 1 4 4 21 151 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 18 
+curRot: 4 0 5 1 1 1 4 4 21 3 2 5 -1328.5493 -1310.5559 -1322.8077
+confNum: 23
+curConf: 0 0 2 1 0 1 1 0 11 11 2 0 
+actualConf: 4 0 5 1 1 3 4 3 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 8 3 2 -1328.5403 -1319.2031 -1322.8077
+confNum: 24
+curConf: 0 0 2 1 0 1 1 0 11 2 1 0 
+actualConf: 4 0 5 1 1 3 4 3 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 2 2 -1328.5331 -1315.2683 -1322.8077
+confNum: 25
+curConf: 0 0 2 1 0 1 1 1 12 2 2 0 
+actualConf: 4 0 5 1 1 3 4 4 20 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 3 3 2 -1328.5215 -1318.5945 -1322.8077
+confNum: 26
+curConf: 0 0 2 1 0 0 1 0 12 10 4 0 
+actualConf: 4 0 5 1 1 1 4 3 20 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 7 2 2 -1328.5056 -1311.1814 -1322.8077
+confNum: 27
+curConf: 0 0 2 1 0 1 1 1 11 11 5 0 
+actualConf: 4 0 5 1 1 3 4 4 19 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 3 2 -1328.4949 -1322.5374 -1322.8077
+confNum: 28
+curConf: 0 0 2 1 0 1 1 1 11 11 1 0 
+actualConf: 4 0 5 1 1 3 4 4 19 46 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 2 2 Pruning time: 0.022466666666666666
+Enumeration/DACS time: 9.203133333333334
+DEE execution time: 9.2256
+DEE done
+Total execution time: 9.2627
+Loading precomputed energy matrix...done
+Parameter ADDWT set to true
+Parameter RESALLOWED0_0 not set. Using default value 
+Parameter RESALLOWED0_1 not set. Using default value 
+Parameter RESALLOWED0_2 not set. Using default value 
+Parameter RESALLOWED0_3 not set. Using default value 
+Parameter RESALLOWED0_4 not set. Using default value 
+Parameter RESALLOWED0_5 not set. Using default value 
+Parameter RESALLOWED0_6 not set. Using default value 
+Parameter RESALLOWED0_7 not set. Using default value 
+Parameter RESALLOWED0_8 not set. Using default value 
+Parameter RESALLOWED1_0 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY 
+Parameter RESALLOWED1_1 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter RESALLOWED1_2 set to ALA VAL LEU ILE PHE TYR TRP CYS MET SER THR LYS ARG HIE HID ASP GLU ASN GLN GLY
+Parameter EREFMATRIXNAME not set. Using default value Eref
+5 4 7 7 4 5 8 5 27 194 194 194 
+
+Pruning all rotamers incompatible with the template..
+Number of rotamers pruned due to incompatibility with the template: 127
+
+5 1 5 2 4 4 3 5 25 142 188 143 
+Preprocessing pairs of rotamers, cutoff of 100.0
+
+Starting DEE cycle run: 1
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 165
+DEE: The minimum difference is 6.318763971328735
+
+Number of rotamers pruned this run: 10
+DEE: The minimum difference is 6.318763971328735
+
+Number of rotamers pruned this run: 1
+DEE: The minimum difference is 6.318763971328735
+
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.318763971328735
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 2
+DEE: The minimum difference is 6.3843889236450195
+
+Current run: 2
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.3843889236450195
+
+
+Starting pruning with Bounds
+
+Num pruned rot this run: 305
+Num pruned pairs this run: 0
+
+Starting DEE cycle run: 2
+Starting pruning with DEE (simple Goldstein)
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 5.984482765197754
+
+
+Starting pruning with DEE (1-sp split-DEE)
+Current run: 1
+Number of rotamers pruned this run: 0
+DEE: The minimum difference is 6.3843889236450195
+
+
+Starting pruning with Bounds
+
+Num pruned rot this run: 0
+Num pruned pairs this run: 0
+
+curLevel 0
+LEU(5 Rot): 0 2 0 true 0 2 1 true 0 2 2 true 0 2 3 true 0 2 4 false 
+NumWTRots: 1
+curLevel 1
+PHE(4 Rot): 1 4 0 false 1 4 1 true 1 4 2 true 1 4 3 true 
+NumWTRots: 1
+curLevel 2
+ASN(7 Rot): 2 18 0 false 2 18 1 false 2 18 2 true 2 18 3 true 2 18 4 false 2 18 5 false 2 18 6 false 
+NumWTRots: 5
+curLevel 3
+ILE(7 Rot): 3 3 0 false 3 3 1 false 3 3 2 true 3 3 3 true 3 3 4 true 3 3 5 true 3 3 6 true 
+NumWTRots: 2
+curLevel 4
+PHE(4 Rot): 4 4 0 true 4 4 1 false 4 4 2 false 4 4 3 false 
+NumWTRots: 3
+curLevel 5
+LEU(5 Rot): 5 2 0 true 5 2 1 false 5 2 2 false 5 2 3 false 5 2 4 false 
+NumWTRots: 4
+curLevel 6
+HID(8 Rot): 6 14 0 true 6 14 1 true 6 14 2 false 6 14 3 false 6 14 4 false 6 14 5 true 6 14 6 true 6 14 7 true 
+NumWTRots: 3
+curLevel 7
+LEU(5 Rot): 7 2 0 true 7 2 1 true 7 2 2 true 7 2 3 false 7 2 4 false 
+NumWTRots: 2
+curLevel 8
+LYS(27 Rot): 8 11 0 false 8 11 1 false 8 11 2 false 8 11 3 true 8 11 4 false 8 11 5 false 8 11 6 false 8 11 7 false 8 11 8 false 8 11 9 false 8 11 10 false 8 11 11 false 8 11 12 false 8 11 13 false 8 11 14 false 8 11 15 true 8 11 16 false 8 11 17 false 8 11 18 false 8 11 19 false 8 11 20 false 8 11 21 false 8 11 22 false 8 11 23 true 8 11 24 true 8 11 25 true 8 11 26 false 
+NumWTRots: 22
+curLevel 9
+ALA(1 Rot): 9 0 0 false 
+VAL(3 Rot): 9 1 0 true 9 1 1 false 9 1 2 true 
+LEU(5 Rot): 9 2 0 true 9 2 1 true 9 2 2 false 9 2 3 true 9 2 4 false 
+ILE(7 Rot): 9 3 0 true 9 3 1 true 9 3 2 true 9 3 3 true 9 3 4 true 9 3 5 false 9 3 6 true 
+PHE(4 Rot): 9 4 0 true 9 4 1 false 9 4 2 true 9 4 3 false 
+TYR(8 Rot): 9 5 0 true 9 5 1 true 9 5 2 false 9 5 3 false 9 5 4 true 9 5 5 true 9 5 6 false 9 5 7 true 
+TRP(7 Rot): 9 6 0 true 9 6 1 true 9 6 2 false 9 6 3 false 9 6 4 true 9 6 5 true 9 6 6 true 
+CYS(3 Rot): 9 7 0 true 9 7 1 false 9 7 2 false 
+MET(13 Rot): 9 8 0 true 9 8 1 true 9 8 2 false 9 8 3 false 9 8 4 true 9 8 5 true 9 8 6 true 9 8 7 false 9 8 8 false 9 8 9 false 9 8 10 true 9 8 11 false 9 8 12 false 
+SER(18 Rot): 9 9 0 false 9 9 1 false 9 9 2 false 9 9 3 false 9 9 4 false 9 9 5 false 9 9 6 false 9 9 7 false 9 9 8 false 9 9 9 false 9 9 10 false 9 9 11 false 9 9 12 false 9 9 13 false 9 9 14 false 9 9 15 false 9 9 16 false 9 9 17 false 
+THR(18 Rot): 9 10 0 false 9 10 1 false 9 10 2 false 9 10 3 false 9 10 4 false 9 10 5 false 9 10 6 true 9 10 7 true 9 10 8 true 9 10 9 true 9 10 10 true 9 10 11 true 9 10 12 false 9 10 13 false 9 10 14 false 9 10 15 false 9 10 16 false 9 10 17 false 
+LYS(27 Rot): 9 11 0 true 9 11 1 true 9 11 2 true 9 11 3 true 9 11 4 true 9 11 5 false 9 11 6 false 9 11 7 false 9 11 8 true 9 11 9 true 9 11 10 true 9 11 11 true 9 11 12 true 9 11 13 true 9 11 14 true 9 11 15 true 9 11 16 false 9 11 17 false 9 11 18 false 9 11 19 true 9 11 20 false 9 11 21 true 9 11 22 true 9 11 23 false 9 11 24 false 9 11 25 false 9 11 26 false 
+ARG(34 Rot): 9 12 0 true 9 12 1 true 9 12 2 true 9 12 3 true 9 12 4 true 9 12 5 true 9 12 6 true 9 12 7 false 9 12 8 false 9 12 9 false 9 12 10 false 9 12 11 true 9 12 12 true 9 12 13 true 9 12 14 true 9 12 15 true 9 12 16 true 9 12 17 true 9 12 18 true 9 12 19 true 9 12 20 false 9 12 21 false 9 12 22 true 9 12 23 false 9 12 24 true 9 12 25 false 9 12 26 true 9 12 27 true 9 12 28 true 9 12 29 false 9 12 30 false 9 12 31 false 9 12 32 false 9 12 33 false 
+HID(8 Rot): 9 14 0 true 9 14 1 true 9 14 2 true 9 14 3 false 9 14 4 false 9 14 5 false 9 14 6 false 9 14 7 true 
+HIE(8 Rot): 9 15 0 true 9 15 1 true 9 15 2 true 9 15 3 false 9 15 4 false 9 15 5 false 9 15 6 false 9 15 7 true 
+ASP(5 Rot): 9 16 0 true 9 16 1 true 9 16 2 false 9 16 3 false 9 16 4 false 
+GLU(8 Rot): 9 17 0 true 9 17 1 true 9 17 2 false 9 17 3 true 9 17 4 true 9 17 5 true 9 17 6 true 9 17 7 false 
+ASN(7 Rot): 9 18 0 true 9 18 1 true 9 18 2 false 9 18 3 true 9 18 4 false 9 18 5 false 9 18 6 false 
+GLN(9 Rot): 9 19 0 true 9 19 1 true 9 19 2 false 9 19 3 false 9 19 4 true 9 19 5 true 9 19 6 false 9 19 7 false 9 19 8 false 
+GLY(1 Rot): 9 20 0 false 
+NumWTRots: 12
+curLevel 10
+ALA(1 Rot): 10 0 0 false 
+VAL(3 Rot): 10 1 0 true 10 1 1 false 10 1 2 true 
+LEU(5 Rot): 10 2 0 true 10 2 1 false 10 2 2 false 10 2 3 false 10 2 4 false 
+ILE(7 Rot): 10 3 0 true 10 3 1 true 10 3 2 true 10 3 3 true 10 3 4 false 10 3 5 false 10 3 6 false 
+PHE(4 Rot): 10 4 0 false 10 4 1 false 10 4 2 false 10 4 3 false 
+TYR(8 Rot): 10 5 0 false 10 5 1 false 10 5 2 false 10 5 3 false 10 5 4 false 10 5 5 false 10 5 6 false 10 5 7 false 
+TRP(7 Rot): 10 6 0 false 10 6 1 false 10 6 2 false 10 6 3 false 10 6 4 false 10 6 5 false 10 6 6 false 
+CYS(3 Rot): 10 7 0 false 10 7 1 false 10 7 2 false 
+MET(13 Rot): 10 8 0 true 10 8 1 true 10 8 2 false 10 8 3 false 10 8 4 false 10 8 5 false 10 8 6 false 10 8 7 false 10 8 8 false 10 8 9 false 10 8 10 true 10 8 11 false 10 8 12 false 
+SER(18 Rot): 10 9 0 false 10 9 1 false 10 9 2 false 10 9 3 false 10 9 4 false 10 9 5 false 10 9 6 false 10 9 7 false 10 9 8 false 10 9 9 false 10 9 10 false 10 9 11 false 10 9 12 false 10 9 13 false 10 9 14 false 10 9 15 false 10 9 16 false 10 9 17 false 
+THR(18 Rot): 10 10 0 false 10 10 1 false 10 10 2 false 10 10 3 false 10 10 4 false 10 10 5 false 10 10 6 true 10 10 7 true 10 10 8 true 10 10 9 true 10 10 10 true 10 10 11 true 10 10 12 false 10 10 13 false 10 10 14 false 10 10 15 false 10 10 16 false 10 10 17 false 
+LYS(27 Rot): 10 11 0 true 10 11 1 true 10 11 2 true 10 11 3 true 10 11 4 true 10 11 5 false 10 11 6 false 10 11 7 false 10 11 8 false 10 11 9 false 10 11 10 false 10 11 11 false 10 11 12 false 10 11 13 false 10 11 14 false 10 11 15 false 10 11 16 false 10 11 17 false 10 11 18 false 10 11 19 false 10 11 20 false 10 11 21 false 10 11 22 false 10 11 23 false 10 11 24 false 10 11 25 false 10 11 26 false 
+ARG(34 Rot): 10 12 0 true 10 12 1 true 10 12 2 true 10 12 3 true 10 12 4 true 10 12 5 true 10 12 6 true 10 12 7 false 10 12 8 false 10 12 9 true 10 12 10 false 10 12 11 false 10 12 12 false 10 12 13 false 10 12 14 false 10 12 15 false 10 12 16 false 10 12 17 false 10 12 18 false 10 12 19 false 10 12 20 false 10 12 21 false 10 12 22 false 10 12 23 false 10 12 24 false 10 12 25 false 10 12 26 false 10 12 27 false 10 12 28 false 10 12 29 false 10 12 30 false 10 12 31 false 10 12 32 false 10 12 33 false 
+HID(8 Rot): 10 14 0 false 10 14 1 false 10 14 2 false 10 14 3 false 10 14 4 false 10 14 5 false 10 14 6 false 10 14 7 false 
+HIE(8 Rot): 10 15 0 false 10 15 1 false 10 15 2 false 10 15 3 false 10 15 4 false 10 15 5 false 10 15 6 false 10 15 7 false 
+ASP(5 Rot): 10 16 0 true 10 16 1 true 10 16 2 false 10 16 3 false 10 16 4 false 
+GLU(8 Rot): 10 17 0 true 10 17 1 true 10 17 2 false 10 17 3 false 10 17 4 false 10 17 5 false 10 17 6 false 10 17 7 false 
+ASN(7 Rot): 10 18 0 true 10 18 1 true 10 18 2 false 10 18 3 false 10 18 4 false 10 18 5 false 10 18 6 false 
+GLN(9 Rot): 10 19 0 true 10 19 1 true 10 19 2 false 10 19 3 false 10 19 4 false 10 19 5 false 10 19 6 false 10 19 7 false 10 19 8 false 
+GLY(1 Rot): 10 20 0 false 
+NumWTRots: 7
+curLevel 11
+ALA(1 Rot): 11 0 0 false 
+VAL(3 Rot): 11 1 0 true 11 1 1 true 11 1 2 false 
+LEU(5 Rot): 11 2 0 true 11 2 1 true 11 2 2 true 11 2 3 true 11 2 4 false 
+ILE(7 Rot): 11 3 0 true 11 3 1 true 11 3 2 true 11 3 3 true 11 3 4 true 11 3 5 true 11 3 6 true 
+PHE(4 Rot): 11 4 0 true 11 4 1 true 11 4 2 true 11 4 3 true 
+TYR(8 Rot): 11 5 0 true 11 5 1 true 11 5 2 true 11 5 3 true 11 5 4 true 11 5 5 true 11 5 6 true 11 5 7 true 
+TRP(7 Rot): 11 6 0 true 11 6 1 true 11 6 2 true 11 6 3 true 11 6 4 true 11 6 5 true 11 6 6 true 
+CYS(3 Rot): 11 7 0 false 11 7 1 true 11 7 2 false 
+MET(13 Rot): 11 8 0 true 11 8 1 true 11 8 2 true 11 8 3 true 11 8 4 true 11 8 5 true 11 8 6 true 11 8 7 true 11 8 8 true 11 8 9 false 11 8 10 true 11 8 11 true 11 8 12 false 
+SER(18 Rot): 11 9 0 false 11 9 1 false 11 9 2 false 11 9 3 false 11 9 4 false 11 9 5 false 11 9 6 false 11 9 7 false 11 9 8 false 11 9 9 false 11 9 10 false 11 9 11 false 11 9 12 false 11 9 13 false 11 9 14 false 11 9 15 false 11 9 16 false 11 9 17 false 
+THR(18 Rot): 11 10 0 false 11 10 1 false 11 10 2 false 11 10 3 false 11 10 4 false 11 10 5 false 11 10 6 false 11 10 7 false 11 10 8 false 11 10 9 false 11 10 10 false 11 10 11 false 11 10 12 true 11 10 13 true 11 10 14 true 11 10 15 true 11 10 16 true 11 10 17 true 
+LYS(27 Rot): 11 11 0 true 11 11 1 true 11 11 2 true 11 11 3 true 11 11 4 true 11 11 5 true 11 11 6 true 11 11 7 true 11 11 8 true 11 11 9 true 11 11 10 true 11 11 11 true 11 11 12 true 11 11 13 true 11 11 14 true 11 11 15 true 11 11 16 true 11 11 17 true 11 11 18 true 11 11 19 true 11 11 20 true 11 11 21 true 11 11 22 true 11 11 23 true 11 11 24 true 11 11 25 true 11 11 26 false 
+ARG(34 Rot): 11 12 0 true 11 12 1 true 11 12 2 true 11 12 3 true 11 12 4 true 11 12 5 true 11 12 6 true 11 12 7 true 11 12 8 true 11 12 9 true 11 12 10 true 11 12 11 true 11 12 12 true 11 12 13 true 11 12 14 true 11 12 15 true 11 12 16 true 11 12 17 true 11 12 18 true 11 12 19 true 11 12 20 true 11 12 21 true 11 12 22 true 11 12 23 true 11 12 24 true 11 12 25 true 11 12 26 true 11 12 27 true 11 12 28 true 11 12 29 true 11 12 30 true 11 12 31 true 11 12 32 true 11 12 33 true 
+HID(8 Rot): 11 14 0 true 11 14 1 true 11 14 2 true 11 14 3 true 11 14 4 true 11 14 5 true 11 14 6 true 11 14 7 true 
+HIE(8 Rot): 11 15 0 true 11 15 1 true 11 15 2 true 11 15 3 true 11 15 4 true 11 15 5 true 11 15 6 true 11 15 7 true 
+ASP(5 Rot): 11 16 0 true 11 16 1 false 11 16 2 true 11 16 3 false 11 16 4 false 
+GLU(8 Rot): 11 17 0 true 11 17 1 true 11 17 2 true 11 17 3 true 11 17 4 true 11 17 5 false 11 17 6 true 11 17 7 false 
+ASN(7 Rot): 11 18 0 true 11 18 1 false 11 18 2 true 11 18 3 true 11 18 4 false 11 18 5 false 11 18 6 false 
+GLN(9 Rot): 11 19 0 true 11 19 1 true 11 19 2 true 11 19 3 true 11 19 4 true 11 19 5 false 11 19 6 true 11 19 7 false 11 19 8 false 
+GLY(1 Rot): 11 20 0 false 
+NumWTRots: 1
+ASTAR PRUNING INFO: Total Rots before pruning for each residue: 
+5 4 7 7 4 5 8 5 27 194 194 194 
+Total number of rotamers before pruning: 654 
+ASTAR PRUNING INFO: Total Rots non-pruned for each residue 
+1 1 5 2 3 4 3 2 22 98 157 51 
+Total number of rotamers after pruning: 349 
+2 4 18 3 4 2 14 2 11 10 6 1 
+pruneIndex 654
+(0 2 4) (1 4 0) (2 18 0) (2 18 1) (2 18 4) (2 18 5) (2 18 6) (3 3 0) (3 3 1) (4 4 1) (4 4 2) (4 4 3) (5 2 1) (5 2 2) (5 2 3) (5 2 4) (6 14 2) (6 14 3) (6 14 4) (7 2 3) (7 2 4) (8 11 0) (8 11 1) (8 11 2) (8 11 4) (8 11 5) (8 11 6) (8 11 7) (8 11 8) (8 11 9) (8 11 10) (8 11 11) (8 11 12) (8 11 13) (8 11 14) (8 11 16) (8 11 17) (8 11 18) (8 11 19) (8 11 20) (8 11 21) (8 11 22) (8 11 26) (9 0 0) (9 1 1) (9 2 2) (9 2 4) (9 3 5) (9 4 1) (9 4 3) (9 5 2) (9 5 3) (9 5 6) (9 6 2) (9 6 3) (9 7 1) (9 7 2) (9 8 2) (9 8 3) (9 8 7) (9 8 8) (9 8 9) (9 8 11) (9 8 12) (9 9 0) (9 9 1) (9 9 2) (9 9 3) (9 9 4) (9 9 5) (9 9 6) (9 9 7) (9 9 8) (9 9 9) (9 9 10) (9 9 11) (9 9 12) (9 9 13) (9 9 14) (9 9 15) (9 9 16) (9 9 17) (9 10 0) (9 10 1) (9 10 2) (9 10 3) (9 10 4) (9 10 5) (9 10 12) (9 10 13) (9 10 14) (9 10 15) (9 10 16) (9 10 17) (9 11 5) (9 11 6) (9 11 7) (9 11 16) (9 11 17) (9 11 18) (9 11 20) (9 11 23) (9 11 24) (9 11 25) (9 11 26) (9 12 7) (9 12 8) (9 12 9) (9 12 10) (9 12 20) (9 12 21) (9 12 23) (9 12 25) (9 12 29) (9 12 30) (9 12 31) (9 12 32) (9 12 33) (9 14 3) (9 14 4) (9 14 5) (9 14 6) (9 15 3) (9 15 4) (9 15 5) (9 15 6) (9 16 2) (9 16 3) (9 16 4) (9 17 2) (9 17 7) (9 18 2) (9 18 4) (9 18 5) (9 18 6) (9 19 2) (9 19 3) (9 19 6) (9 19 7) (9 19 8) (9 20 0) (10 0 0) (10 1 1) (10 2 1) (10 2 2) (10 2 3) (10 2 4) (10 3 4) (10 3 5) (10 3 6) (10 4 0) (10 4 1) (10 4 2) (10 4 3) (10 5 0) (10 5 1) (10 5 2) (10 5 3) (10 5 4) (10 5 5) (10 5 6) (10 5 7) (10 6 0) (10 6 1) (10 6 2) (10 6 3) (10 6 4) (10 6 5) (10 6 6) (10 7 0) (10 7 1) (10 7 2) (10 8 2) (10 8 3) (10 8 4) (10 8 5) (10 8 6) (10 8 7) (10 8 8) (10 8 9) (10 8 11) (10 8 12) (10 9 0) (10 9 1) (10 9 2) (10 9 3) (10 9 4) (10 9 5) (10 9 6) (10 9 7) (10 9 8) (10 9 9) (10 9 10) (10 9 11) (10 9 12) (10 9 13) (10 9 14) (10 9 15) (10 9 16) (10 9 17) (10 10 0) (10 10 1) (10 10 2) (10 10 3) (10 10 4) (10 10 5) (10 10 12) (10 10 13) (10 10 14) (10 10 15) (10 10 16) (10 10 17) (10 11 5) (10 11 6) (10 11 7) (10 11 8) (10 11 9) (10 11 10) (10 11 11) (10 11 12) (10 11 13) (10 11 14) (10 11 15) (10 11 16) (10 11 17) (10 11 18) (10 11 19) (10 11 20) (10 11 21) (10 11 22) (10 11 23) (10 11 24) (10 11 25) (10 11 26) (10 12 7) (10 12 8) (10 12 10) (10 12 11) (10 12 12) (10 12 13) (10 12 14) (10 12 15) (10 12 16) (10 12 17) (10 12 18) (10 12 19) (10 12 20) (10 12 21) (10 12 22) (10 12 23) (10 12 24) (10 12 25) (10 12 26) (10 12 27) (10 12 28) (10 12 29) (10 12 30) (10 12 31) (10 12 32) (10 12 33) (10 14 0) (10 14 1) (10 14 2) (10 14 3) (10 14 4) (10 14 5) (10 14 6) (10 14 7) (10 15 0) (10 15 1) (10 15 2) (10 15 3) (10 15 4) (10 15 5) (10 15 6) (10 15 7) (10 16 2) (10 16 3) (10 16 4) (10 17 2) (10 17 3) (10 17 4) (10 17 5) (10 17 6) (10 17 7) (10 18 2) (10 18 3) (10 18 4) (10 18 5) (10 18 6) (10 19 2) (10 19 3) (10 19 4) (10 19 5) (10 19 6) (10 19 7) (10 19 8) (10 20 0) (11 0 0) (11 1 2) (11 2 4) (11 7 0) (11 7 2) (11 8 9) (11 8 12) (11 9 0) (11 9 1) (11 9 2) (11 9 3) (11 9 4) (11 9 5) (11 9 6) (11 9 7) (11 9 8) (11 9 9) (11 9 10) (11 9 11) (11 9 12) (11 9 13) (11 9 14) (11 9 15) (11 9 16) (11 9 17) (11 10 0) (11 10 1) (11 10 2) (11 10 3) (11 10 4) (11 10 5) (11 10 6) (11 10 7) (11 10 8) (11 10 9) (11 10 10) (11 10 11) (11 11 26) (11 16 1) (11 16 3) (11 16 4) (11 17 5) (11 17 7) (11 18 1) (11 18 4) (11 18 5) (11 18 6) (11 19 5) (11 19 7) (11 19 8) (11 20 0) curIndexRed 349
+0 -126.40899658203125 8 0 0 2 1 1 3 1 1 9 465
+0 -123.23793029785156 8 0 0 3 1 1 1 2 0 9 1449
+confNum: 1
+curConf: 0 0 3 1 0 0 2 1 17 6 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 3 2 2 -1328.9928 -1311.6362 -1311.6362
+confNum: 2
+curConf: 0 0 3 1 0 0 2 0 17 6 23 1 
+actualConf: 4 0 5 1 1 1 4 3 19 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 3 2 2 -1328.9305 -1308.03 -1311.6362
+confNum: 3
+curConf: 0 0 3 1 0 0 2 1 17 17 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 8 2 2 -1328.8723 -1315.4697 -1315.4697
+confNum: 4
+curConf: 0 0 3 1 0 0 2 1 18 6 23 1 
+actualConf: 4 0 5 1 1 1 4 4 20 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 3 2 2 -1328.8263 -1311.1593 -1315.4697
+confNum: 5
+curConf: 0 0 3 1 0 0 2 0 17 17 23 1 
+actualConf: 4 0 5 1 1 1 4 3 19 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 8 2 2 -1328.8102 -1311.8606 -1315.4697
+confNum: 6
+curConf: 0 0 3 1 0 0 2 0 18 6 23 1 
+actualConf: 4 0 5 1 1 1 4 3 20 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 3 2 2 -1328.7612 -1307.5605 -1315.4697
+confNum: 7
+curConf: 0 0 3 1 0 0 2 1 19 75 23 1 
+actualConf: 4 0 5 1 1 1 4 4 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 4 21 3 2 2 -1328.7294 -1311.7361 -1315.4697
+confNum: 8
+curConf: 0 0 3 1 0 2 2 1 17 6 16 1 
+actualConf: 4 0 5 1 1 3 4 4 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 3 2 -1328.7228 -1318.9897 -1318.9897
+confNum: 9
+curConf: 0 0 3 1 0 0 2 1 18 17 23 1 
+actualConf: 4 0 5 1 1 1 4 4 20 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 8 2 2 -1328.6943 -1314.9563 -1318.9897
+confNum: 10
+curConf: 0 0 3 1 0 0 2 0 19 75 23 1 
+actualConf: 4 0 5 1 1 1 4 3 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 3 21 3 2 2 -1328.6672 -1308.138 -1318.9897
+confNum: 11
+curConf: 0 0 3 1 0 2 2 0 17 6 16 1 
+actualConf: 4 0 5 1 1 3 4 3 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 3 2 -1328.6604 -1315.3735 -1318.9897
+confNum: 12
+curConf: 0 0 3 1 0 0 2 1 17 16 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 7 2 2 -1328.6603 -1315.1449 -1318.9897
+confNum: 13
+curConf: 0 0 3 1 0 0 2 1 17 78 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 6 2 2 -1328.6508 -1314.4319 -1318.9897
+confNum: 14
+curConf: 0 0 3 1 0 0 2 0 18 17 23 1 
+actualConf: 4 0 5 1 1 1 4 3 20 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 8 2 2 -1328.6294 -1311.3602 -1318.9897
+0 -121.53986358642578 9 0 0 3 1 0 0 2 1 17 12 14
+confNum: 15
+curConf: 0 0 3 1 0 2 2 1 17 6 24 1 
+actualConf: 4 0 5 1 1 3 4 4 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 3 2 -1328.6154 -1318.7213 -1318.9897
+confNum: 16
+curConf: 0 0 3 1 0 2 2 1 17 17 16 1 
+actualConf: 4 0 5 1 1 3 4 4 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 3 2 -1328.6025 -1322.8077 -1322.8077
+confNum: 17
+curConf: 0 0 3 1 0 0 2 0 17 16 23 1 
+actualConf: 4 0 5 1 1 1 4 3 19 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 7 2 2 -1328.5981 -1311.5259 -1322.8077
+confNum: 18
+curConf: 0 0 3 1 0 2 2 1 17 6 15 1 
+actualConf: 4 0 5 1 1 3 4 4 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 2 2 -1328.5952 -1318.8812 -1322.8077
+confNum: 19
+curConf: 0 0 3 1 0 0 2 0 17 78 23 1 
+actualConf: 4 0 5 1 1 1 4 3 19 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 6 2 2 -1328.5903 -1310.8177 -1322.8077
+confNum: 20
+curConf: 0 0 3 1 0 0 2 1 18 16 23 1 
+actualConf: 4 0 5 1 1 1 4 4 20 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 7 2 2 -1328.5706 -1314.7766 -1322.8077
+confNum: 21
+curConf: 0 0 3 1 0 2 2 0 17 6 24 1 
+actualConf: 4 0 5 1 1 3 4 3 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 3 2 -1328.5532 -1315.1282 -1322.8077
+confNum: 22
+curConf: 0 0 3 1 0 0 2 1 19 75 23 45 
+actualConf: 4 0 5 1 1 1 4 4 21 151 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 18 
+curRot: 4 0 5 1 1 1 4 4 21 3 2 5 -1328.5493 -1310.5555 -1322.8077
+confNum: 23
+curConf: 0 0 3 1 0 2 2 0 17 17 16 1 
+actualConf: 4 0 5 1 1 3 4 3 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 8 3 2 -1328.5403 -1319.2025 -1322.8077
+confNum: 24
+curConf: 0 0 3 1 0 2 2 0 17 6 15 1 
+actualConf: 4 0 5 1 1 3 4 3 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 2 2 -1328.5331 -1315.2684 -1322.8077
+confNum: 25
+curConf: 0 0 3 1 0 2 2 1 18 6 16 1 
+actualConf: 4 0 5 1 1 3 4 4 20 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 3 3 2 -1328.5215 -1318.5946 -1322.8077
+confNum: 26
+curConf: 0 0 3 1 0 0 2 0 18 16 23 1 
+actualConf: 4 0 5 1 1 1 4 3 20 45 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 7 2 2 -1328.5056 -1311.181 -1322.8077
+confNum: 27
+curConf: 0 0 3 1 0 2 2 1 17 17 24 1 
+actualConf: 4 0 5 1 1 3 4 4 19 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 3 2 -1328.4949 -1322.5382 -1322.8077
+confNum: 28
+curConf: 0 0 3 1 0 2 2 1 17 17 15 1 
+actualConf: 4 0 5 1 1 3 4 4 19 46 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 8 2 2 -1328.4744 -1322.7024 -1322.8077
+confNum: 29
+curConf: 0 0 3 1 0 0 2 1 18 78 23 1 
+actualConf: 4 0 5 1 1 1 4 4 20 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 6 2 2 -1328.4658 -1313.9026 -1322.8077
+confNum: 30
+curConf: 0 0 3 1 0 0 2 0 19 75 23 45 
+actualConf: 4 0 5 1 1 1 4 3 21 151 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 18 
+curRot: 4 0 5 1 1 1 4 3 21 3 2 5 -1328.4641 -1307.0613 -1322.8077
+confNum: 31
+curConf: 0 0 3 1 0 2 2 0 18 6 16 1 
+actualConf: 4 0 5 1 1 3 4 3 20 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 3 3 2 -1328.4563 -1314.9998 -1322.8077
+confNum: 32
+curConf: 0 0 3 1 0 2 2 1 19 75 16 1 
+actualConf: 4 0 5 1 1 3 4 4 21 151 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 4 21 3 3 2 -1328.4556 -1319.0862 -1322.8077
+confNum: 33
+curConf: 0 0 3 1 0 2 2 1 18 6 15 1 
+actualConf: 4 0 5 1 1 3 4 4 20 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 3 2 2 -1328.4435 -1318.5371 -1322.8077
+confNum: 34
+curConf: 0 0 3 1 0 2 2 0 17 17 24 1 
+actualConf: 4 0 5 1 1 3 4 3 19 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 3 19 8 3 2 -1328.4329 -1318.9563 -1322.8077
+confNum: 35
+curConf: 0 0 3 1 0 2 2 0 17 17 15 1 
+actualConf: 4 0 5 1 1 3 4 3 19 46 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 8 2 2 -1328.4124 -1319.098 -1322.8077
+confNum: 36
+curConf: 0 0 3 1 0 0 2 0 18 78 23 1 
+actualConf: 4 0 5 1 1 1 4 3 20 154 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 4 3 20 6 2 2 -1328.4026 -1310.3073 -1322.8077
+confNum: 37
+curConf: 0 0 3 1 0 2 2 0 19 75 16 1 
+actualConf: 4 0 5 1 1 3 4 3 21 151 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 3 21 3 3 2 -1328.3933 -1315.4948 -1322.8077
+confNum: 38
+curConf: 0 0 3 1 0 2 2 1 18 17 16 1 
+actualConf: 4 0 5 1 1 3 4 4 20 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 8 3 2 -1328.3896 -1322.3992 -1322.8077
+confNum: 39
+curConf: 0 0 3 1 0 2 2 1 17 16 16 1 
+actualConf: 4 0 5 1 1 3 4 4 19 45 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 7 3 2 -1328.3893 -1322.485 -1322.8077
+confNum: 40
+curConf: 0 0 3 1 0 2 2 1 17 78 16 1 
+actualConf: 4 0 5 1 1 3 4 4 19 154 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 6 3 2 -1328.3801 -1321.7688 -1322.8077
+confNum: 41
+curConf: 0 0 3 1 0 2 2 0 18 6 15 1 
+actualConf: 4 0 5 1 1 3 4 3 20 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 3 2 2 -1328.3785 -1314.9407 -1322.8077
+confNum: 42
+curConf: 0 0 3 1 0 0 2 1 17 6 16 1 
+actualConf: 4 0 5 1 1 1 4 4 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 1 4 4 19 3 3 2 -1328.3671 -1318.3868 -1322.8077
+confNum: 43
+curConf: 0 0 3 1 0 2 2 1 18 6 24 1 
+actualConf: 4 0 5 1 1 3 4 4 20 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 4 20 3 3 2 -1328.3469 -1318.3734 -1322.8077
+confNum: 44
+curConf: 0 0 3 1 0 0 1 1 19 75 23 1 
+actualConf: 4 0 5 1 1 1 3 4 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 3 4 21 3 2 2 -1328.345 -1310.0852 -1322.8077
+confNum: 45
+curConf: 0 0 3 1 0 2 2 0 17 16 16 1 
+actualConf: 4 0 5 1 1 3 4 3 19 45 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 7 3 2 -1328.327 -1318.8688 -1322.8077
+confNum: 46
+curConf: 0 0 3 1 0 2 2 0 18 17 16 1 
+actualConf: 4 0 5 1 1 3 4 3 20 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 8 3 2 -1328.3246 -1318.8098 -1322.8077
+confNum: 47
+curConf: 0 0 3 1 0 2 2 0 17 78 16 1 
+actualConf: 4 0 5 1 1 3 4 3 19 154 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 6 3 2 -1328.3196 -1318.1602 -1322.8077
+confNum: 48
+curConf: 0 0 3 1 0 2 2 1 18 17 15 1 
+actualConf: 4 0 5 1 1 3 4 4 20 46 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 8 2 2 -1328.3113 -1322.3417 -1322.8077
+confNum: 49
+curConf: 0 0 3 1 0 2 2 1 19 75 15 1 
+actualConf: 4 0 5 1 1 3 4 4 21 151 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 4 21 3 2 2 -1328.309 -1318.9664 -1322.8077
+confNum: 50
+curConf: 0 0 3 1 0 0 2 0 17 6 16 1 
+actualConf: 4 0 5 1 1 1 4 3 19 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 1 4 3 19 3 3 2 -1328.3046 -1314.773 -1322.8077
+confNum: 51
+curConf: 0 0 3 1 0 2 2 1 17 16 24 1 
+actualConf: 4 0 5 1 1 3 4 4 19 45 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 7 3 2 -1328.2883 -1322.2284 -1322.8077
+confNum: 52
+curConf: 0 0 3 1 0 0 1 0 19 75 23 1 
+actualConf: 4 0 5 1 1 1 3 3 21 151 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 1 3 3 21 3 2 2 -1328.283 -1306.4907 -1322.8077
+confNum: 53
+curConf: 0 0 3 1 0 2 2 0 18 6 24 1 
+actualConf: 4 0 5 1 1 3 4 3 20 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 3 4 3 20 3 3 2 -1328.282 -1314.7765 -1322.8077
+confNum: 54
+curConf: 0 0 3 1 0 2 2 1 17 78 24 1 
+actualConf: 4 0 5 1 1 3 4 4 19 154 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 3 4 4 19 6 3 2 -1328.2734 -1321.507 -1322.8077
+confNum: 55
+curConf: 0 0 3 1 0 2 2 1 18 16 16 1 
+actualConf: 4 0 5 1 1 3 4 4 20 45 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 7 3 2 -1328.2646 -1322.2094 -1322.8077
+confNum: 56
+curConf: 0 0 3 1 0 2 2 1 17 16 15 1 
+actualConf: 4 0 5 1 1 3 4 4 19 45 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 7 2 2 -1328.2622 -1322.3821 -1322.8077
+confNum: 57
+curConf: 0 0 2 1 0 2 2 1 17 6 24 1 
+actualConf: 4 0 4 1 1 3 4 4 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 4 1 1 3 4 4 19 3 3 2 -1328.2616 -1319.2242 -1322.8077
+confNum: 58
+curConf: 0 0 3 1 0 2 2 1 17 78 15 1 
+actualConf: 4 0 5 1 1 3 4 4 19 154 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 4 19 6 2 2 -1328.2527 -1321.6652 -1322.8077
+confNum: 59
+curConf: 0 0 3 1 0 2 2 0 19 75 15 1 
+actualConf: 4 0 5 1 1 3 4 3 21 151 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 3 21 3 2 2 -1328.247 -1315.3749 -1322.8077
+confNum: 60
+curConf: 0 0 3 1 0 2 2 0 18 17 15 1 
+actualConf: 4 0 5 1 1 3 4 3 20 46 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 8 2 2 -1328.2465 -1318.7516 -1322.8077
+confNum: 61
+curConf: 0 0 3 1 0 0 2 1 17 17 16 1 
+actualConf: 4 0 5 1 1 1 4 4 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 1 4 4 19 8 3 2 -1328.247 -1322.2079 -1322.8077
+confNum: 62
+curConf: 0 0 3 1 0 2 2 1 19 75 16 45 
+actualConf: 4 0 5 1 1 3 4 4 21 151 23 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 18 
+curRot: 4 0 5 1 1 3 4 4 21 3 3 5 -1328.2391 -1317.8722 -1322.8077
+confNum: 63
+curConf: 0 0 3 1 0 2 2 0 17 16 24 1 
+actualConf: 4 0 5 1 1 3 4 3 19 45 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 3 19 7 3 2 -1328.2263 -1318.6384 -1322.8077
+confNum: 64
+curConf: 0 0 3 1 0 0 2 1 17 84 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 167 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 16 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 3 2 2 -1328.2245 -1313.1393 -1322.8077
+confNum: 65
+curConf: 0 0 3 1 0 0 1 1 19 75 23 45 
+actualConf: 4 0 5 1 1 1 3 4 21 151 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 18 
+curRot: 4 0 5 1 1 1 3 4 21 3 2 5 -1328.216 -1308.9435 -1322.8077
+confNum: 66
+curConf: 0 0 3 1 0 2 2 1 18 17 24 1 
+actualConf: 4 0 5 1 1 3 4 4 20 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 4 20 8 3 2 -1328.2151 -1322.1783 -1322.8077
+confNum: 67
+curConf: 0 0 3 1 0 2 2 0 17 78 24 1 
+actualConf: 4 0 5 1 1 3 4 3 19 154 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 3 4 3 19 6 3 2 -1328.2131 -1317.9193 -1322.8077
+confNum: 68
+curConf: 0 0 3 1 0 2 2 0 17 16 15 1 
+actualConf: 4 0 5 1 1 3 4 3 19 45 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 7 2 2 -1328.2002 -1318.7941 -1322.8077
+confNum: 69
+curConf: 0 0 3 1 0 2 2 0 18 16 16 1 
+actualConf: 4 0 5 1 1 3 4 3 20 45 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 7 3 2 -1328.1996 -1318.6193 -1322.8077
+confNum: 70
+curConf: 0 0 2 1 0 2 2 0 17 6 24 1 
+actualConf: 4 0 4 1 1 3 4 3 19 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 4 1 1 3 4 3 19 3 3 2 -1328.1997 -1315.6326 -1322.8077
+confNum: 71
+curConf: 0 0 3 1 0 2 2 0 17 78 15 1 
+actualConf: 4 0 5 1 1 3 4 3 19 154 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 3 19 6 2 2 -1328.1924 -1318.0801 -1322.8077
+confNum: 72
+curConf: 0 0 3 1 0 2 2 1 18 16 15 1 
+actualConf: 4 0 5 1 1 3 4 4 20 45 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 7 2 2 -1328.1874 -1322.1522 -1322.8077
+confNum: 73
+curConf: 0 0 3 1 0 0 2 0 17 17 16 1 
+actualConf: 4 0 5 1 1 1 4 3 19 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 1 4 3 19 8 3 2 -1328.1846 -1318.6 -1322.8077
+confNum: 74
+curConf: 0 0 3 1 0 0 2 1 17 4 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 14 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 3 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 5 2 2 -1328.1746 -1312.4725 -1322.8077
+confNum: 75
+curConf: 0 0 3 1 0 0 2 1 18 6 16 1 
+actualConf: 4 0 5 1 1 1 4 4 20 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 1 4 4 20 3 3 2 -1328.1656 -1317.9875 -1322.8077
+confNum: 76
+curConf: 0 0 3 1 0 2 2 1 18 78 16 1 
+actualConf: 4 0 5 1 1 3 4 4 20 154 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 6 3 2 -1328.1603 -1321.3419 -1322.8077
+confNum: 77
+curConf: 0 0 3 1 0 0 2 0 17 84 23 1 
+actualConf: 4 0 5 1 1 1 4 3 19 167 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 16 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 3 2 2 -1328.1539 -1309.5574 -1322.8077
+confNum: 78
+curConf: 0 0 3 1 0 2 2 0 19 75 16 45 
+actualConf: 4 0 5 1 1 3 4 3 21 151 23 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 18 
+curRot: 4 0 5 1 1 3 4 3 21 3 3 5 -1328.1538 -1314.3821 -1322.8077
+confNum: 79
+curConf: 0 0 3 1 0 0 2 1 17 6 15 1 
+actualConf: 4 0 5 1 1 1 4 4 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 1 4 4 19 3 2 2 -1328.1519 -1318.248 -1322.8077
+confNum: 80
+curConf: 0 0 3 1 0 0 2 1 17 6 23 45 
+actualConf: 4 0 5 1 1 1 4 4 19 19 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 18 
+curRot: 4 0 5 1 1 1 4 4 19 3 2 5 -1328.1511 -1310.1642 -1322.8077
+confNum: 81
+curConf: 0 0 3 1 0 2 2 0 18 17 24 1 
+actualConf: 4 0 5 1 1 3 4 3 20 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 3 20 8 3 2 -1328.1503 -1318.5901 -1322.8077
+confNum: 82
+curConf: 0 0 3 1 0 2 2 1 19 75 24 1 
+actualConf: 4 0 5 1 1 3 4 4 21 151 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 3 4 4 21 3 3 2 -1328.1497 -1318.7844 -1322.8077
+confNum: 83
+curConf: 0 0 3 1 0 0 2 1 19 6 23 1 
+actualConf: 4 0 5 1 1 1 4 4 21 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 4 21 3 2 2 -1328.1458 -1310.8502 -1322.8077
+confNum: 84
+curConf: 0 0 2 1 0 2 2 1 17 17 24 1 
+actualConf: 4 0 4 1 1 3 4 4 19 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 4 1 1 3 4 4 19 8 3 2 -1328.1418 -1323.0442 -1323.0442
+confNum: 85
+curConf: 0 0 3 1 0 0 1 0 19 75 23 45 
+actualConf: 4 0 5 1 1 1 3 3 21 151 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 18 
+curRot: 4 0 5 1 1 1 3 3 21 3 2 5 -1328.1309 -1305.4501 -1323.0442
+confNum: 86
+curConf: 0 0 3 1 0 2 2 0 18 16 15 1 
+actualConf: 4 0 5 1 1 3 4 3 20 45 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 7 2 2 -1328.1226 -1318.5621 -1323.0442
+confNum: 87
+curConf: 0 0 3 1 0 0 2 0 17 4 23 1 
+actualConf: 4 0 5 1 1 1 4 3 19 14 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 3 6 1 
+curRot: 4 0 5 1 1 1 4 3 19 5 2 2 -1328.1104 -1308.8723 -1323.0442
+confNum: 88
+curConf: 0 0 3 1 0 0 2 0 18 6 16 1 
+actualConf: 4 0 5 1 1 1 4 3 20 19 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 1 4 3 20 3 3 2 -1328.1003 -1314.3926 -1323.0442
+confNum: 89
+curConf: 0 0 3 1 0 0 2 1 19 75 16 1 
+actualConf: 4 0 5 1 1 1 4 4 21 151 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 1 4 4 21 3 3 2 -1328.0986 -1318.4799 -1323.0442
+confNum: 90
+curConf: 0 0 3 1 0 2 2 0 18 78 16 1 
+actualConf: 4 0 5 1 1 3 4 3 20 154 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 6 3 2 -1328.0969 -1317.753 -1323.0442
+confNum: 91
+curConf: 0 0 3 1 0 2 2 1 18 16 24 1 
+actualConf: 4 0 5 1 1 3 4 4 20 45 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 4 20 7 3 2 -1328.0968 -1321.9933 -1323.0442
+confNum: 92
+curConf: 0 0 3 1 0 0 2 1 19 17 23 1 
+actualConf: 4 0 5 1 1 1 4 4 21 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 4 21 8 2 2 -1328.0962 -1314.7297 -1323.0442
+confNum: 93
+curConf: 0 0 3 1 0 0 2 0 17 6 15 1 
+actualConf: 4 0 5 1 1 1 4 3 19 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 1 4 3 19 3 2 2 -1328.0896 -1314.6351 -1323.0442
+confNum: 94
+curConf: 0 0 3 1 0 2 2 0 19 75 24 1 
+actualConf: 4 0 5 1 1 3 4 3 21 151 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 3 4 3 21 3 3 2 -1328.0876 -1315.1935 -1323.0442
+confNum: 95
+curConf: 0 0 3 1 0 0 2 0 19 6 23 1 
+actualConf: 4 0 5 1 1 1 4 3 21 19 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 5 1 1 1 4 3 21 3 2 2 -1328.0844 -1307.28 -1323.0442
+confNum: 96
+curConf: 0 0 3 1 0 2 2 1 18 78 15 1 
+actualConf: 4 0 5 1 1 3 4 4 20 154 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 4 20 6 2 2 -1328.0825 -1321.2924 -1323.0442
+confNum: 97
+curConf: 0 0 3 1 0 2 2 1 19 75 15 45 
+actualConf: 4 0 5 1 1 3 4 4 21 151 22 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 18 
+curRot: 4 0 5 1 1 3 4 4 21 3 2 5 -1328.081 -1317.744 -1323.0442
+confNum: 98
+curConf: 0 0 2 1 0 2 2 0 17 17 24 1 
+actualConf: 4 0 4 1 1 3 4 3 19 46 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 4 1 1 3 4 3 19 8 3 2 -1328.0801 -1319.4607 -1323.0442
+confNum: 99
+curConf: 0 0 3 1 0 2 1 1 19 75 16 1 
+actualConf: 4 0 5 1 1 3 3 4 21 151 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 3 4 21 3 3 2 -1328.0709 -1317.4365 -1323.0442
+confNum: 100
+curConf: 0 0 3 1 0 0 2 0 17 6 23 45 
+actualConf: 4 0 5 1 1 1 4 3 19 19 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 18 
+curRot: 4 0 5 1 1 1 4 3 19 3 2 5 -1328.0658 -1306.67 -1323.0442
+confNum: 101
+curConf: 0 0 3 1 0 2 2 1 17 6 150 1 
+actualConf: 4 0 5 1 1 3 4 4 19 19 187 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 19 1 
+curRot: 4 0 5 1 1 3 4 4 19 3 3 2 -1328.0588 -1317.0278 -1323.0442
+confNum: 102
+curConf: 0 0 3 1 0 0 2 0 19 75 16 1 
+actualConf: 4 0 5 1 1 1 4 3 21 151 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 1 4 3 21 3 3 2 -1328.0363 -1314.8871 -1323.0442
+confNum: 103
+curConf: 0 0 3 1 0 0 2 0 19 17 23 1 
+actualConf: 4 0 5 1 1 1 4 3 21 46 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 1 4 3 21 8 2 2 -1328.0349 -1311.17 -1323.0442
+confNum: 104
+curConf: 0 0 3 1 0 0 2 1 18 17 16 1 
+actualConf: 4 0 5 1 1 1 4 4 20 46 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 1 4 4 20 8 3 2 -1328.034 -1321.7924 -1323.0442
+confNum: 105
+curConf: 0 0 3 1 0 0 2 1 17 16 16 1 
+actualConf: 4 0 5 1 1 1 4 4 19 45 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 1 4 4 19 7 3 2 -1328.0336 -1321.8848 -1323.0442
+confNum: 106
+curConf: 0 0 3 1 0 2 2 0 18 16 24 1 
+actualConf: 4 0 5 1 1 3 4 3 20 45 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 1 
+curRot: 4 0 5 1 1 3 4 3 20 7 3 2 -1328.032 -1318.4045 -1323.0442
+confNum: 107
+curConf: 0 0 3 1 0 0 2 1 17 17 15 1 
+actualConf: 4 0 5 1 1 1 4 4 19 46 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 8 5 1 
+curRot: 4 0 5 1 1 1 4 4 19 8 2 2 -1328.0314 -1322.0713 -1323.0442
+confNum: 108
+curConf: 0 0 3 1 0 0 2 1 17 17 23 45 
+actualConf: 4 0 5 1 1 1 4 4 19 46 30 182 
+curAANum: 2 4 18 3 4 2 14 2 11 8 6 18 
+curRot: 4 0 5 1 1 1 4 4 19 8 2 5 -1328.0283 -1313.9689 -1323.0442
+confNum: 109
+curConf: 0 0 3 1 0 0 2 1 17 78 16 1 
+actualConf: 4 0 5 1 1 1 4 4 19 154 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 1 4 4 19 6 3 2 -1328.0245 -1321.1677 -1323.0442
+confNum: 110
+curConf: 0 0 3 1 0 2 2 0 18 78 15 1 
+actualConf: 4 0 5 1 1 3 4 3 20 154 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 4 3 20 6 2 2 -1328.0194 -1317.7035 -1323.0442
+confNum: 111
+curConf: 0 0 3 1 0 0 2 1 17 82 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 162 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 15 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 6 2 2 -1328.0197 -1313.7864 -1323.0442
+confNum: 112
+curConf: 0 0 2 1 0 2 2 1 18 6 24 1 
+actualConf: 4 0 4 1 1 3 4 4 20 19 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 6 1 
+curRot: 4 0 4 1 1 3 4 4 20 3 3 2 -1328.019 -1318.9014 -1323.0442
+confNum: 113
+curConf: 0 0 3 1 0 2 1 0 19 75 16 1 
+actualConf: 4 0 5 1 1 3 3 3 21 151 23 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 1 
+curRot: 4 0 5 1 1 3 3 3 21 3 3 2 -1328.0088 -1313.8473 -1323.0442
+confNum: 114
+curConf: 0 0 3 1 0 0 1 1 17 84 23 1 
+actualConf: 4 0 5 1 1 1 3 4 19 167 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 16 6 1 
+curRot: 4 0 5 1 1 1 3 4 19 3 2 2 -1328.0039 -1312.3829 -1323.0442
+confNum: 115
+curConf: 0 0 3 1 0 0 2 1 18 6 15 1 
+actualConf: 4 0 5 1 1 1 4 4 20 19 22 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 5 1 
+curRot: 4 0 5 1 1 1 4 4 20 3 2 2 -1328.0001 -1317.8951 -1323.0442
+confNum: 116
+curConf: 0 0 3 1 0 2 2 0 19 75 15 45 
+actualConf: 4 0 5 1 1 3 4 3 21 151 22 182 
+curAANum: 2 4 18 3 4 2 14 2 11 14 5 18 
+curRot: 4 0 5 1 1 3 4 3 21 3 2 5 -1327.996 -1314.2537 -1323.0442
+confNum: 117
+curConf: 0 0 3 1 0 0 2 1 17 3 23 1 
+actualConf: 4 0 5 1 1 1 4 4 19 8 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 2 6 1 
+curRot: 4 0 5 1 1 1 4 4 19 4 2 2 -1327.9963 -1313.9658 -1323.0442
+confNum: 118
+curConf: 0 0 3 1 0 2 2 0 17 6 150 1 
+actualConf: 4 0 5 1 1 3 4 3 19 19 187 3 
+curAANum: 2 4 18 3 4 2 14 2 11 4 19 1 
+curRot: 4 0 5 1 1 3 4 3 19 3 3 2 -1327.9956 -1313.4144 -1323.0442
+confNum: 119
+curConf: 0 0 3 1 0 0 2 1 18 4 23 1 
+actualConf: 4 0 5 1 1 1 4 4 20 14 30 3 
+curAANum: 2 4 18 3 4 2 14 2 11 3 6 1 
+curRot: 4 0 5 1 1 1 4 4 20 5 2 2 -1327.9938 -1311.988 -1323.0442
+confNum: 120
+curConf: 0 0 3 1 0 2 2 1 18 78 24 1 
+actualConf: 4 0 5 1 1 3 4 4 20 154 31 3 
+curAANum: 2 4 18 3 4 2 14 2 11 14 6 1 
+curRot: 4 0 5 1 1 3 4 4 20 6 3 2 Pruning time: 0.15725
+Enumeration/DACS time: 40.495133333333335
+DEE execution time: 40.65238333333333
+DEE done
+Total execution time: 49.92166666666667
+KStar Finished.

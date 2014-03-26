@@ -1,0 +1,5 @@
+84  LEU PHE ASN ILE PHE LEU HID LEU LYS MET TRP VAL 4   0   4   1   1   3   4   4   19  8   3   2   unMinE: -1228.3792  minE:   -1323.0442  minBound:   -1328.1418  bestE:  -1323.0442
+16  LEU PHE ASN ILE PHE LEU HID LEU LYS MET TYR VAL 4   0   5   1   1   3   4   4   19  8   3   2   unMinE: -1232.6733  minE:   -1322.8077  minBound:   -1328.6025  bestE:  -1322.8077
+28  LEU PHE ASN ILE PHE LEU HID LEU LYS MET TYR VAL 4   0   5   1   1   3   4   4   19  8   2   2   unMinE: -1232.1857  minE:   -1322.7024  minBound:   -1328.4744  bestE:  -1322.8077
+27  LEU PHE ASN ILE PHE LEU HID LEU LYS MET TRP VAL 4   0   5   1   1   3   4   4   19  8   3   2   unMinE: -1231.1562  minE:   -1322.5382  minBound:   -1328.4949  bestE:  -1322.8077
+39  LEU PHE ASN ILE PHE LEU HID LEU LYS MET TYR VAL 4   0   5   1   1   3   4   4   19  7   3   2   unMinE: -1239.5095  minE:   -1322.485   minBound:   -1328.3893  bestE:  -1322.8077
