@@ -124,6 +124,9 @@ shipped by CUDA SDK returns normally.</p></li>
 <pre><code>$ cd ~/src
 $ git clone https://github.com/zhou13/gOSPREY.git
 </code></pre>
+
+<p>Otherwise, you need to download the tarball from the website and decompress
+it by yourself.</p>
 </li>
 <li>
 <p>Create a build directory for gOSPREY:</p>
@@ -159,7 +162,8 @@ copy/move this file to anyplace that make you feel comfortable.</p>
 <p>Let's use <code>ppi_GPU</code> as an example. You can find it under <code>doc/example/ppi_GPU/</code>.
 Suppose you are still under the <code>build</code> directory.  Execute:</p>
 
-<pre><code>    $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
+<pre><code>    $ cd ../doc/example/ppi_GPU
+    $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
 </code></pre>
 
 <p>Hope that everything goes smooth for you!</p>
@@ -185,7 +189,7 @@ can find an example under <code>doc/example/ppi_GPU/KStar.cfg</code>:</p>
 <p><code>enableAStarJava</code> determines whether the A* module implemented by origianl
 OSPREY will be enabled.  <code>enableAStarNativeC</code> determines whether the A*
 module implemented using native machine code through JNI with heuristic function
-optimization will be used.  <code>enableAStarCUDA</code> determines whether <code>GA*</code> will be
+optimization will be used.  <code>enableAStarCUDA</code> determines whether GA* will be
 enabled through CUDA.  If more than one modules are enabled, gOSPREY will
 compare the results returned by different modules to verily the correctness.</p>
 
