@@ -377,18 +377,29 @@ public class KSParser
 		rotamerIndexOffset = rl.getRotamerIndexOffset();
 		totalNumRotamers = rl.getTotalNumRotamers();*/
 
-                EnvironmentVars.autoFix = new Boolean((String)rParams.getValue("AUTOFIX","true")).booleanValue();
-                
-                String ramaGlyFile = (String)rParams.getValue("RAMAGLYFILE","rama500-gly-sym.data");
+		EnvironmentVars.autoFix = new Boolean((String)rParams.getValue("AUTOFIX","true")).booleanValue();
 
-                if( ! ramaGlyFile.equalsIgnoreCase("none") ){
-                    String ramaFiles[] = { EnvironmentVars.dataDir + ramaGlyFile,
-                    EnvironmentVars.dataDir + (String)rParams.getValue("RAMAPROFILE","rama500-pro.data"),
-                    EnvironmentVars.dataDir + (String)rParams.getValue("RAMAGENFILE","rama500-general.data"),
-                    EnvironmentVars.dataDir + (String)rParams.getValue("RAMAPREPROFILE","rama500-prepro.data")
-                    };
-                    RamachandranChecker.getInstance().readInputFiles( ramaFiles );
-                }
+		String ramaGlyFile = (String)rParams.getValue("RAMAGLYFILE","rama500-gly-sym.data");
+
+		if( ! ramaGlyFile.equalsIgnoreCase("none") ) {
+			String ramaFiles[] = {
+				EnvironmentVars.dataDir + ramaGlyFile,
+				EnvironmentVars.dataDir + (String)rParams.getValue("RAMAPROFILE","rama500-pro.data"),
+				EnvironmentVars.dataDir + (String)rParams.getValue("RAMAGENFILE","rama500-general.data"),
+				EnvironmentVars.dataDir + (String)rParams.getValue("RAMAPREPROFILE","rama500-prepro.data")
+			};
+			RamachandranChecker.getInstance().readInputFiles( ramaFiles );
+		}
+
+		AStarConfig.enableJava    = Boolean.parseBoolean(rParams.getValue("ENABLEASTARJAVA", "true"));
+		AStarConfig.enableNativeC = Boolean.parseBoolean(rParams.getValue("ENABLEAStarNATIVEC", "false"));
+		AStarConfig.enableCUDA    = Boolean.parseBoolean(rParams.getValue("ENABLEAStarCUDA", "false"));
+		AStarConfig.maxCPUMemory  = Long.parseLong(rParams.getValue("MAXNATIVECPUMEMORY", "1073741824"));
+		AStarConfig.maxGPUMemory  = Long.parseLong(rParams.getValue("MAXNATIVEGPUMEMORY", "1073741824"));
+		AStarConfig.numWorkGroup  = Integer.parseInt(rParams.getValue("NUMGPUWORKGROUP", "8"));
+		AStarConfig.numWorkItem   = Integer.parseInt(rParams.getValue("NUMGPUWORKITEM", "192"));
+		AStarConfig.numWorkItem2  = Integer.parseInt(rParams.getValue("NUMGPUWORKITEM2", "192"));
+		AStarConfig.shrinkRatio   = Double.parseDouble(rParams.getValue("SHRINKRATIO", "1"));
 	}
 	
 	/******************************/

@@ -74,6 +74,14 @@ JNIEXPORT void JNICALL Java_MSAStar_initNativeAStar(
     printf("Shrink ratio: %.2f\n", shrink_ratio);
 
     rot_cnt = (*env)->GetArrayLength(env, _arp_matrix)-1;
+    if (rot_cnt > MAX_ROTAMER) {
+        printf("Native K* does not support more than %d rotamers due to memory"
+               "bound and GPU cache size.\n\n"
+               "You may want to change constant in jni/astar.h to avoid this"
+               "limitation.  But that _may_ slow down the computation.\n",
+               MAX_ROTAMER);
+        exit(EXIT_FAILURE);
+    }
     printf("rot_cnt: %d\n", rot_cnt);fflush(stdout);
     for (int i = 0; i <= rot_cnt; ++i) {
         jfloatArray t = (jfloatArray)(*env)->
@@ -124,6 +132,10 @@ JNIEXPORT void JNICALL Java_MSAStar_initNativeAStar(
     puts("");
     */
 
+    if (tree_level < 5) {
+        fprintf(stderr, "number of the mutatable AAs is too small:  skip GPU acceleration\n");
+        enable_gpu = false;
+    }
     if (enable_cpu)
         init_cpu();
     if (enable_gpu)

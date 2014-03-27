@@ -693,7 +693,7 @@ void shrink(int *__data_size, int *__num_child)
 {
     int data_size = *__data_size + *__num_child;
     if (data_size + data_reserved > data_capacity || data_size > max_data) {
-        if (shrink_ratio == 1) {
+        if (shrink_ratio >= 0.99) {
             puts("  >>> GPU run out of memory! Running Failed");
             exit(EXIT_FAILURE);
         }
@@ -707,7 +707,7 @@ void shrink(int *__data_size, int *__num_child)
         if (!d_data2)
             CHK_CUDA(cudaMalloc(&d_data2, data_capacity * sizeof(data_t)));
 
-        puts("OK0");fflush(stdout);
+        // puts("OK0");fflush(stdout);
 
         CHK_CUDA(cudaMemset(d_data_used, 0, data_size * sizeof(int)));
         d_tagging<<<num_block, num_local>>>(
@@ -715,7 +715,7 @@ void shrink(int *__data_size, int *__num_child)
                 d_heap_size,
                 d_data_used);
 
-        puts("OK1");fflush(stdout);
+        // puts("OK1");fflush(stdout);
 
         thrust::device_ptr<int> dev_used(d_data_used);
         thrust::inclusive_scan(dev_used, dev_used+data_size, dev_used);
@@ -744,7 +744,6 @@ void shrink(int *__data_size, int *__num_child)
         // thrust::host_vector<data_t> h_data(dev_data, dev_data + new_data_size);
         // thrust::sort(h_data.begin(), h_data.end());
         // thrust::copy(h_data.begin(), h_data.end(), dev_data);
-
 
         new_data_size *= shrink_ratio;
 
@@ -787,7 +786,7 @@ extern "C" void init_cuda()
     int max_child = 0;
     func_reduce(max_child, rot_per_level, rot_per_level+tree_level, max);
     if (max_child >= 255) {
-        printf("CUDA K* do not support more than 255 rotemar in single\n"
+        printf("CUDA K* does not support more than 255 rotemar in single\n"
                "residue due to memory limit.\n\n"
                "You may want to change some data type char to short in\n"
                "source jni/astar-cuda.cu to avoid this limitation.\n"
@@ -795,7 +794,7 @@ extern "C" void init_cuda()
         exit(EXIT_FAILURE);
     }
     if (tree_level > MAX_LEVEL) {
-        printf("CUDA K* do not support more than %d residues due to memory"
+        printf("CUDA K* does not support more than %d residues due to memory"
                "bound limit.\n\n"
                "You may want to change constant in jni/astar.h to avoid this"
                "limitation.  But that would almost double the memory usage\n",

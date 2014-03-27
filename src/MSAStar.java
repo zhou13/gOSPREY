@@ -77,6 +77,9 @@
  * 
  */
 public class MSAStar {
+	static {
+		System.loadLibrary("MSAStar");
+	}
 
 	//number of residues under consideration
 	private int numTreeLevels;

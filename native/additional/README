@@ -1,0 +1,5 @@
+This directory contains a ugly Makefile and OpenCL support.
+Due to the lack of devices, our OpenCL implementation is not
+as efficient as that of CUDA.  But it should just work, with
+some bugs.  If you are interested in improve it, these files 
+here may be helpful for you!

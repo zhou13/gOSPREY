@@ -23,7 +23,7 @@
 #  define MAX_LEVEL 20
 #endif
 #ifndef MAX_ROUND
-#  define MAX_ROUND 120
+#  define MAX_ROUND 250
 #endif
 
 extern int tree_level;

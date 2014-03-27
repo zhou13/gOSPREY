@@ -1,7 +1,8 @@
 // This file is not commented since it is similar to MSAStar.java.
 // This unit is just used to compare the speed to astar-cuda.cu.  It is almost
-// 100x faster than MSAStar.java.  But I haven't implement some feature such as
-// first_run and single_seq because 1) It is slow. 2) I do not understand it.
+// 100x faster than MSAStar.java.  I haven't implement some features such as
+// first_run and single_seq.
+
 #include "astar-cpu.h"
 #include "qsort.h"
 
