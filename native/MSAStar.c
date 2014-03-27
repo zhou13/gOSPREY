@@ -2,7 +2,8 @@
 
 #include "astar-cpu.h"
 
-#include "astar-opencl.h"
+// See native/additional/ for OpenCL support
+//#include "astar-opencl.h"
 #include "astar-cuda.h"
 
 #include "MSAStar.h"
