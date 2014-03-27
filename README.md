@@ -74,6 +74,9 @@ Installation
         $ cd ~/src
         $ git clone https://github.com/zhou13/gOSPREY.git
 
+    Otherwise, you need to download the tarball from the website and decompress
+    it by yourself.
+
 3.  Create a build directory for gOSPREY:
 
         $ cd gOSPREY
@@ -101,7 +104,8 @@ copy/move this file to anyplace that make you feel comfortable.
 Let's use `ppi_GPU` as an example. You can find it under `doc/example/ppi_GPU/`.
 Suppose you are still under the `build` directory.  Execute:
 
-        $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
+    $ cd ../doc/example/ppi_GPU
+    $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
 
 Hope that everything goes smooth for you!
 
@@ -111,20 +115,20 @@ The document of original OSPREY can be found at `doc/manual.pdf`.  Besides that,
 gOSPREY provided some additional parameter that a user need to configure.  You
 can find an example under `doc/example/ppi_GPU/KStar.cfg`:
 
-        enableAStarJava true
-        enableAStarNativeC true
-        enableAStarCUDA true
-        maxNativeCPUMemory 5032706048
-        maxNativeGPUMemory 5032706048
-        numGPUWorkGroup 4
-        numGPUWorkItem 192
-        numGPUWorkItem2 192
-        shrinkRatio 1
+    enableAStarJava true
+    enableAStarNativeC true
+    enableAStarCUDA true
+    maxNativeCPUMemory 5032706048
+    maxNativeGPUMemory 5032706048
+    numGPUWorkGroup 4
+    numGPUWorkItem 192
+    numGPUWorkItem2 192
+    shrinkRatio 1
 
 `enableAStarJava` determines whether the A\* module implemented by origianl
 OSPREY will be enabled.  `enableAStarNativeC` determines whether the A\*
 module implemented using native machine code through JNI with heuristic function
-optimization will be used.  `enableAStarCUDA` determines whether `GA*` will be
+optimization will be used.  `enableAStarCUDA` determines whether GA* will be
 enabled through CUDA.  If more than one modules are enabled, gOSPREY will
 compare the results returned by different modules to verily the correctness.
 
