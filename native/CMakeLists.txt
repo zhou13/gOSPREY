@@ -3,7 +3,7 @@ project(OSPREY-Native)
 # find_package(JNI REQUIRED)
 find_package(CUDA REQUIRED)
 
-set(CUDA_NVCC_FLAGS "-arch=sm_35 -Xcompiler -fPIC")
+set(CUDA_NVCC_FLAGS "-arch=sm_12 -Xcompiler -fPIC")
 set(JNI_HEADER ${CMAKE_CURRENT_BINARY_DIR}/MSAStar.h)
 cuda_add_library(cuda_astar STATIC astar-cuda.cu)
 
