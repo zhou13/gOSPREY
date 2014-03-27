@@ -162,8 +162,8 @@ copy/move this file to anyplace that make you feel comfortable.</p>
 <p>Let's use <code>ppi_GPU</code> as an example. You can find it under <code>doc/example/ppi_GPU/</code>.
 Suppose you are still under the <code>build</code> directory.  Execute:</p>
 
-<pre><code>    $ cd ../doc/example/ppi_GPU
-    $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
+<pre><code>$ cd ../doc/example/ppi_GPU
+$ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
 </code></pre>
 
 <p>Hope that everything goes smooth for you!</p>
@@ -175,15 +175,15 @@ Suppose you are still under the <code>build</code> directory.  Execute:</p>
 gOSPREY provided some additional parameter that a user need to configure.  You
 can find an example under <code>doc/example/ppi_GPU/KStar.cfg</code>:</p>
 
-<pre><code>    enableAStarJava true
-    enableAStarNativeC true
-    enableAStarCUDA true
-    maxNativeCPUMemory 5032706048
-    maxNativeGPUMemory 5032706048
-    numGPUWorkGroup 4
-    numGPUWorkItem 192
-    numGPUWorkItem2 192
-    shrinkRatio 1
+<pre><code>enableAStarJava true
+enableAStarNativeC true
+enableAStarCUDA true
+maxNativeCPUMemory 5032706048
+maxNativeGPUMemory 5032706048
+numGPUWorkGroup 4
+numGPUWorkItem 192
+numGPUWorkItem2 192
+shrinkRatio 1
 </code></pre>
 
 <p><code>enableAStarJava</code> determines whether the A* module implemented by origianl
