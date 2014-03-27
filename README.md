@@ -1,5 +1,6 @@
 Introduction to gOSPREY
 =======================
+Welcome to the website for the gOSPREY!
 
 gOSPREY is the abbreviation for <strong>O</strong>pen <strong>S</strong>ource
 <strong>P</strong>rotein <strong>RE</strong>design for <strong>Y</strong>ou on a
@@ -70,25 +71,25 @@ Installation
 2.  Download the source from github.  If you have `git` installed, you can
     `cd` into your working directory and perform:
 
-        cd ~/src
-        git clone https://github.com/zhou13/gOSPREY.git
+        $ cd ~/src
+        $ git clone https://github.com/zhou13/gOSPREY.git
 
 3.  Create a build directory for gOSPREY:
 
-        cd gOSPREY
-        mkdir build
+        $ cd gOSPREY
+        $ mkdir build
 
 4.  Run `cmake` to generate the Makefile.  Because gOSPREY uses Java Native
     Interface, a dynamic library must be installed under the
     `java.library.path`.  On most system, a prefix on `/usr` should do this job:
 
-        cd build
-        cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+        $ cd build
+        $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 
 5.  Comiple gOSPREY and install the library:
 
-        make
-        sudo make install
+        $ make
+        $ sudo make install
 
 Usage
 -----
@@ -100,7 +101,7 @@ copy/move this file to anyplace that make you feel comfortable.
 Let's use `ppi_GPU` as an example. You can find it under `doc/example/ppi_GPU/`.
 Suppose you are still under the `build` directory.  Execute:
 
-        java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
+        $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
 
 Hope that everything goes smooth for you!
 
@@ -133,3 +134,8 @@ an individual work group when calculating the heuristic function in parallel.
 When `shrinkRatio` is not equal to one, GSMA\* will be enabled.  In that case,
 when the system runs out of memory, a fraction of nodes specified by `shrinkRatio`
 will be dropped.  You may want to set it to `0.5`.
+
+Support or Contact
+------------------
+Having trouble at installation or function? Feel free to contact the authors:
+broken.zhou@gmail.com.
