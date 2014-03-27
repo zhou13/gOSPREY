@@ -1,81 +1,222 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="gOSPREY : Open Source Protein REdesign for You on a GPU!" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
 
-    <title>gOSPREY</title>
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>gOSPREY by zhou13</title>
   </head>
 
   <body>
+    <a id="forkme_banner" href="https://github.com/zhou13/gOSPREY">View on GitHub</a>
+    <div class="shell">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/zhou13/gOSPREY">View on GitHub</a>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>gOSPREY</h1>
+            <h2>Open Source Protein REdesign for You on a GPU!</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-          <h1 id="project_title">gOSPREY</h1>
-          <h2 id="project_tagline">Open Source Protein REdesign for You on a GPU!</h2>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/zhou13/gOSPREY/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/zhou13/gOSPREY/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/zhou13/gOSPREY/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/zhou13/gOSPREY/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-the-homepage-of-gosprey" class="anchor" href="#welcome-to-the-homepage-of-gosprey"><span class="octicon octicon-link"></span></a>Welcome to the Homepage of gOSPREY</h3>
+      <span class="banner-fix"></span>
 
-<p>Welcome to the website for the gOSPREY (Open Source Protein REdesign for You <strong>on a GPU</strong>).  gOSPREY is a open source software based on the OSPREY software by Donald Lab at Duke University.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+      <section id="main_content">
+        <h1>
+<a name="introduction-to-gosprey" class="anchor" href="#introduction-to-gosprey"><span class="octicon octicon-link"></span></a>Introduction to gOSPREY</h1>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>Welcome to the website for the gOSPREY!</p>
+
+<p>gOSPREY is the abbreviation for <strong>O</strong>pen <strong>S</strong>ource
+<strong>P</strong>rotein <strong>RE</strong>design for <strong>Y</strong>ou on a
+<strong>G</strong>PU.  It enables the user to utilize a GPU to accelerate the
+procedure of protein design.</p>
+
+<p>gOSPREY is base on the software suite OSPREY, developed by the <a href="http://www.cs.duke.edu/donaldlab/osprey.php">Donald
+Lab</a> from Duke University.  Here is
+a short introduction for OSPREY:</p>
+
+<blockquote>
+<p>OSPREY incorporates several different algorithmic modules for structure-based
+protein design, including a number of powerful Dead-End Elimination algorithms
+and the ensemble-based K* algorithm for protein-ligand binding prediction.
+OSPREY allows the incorporation of continuous protein side-chain and
+continuous or discrete backbone flexibility, while maintaining provable
+guarantees with respect to the input model (input structure, rotamer library,
+energy function, and any backbone perturbations) for a given protein design
+problem. See full details of the different algorithmic modules in OSPREY.</p>
+</blockquote>
+
+<p>Currently, the version of gOSPREY that you can download is based on OSPREY v2.1
+beta with some improvements, including:</p>
+
+<ul>
+<li><p>A robust CUDA implementation of GA*, a variant of A* algorithm runs on any
+CUDA-compatiable device in a massive parallel fashion.</p></li>
+<li><p>Improved computation of heuristic function for structure-based computation
+protein deisgn, which is able to acceleate the protein design procedure
+significently without any parallelization.</p></li>
+<li><p>An implementation of GSMA* on CUDA, which is able to continue the design
+process even if the system is out of memory.</p></li>
+<li><p>An alpha release of OpenCL implementation of GA*.  This is not package by
+default.  Advanced users with coding ability may want to try it in
+<code>native/additional</code> directory.</p></li>
+<li><p>A nice and clean build and package system based on CMake so you should not
+worry about the ugly compilation process of CUDA (<code>nvcc</code>) and Java Native
+Interface!</p></li>
+</ul><h2>
+<a name="requirement" class="anchor" href="#requirement"><span class="octicon octicon-link"></span></a>Requirement</h2>
+
+<h3>
+<a name="hardware-requirement" class="anchor" href="#hardware-requirement"><span class="octicon octicon-link"></span></a>Hardware Requirement</h3>
+
+<p>In order to use the function of GPU acceleration, the user must own a
+CUDA-compatible video card, with the
+<a href="http://docs.nvidia.com/cuda/cuda-c-programming-guide/">Compute-Capability</a> at
+least 1.2.</p>
+
+<h3>
+<a name="software-dependency" class="anchor" href="#software-dependency"><span class="octicon octicon-link"></span></a>Software Dependency</h3>
+
+<p>In order to run gOSPREY, a user must have the following installed:</p>
+
+<ul>
+<li><p><strong>A working Linux environment</strong></p></li>
+<li><p>A Java Development Kit 1.7 implementation</p></li>
+<li><p><a href="http://developer.nvidia.com/cuda">NVIDIA CUDA Software Development Kit</a></p></li>
+<li><p>a recent gcc/g++ release</p></li>
+<li><p>cmake 2.8+</p></li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li><p>Check the environemnt.  Make sure you have CUDA installed on your Linux box.
+And make sure the <code>deviceQuery</code> utility from <code>1_Utilities/deviceQuery</code>
+shipped by CUDA SDK returns normally.</p></li>
+<li>
+<p>Download the source from github.  If you have <code>git</code> installed, you can
+<code>cd</code> into your working directory and perform:</p>
+
+<pre><code>$ cd ~/src
+$ git clone https://github.com/zhou13/gOSPREY.git
+</code></pre>
+</li>
+<li>
+<p>Create a build directory for gOSPREY:</p>
+
+<pre><code>$ cd gOSPREY
+$ mkdir build
+</code></pre>
+</li>
+<li>
+<p>Run <code>cmake</code> to generate the Makefile.  Because gOSPREY uses Java Native
+Interface, a dynamic library must be installed under the
+<code>java.library.path</code>.  On most system, a prefix on <code>/usr</code> should do this job:</p>
+
+<pre><code>$ cd build
+$ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+</code></pre>
+</li>
+<li>
+<p>Comiple gOSPREY and install the library:</p>
+
+<pre><code>$ make
+$ sudo make install
+</code></pre>
+</li>
+</ol><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Thanks for the CMake and jar package system, the use of gOSPREY is pretty easy.
+After the <code>make</code> in the installation procedure, a file called <code>osprey.jar</code> will
+be generated.  This contains all the Java class needed by gOSPREY.  You can
+copy/move this file to anyplace that make you feel comfortable.</p>
+
+<p>Let's use <code>ppi_GPU</code> as an example. You can find it under <code>doc/example/ppi_GPU/</code>.
+Suppose you are still under the <code>build</code> directory.  Execute:</p>
+
+<pre><code>    $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Hope that everything goes smooth for you!</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>The document of original OSPREY can be found at <code>doc/manual.pdf</code>.  Besides that,
+gOSPREY provided some additional parameter that a user need to configure.  You
+can find an example under <code>doc/example/ppi_GPU/KStar.cfg</code>:</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<pre><code>    enableAStarJava true
+    enableAStarNativeC true
+    enableAStarCUDA true
+    maxNativeCPUMemory 5032706048
+    maxNativeGPUMemory 5032706048
+    numGPUWorkGroup 4
+    numGPUWorkItem 192
+    numGPUWorkItem2 192
+    shrinkRatio 1
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p><code>enableAStarJava</code> determines whether the A* module implemented by origianl
+OSPREY will be enabled.  <code>enableAStarNativeC</code> determines whether the A*
+module implemented using native machine code through JNI with heuristic function
+optimization will be used.  <code>enableAStarCUDA</code> determines whether <code>GA*</code> will be
+enabled through CUDA.  If more than one modules are enabled, gOSPREY will
+compare the results returned by different modules to verily the correctness.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>If CUDA is enable, <code>numGPUWorkGroup</code> * <code>numGPUWorkItem</code> is the number of
+parallel queues used in GA*.  <code>numGPUWorkItem2</code> is the number of work items for
+an individual work group when calculating the heuristic function in parallel.
+When <code>shrinkRatio</code> is not equal to one, GSMA* will be enabled.  In that case,
+when the system runs out of memory, a fraction of nodes specified by <code>shrinkRatio</code>
+will be dropped.  You may want to set it to <code>0.5</code>.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h2>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h2>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble at installation or function? Feel free to contact the authors:  <a href="mailto:broken.zhou@gmail.com">broken.zhou@gmail.com</a>.</p>
+<p>Having trouble at installation or function? Feel free to contact the authors:
+<a href="mailto:broken.zhou@gmail.com">broken.zhou@gmail.com</a>.</p>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">gOSPREY maintained by <a href="https://github.com/zhou13">zhou13</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/zhou13">zhou13</a> can be found on <a href="https://github.com/zhou13/gOSPREY">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
 
     
-
   </body>
 </html>
