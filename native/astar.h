@@ -14,8 +14,6 @@
 #include <math.h>
 #include <inttypes.h>
 
-#include "utility.h"
-
 #define nUSE_OPENCL
 
 #ifndef MAX_ROTAMER

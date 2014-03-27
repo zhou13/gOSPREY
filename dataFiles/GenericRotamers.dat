@@ -1,0 +1,27 @@
+! The first line is the number of AA types to be read
+! The format for the rest of the file is
+! AA_name num_dihedrals num_rotamers
+! dihedral_list_one_per_line
+! rotamer_angles
+1
+MON 1 19
+C8 C7 C6 C13
+-180
+-160
+-140
+-120
+-100
+-80
+-60
+-40
+-20
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180

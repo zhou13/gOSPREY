@@ -63,7 +63,9 @@ public class ReducedEnergyMatrix {
     int numTotalNodes;//the total number of possible rotamers for the given mutation
 
 
-    
+    public float[][] getRedEmat() {
+        return RedEmat;
+    }
 
     public ReducedEnergyMatrix(float[][] a){
         RedEmat = a;

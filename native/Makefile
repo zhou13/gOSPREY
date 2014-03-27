@@ -21,8 +21,8 @@ astar-gpu.c: astar-cl.h
 astar-cl.h: astar.cl
 	clconvert astar.cl > astar-cl.h
 
-MSAStar.h: ../MSAStar.class
-	javah -classpath .. -jni MSAStar
+MSAStar.h: ../src/MSAStar.class
+	javah -classpath ../src -jni MSAStar
 
 clean:
 	rm libMSAStar.so

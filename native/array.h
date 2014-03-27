@@ -26,8 +26,6 @@
 
 #pragma once
 
-#include "utility.h"
-
 #define array(type) struct { \
     type *v; \
     int size; \

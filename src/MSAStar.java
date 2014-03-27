@@ -113,14 +113,177 @@ public class MSAStar {
         //Use DEEPer
         boolean doPerturbations;
 
+	//Use Native AStar
+	boolean nativeCheckFlag;
+
+
 	//constructor
 	/*
 	 * We assume that the parameters supplied (energy and DEE information) have already been modified
 	 * 		to consider only the residues and rotamers for the possible mutations; i.e., the matrices are of
 	 * 		reduced size
 	 */
-	MSAStar (int treeLevels, int numRotForRes[], ReducedEnergyMatrix arpMatrixRed, StericCheck stF, boolean[][] spFlags,
-                boolean[][][] tripFlags, boolean doPerts){
+	public MSAStar(
+			int treeLevels,
+			int numRotForRes[],
+			ReducedEnergyMatrix arpMatrixRed,
+			StericCheck stF,
+			boolean[][] spFlags,
+			boolean[][][] tripFlags,
+			boolean doPerts)
+	{
+		nativeCheckFlag = true;
+		nativeCheckFlag &= spFlags == null;
+		nativeCheckFlag &= tripFlags == null;
+		nativeCheckFlag &= doPerts == false;
+		nativeCheckFlag &= stF == null;
+		nativeCheckFlag &= AStarConfig.enableNativeC || AStarConfig.enableCUDA;
+
+		if (nativeCheckFlag) {
+			System.out.println("Native AStar is enabled");
+			initNativeAStar(
+					treeLevels,
+					numRotForRes,
+					arpMatrixRed.getRedEmat(),
+					stF,
+					spFlags,
+					tripFlags,
+					doPerts,
+					AStarConfig.enableNativeC,
+					AStarConfig.enableCUDA,
+					AStarConfig.maxCPUMemory,
+					AStarConfig.maxGPUMemory,
+					AStarConfig.numWorkGroup,
+					AStarConfig.numWorkItem,
+					AStarConfig.numWorkItem2,
+					AStarConfig.shrinkRatio);
+		}
+
+		if (AStarConfig.enableJava) {
+			System.out.println("Java AStar is enabled");
+			initJavaAStar(
+					treeLevels,
+					numRotForRes,
+					arpMatrixRed,
+					stF,
+					spFlags,
+					tripFlags,
+					doPerts);
+		}
+	}
+
+	public int[] doAStar(
+			boolean run1,
+			int numMaxChanges,
+			int nodesDefault[], 
+			boolean prunedNodes[],
+			StrandRotamers strandRot[],
+			String strandDefault[][],
+			int numForRes[],
+			int strandMut[][],
+			boolean singleSeq, 
+			int mutRes2Strand[],
+			int mutRes2MutIndex[])
+	{
+		int[] javaResult = null;
+		int[] nativeResult = null;
+
+		if (nativeCheckFlag) {
+			long begin = System.currentTimeMillis();
+
+			nativeResult = doNativeAStar(
+					run1,
+					numMaxChanges,
+					nodesDefault,
+					prunedNodes,
+					strandRot,
+					strandDefault,
+					numForRes,
+					strandMut,
+					singleSeq,
+					mutRes2Strand,
+					mutRes2MutIndex);
+
+			long end = System.currentTimeMillis();
+
+			System.out.printf("All Native A* run in %d ms\n", end-begin);
+		}
+
+		if (AStarConfig.enableJava) {
+			long begin = System.currentTimeMillis();
+
+			javaResult = doJavaAStar(
+					run1,
+					numMaxChanges,
+					nodesDefault,
+					prunedNodes,
+					strandRot,
+					strandDefault,
+					numForRes,
+					strandMut,
+					singleSeq,
+					mutRes2Strand,
+					mutRes2MutIndex);
+
+			long end = System.currentTimeMillis();
+
+			System.out.printf(">>> Java A* runs in %d ms\n", end-begin);
+			System.out.println();
+		}
+
+		if (AStarConfig.enableJava && nativeCheckFlag) {
+			assert javaResult.length == nativeResult.length;
+			for (int i = 0; i < nativeResult.length; ++i)
+				if (javaResult[i] != nativeResult[i]) {
+					System.out.println("Warning: Two A* result is different.  It may be due to float precision.");
+					break;
+				}
+		}
+
+		if (AStarConfig.enableJava)
+			return javaResult;
+		return nativeResult;
+	}
+
+	private native void initNativeAStar(
+			int treeLevels,
+			int numRotForRes[],
+			float arpMatrix[][],
+			StericCheck stF,
+			boolean[][] spFlags,
+			boolean[][][] tripFlags,
+			boolean doPerts,
+			boolean enableNativeCPUAStar,
+			boolean enableNativeGPUAStar,
+			long maxNativeCPUMemory,
+			long maxNativeGPUMemory,
+			int numGPUWorkGroup,
+			int numGPUWorkItem,
+			int numGPUWorkItem2,
+			double shrinkRatio);
+
+	private native int[] doNativeAStar(
+			boolean firstRun,
+			int numMaxChanges,
+			int nodesDefault[],
+			boolean prunedNodes[],
+			StrandRotamers strandRot[],
+			String strandDefault[][],
+			int numForRes[],
+			int strandMut[][],
+			boolean singleSeq, 
+			int mutRes2Strand[],
+			int mutRes2MutIndex[]);
+
+
+	private void initJavaAStar(
+			int treeLevels,
+			int numRotForRes[],
+			ReducedEnergyMatrix arpMatrixRed,
+			StericCheck stF,
+			boolean[][] spFlags,
+			boolean[][][] tripFlags,
+			boolean doPerts) {
 	
 		numTreeLevels = treeLevels;
                 pairwiseMinEnergyMatrix = arpMatrixRed;
@@ -169,9 +332,11 @@ public class MSAStar {
 	 * 		conformation. To find the second conformation, A* runs on the saved queue, and this is repeated
 	 * 		for all subsequent conformations
 	 */
-	public int[] doAStar (boolean run1, int numMaxChanges, int nodesDefault[], boolean prunedNodes[],
-			StrandRotamers strandRot[], String strandDefault[][], int numForRes[], int strandMut[][], boolean singleSeq, 
-			int mutRes2Strand[], int mutRes2MutIndex[]){
+	private int[] doJavaAStar (boolean run1, int numMaxChanges,
+			int nodesDefault[], boolean prunedNodes[],
+			StrandRotamers strandRot[], String strandDefault[][],
+			int numForRes[], int strandMut[][], boolean singleSeq, 
+			int mutRes2Strand[], int mutRes2MutIndex[]) {
 		
 		int curLevelNum = 0;
 		float hScore;
@@ -591,3 +756,4 @@ public class MSAStar {
             return false;
         }
 }
+// set sw=8 ts=8
