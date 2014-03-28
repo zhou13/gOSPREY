@@ -24,11 +24,11 @@ Currently, the version of gOSPREY that you can download is based on OSPREY v2.1
 beta with some improvements, including:
 
 * A robust CUDA implementation of GA\*, a variant of A\* algorithm runs on any
-  CUDA-compatiable device in a massive parallel fashion.
+  CUDA-compatible device in a massive parallel fashion.
 
 * Improved computation of heuristic function for structure-based computation
-  protein deisgn, which is able to acceleate the protein design procedure
-  significently without any parallelization.
+  protein design, which is able to accelerate the protein design procedure
+  significantly even without parallelization.
 
 * An implementation of GSMA\* on CUDA, which is able to continue the design
   process even if the system is out of memory.
@@ -51,11 +51,12 @@ least 1.2.
 
 ### Software Dependency
 In order to run gOSPREY, a user must have the following installed:
-*  **A working Linux environment**
 
-*  A Java Development Kit 1.7 implementation
+*  A **Linux** operating system with **NVIDIA proprietary driver**
 
-*  [NVIDIA CUDA Software Development Kit](http://developer.nvidia.com/cuda)
+*  [NVIDIA CUDA SDK](http://developer.nvidia.com/cuda)
+
+*  A JDK 1.7 implementation
 
 *  A recent gcc/g++ release
 
@@ -63,17 +64,17 @@ In order to run gOSPREY, a user must have the following installed:
 
 Installation
 ------------
-1.  Check the environemnt.  Make sure you have CUDA installed on your Linux box.
-    And make sure the `deviceQuery` utility from `1_Utilities/deviceQuery`
-    shipped by CUDA SDK returns normally.
+1.  Check your environment setting.  Make sure you have CUDA installed on your
+    Linux box.  And make sure the `deviceQuery` utility from
+    `1_Utilities/deviceQuery` shipped by CUDA SDK returns normally.
 
-2.  Download the source from github.  If you have `git` installed, you can
-    `cd` into your working directory and perform:
+2.  Download the source code from github.  If you have `git` installed, you can
+    `cd` into your working directory and perform the clone operation:
 
         $ cd ~/src
         $ git clone https://github.com/zhou13/gOSPREY.git
 
-    Otherwise, you need to download the tarball from the website and decompress
+    Alternatively, you can to download the tarball from the website and decompress
     it by yourself.
 
 3.  Create a build directory for gOSPREY:
@@ -88,7 +89,7 @@ Installation
         $ cd build
         $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 
-5.  Comiple gOSPREY and install the library:
+5.  Compile gOSPREY and install its dynamic library:
 
         $ make
         $ sudo make install
@@ -97,8 +98,8 @@ Usage
 -----
 Thanks for the CMake and jar package system, the use of gOSPREY is pretty easy.
 After the `make install` in the installation procedure, a file called
-`osprey.jar` will be generated.  This contains all the Java class needed by
-gOSPREY.  You can copy/move this file to anyplace that make you feel
+`osprey.jar` will be generated.  This contains all the Java classes needed by
+gOSPREY.  You can copy/move this file to any place that make you feel
 comfortable.
 
 Let's use `ppi_GPU` as an example. You can find it under `doc/example/ppi_GPU/`.
@@ -127,10 +128,10 @@ can find an example under `doc/example/ppi_GPU/KStar.cfg`:
     numGPUWorkItem2 192
     shrinkRatio 1
 
-`enableAStarJava` determines whether the A\* module implemented by origianl
+`enableAStarJava` determines whether the A\* module implemented by original
 OSPREY will be enabled.  `enableAStarNativeC` determines whether the A\*
 module implemented using native machine code through JNI with heuristic function
-optimization will be used.  `enableAStarCUDA` determines whether GA* will be
+optimization will be used.  `enableAStarCUDA` determines whether GA\* will be
 enabled through CUDA.  If more than one modules are enabled, gOSPREY will
 compare the results returned by different modules to verily the correctness.
 
