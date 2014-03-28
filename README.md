@@ -7,7 +7,7 @@ gOSPREY is the abbreviation for <strong>O</strong>pen <strong>S</strong>ource
 <strong>G</strong>PU.  It enables the user to utilize a GPU to accelerate the
 procedure of protein design.
 
-gOSPREY is base on the software suite OSPREY, developed by the [Donald
+gOSPREY is based on the software suite OSPREY, developed by the [Donald
 Lab](http://www.cs.duke.edu/donaldlab/osprey.php) from Duke University.  Here is
 a short introduction for OSPREY:
 
@@ -33,13 +33,12 @@ beta with some improvements, including:
 * An implementation of GSMA\* on CUDA, which is able to continue the design
   process even if the system is out of memory.
 
-* An alpha release of OpenCL implementation of GA\*.  This is not package by
+* An alpha release of OpenCL implementation of GA\*.  This is not packaged by
   default.  Advanced users with coding ability may want to try it in
   `native/additional` directory.
 
-* A nice and clean build and package system based on CMake so you should not
-  worry about the ugly compilation process of CUDA (`nvcc`) and Java Native
-  Interface!
+* A nice build/package system based on CMake so you should not worry about the
+  ugly compilation process of CUDA (`nvcc`) and Java Native Interface!
 
 Requirement
 -----------
@@ -58,9 +57,9 @@ In order to run gOSPREY, a user must have the following installed:
 
 *  [NVIDIA CUDA Software Development Kit](http://developer.nvidia.com/cuda)
 
-*  a recent gcc/g++ release
+*  A recent gcc/g++ release
 
-*  cmake 2.8+
+*  CMake 2.8+
 
 Installation
 ------------
@@ -97,17 +96,20 @@ Installation
 Usage
 -----
 Thanks for the CMake and jar package system, the use of gOSPREY is pretty easy.
-After the `make` in the installation procedure, a file called `osprey.jar` will
-be generated.  This contains all the Java class needed by gOSPREY.  You can
-copy/move this file to anyplace that make you feel comfortable.
+After the `make install` in the installation procedure, a file called
+`osprey.jar` will be generated.  This contains all the Java class needed by
+gOSPREY.  You can copy/move this file to anyplace that make you feel
+comfortable.
 
 Let's use `ppi_GPU` as an example. You can find it under `doc/example/ppi_GPU/`.
 Suppose you are still under the `build` directory.  Execute:
 
     $ cd ../doc/example/ppi_GPU
-    $ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
+    $ java -jar ../../../build/osprey.jar -t 8 doDEE System.cfg DEE.cfg
 
-Hope that everything goes smooth for you!
+Here, `-t 8` will make gOSPREY compute the energy matrix in 8 threads on your CPU.
+
+Finally, hope that everything goes smooth for you!
 
 Configuration
 -------------
