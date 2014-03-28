@@ -56,7 +56,7 @@
 <strong>G</strong>PU.  It enables the user to utilize a GPU to accelerate the
 procedure of protein design.</p>
 
-<p>gOSPREY is base on the software suite OSPREY, developed by the <a href="http://www.cs.duke.edu/donaldlab/osprey.php">Donald
+<p>gOSPREY is based on the software suite OSPREY, developed by the <a href="http://www.cs.duke.edu/donaldlab/osprey.php">Donald
 Lab</a> from Duke University.  Here is
 a short introduction for OSPREY:</p>
 
@@ -76,18 +76,17 @@ beta with some improvements, including:</p>
 
 <ul>
 <li><p>A robust CUDA implementation of GA*, a variant of A* algorithm runs on any
-CUDA-compatiable device in a massive parallel fashion.</p></li>
+CUDA-compatible device in a massive parallel fashion.</p></li>
 <li><p>Improved computation of heuristic function for structure-based computation
-protein deisgn, which is able to acceleate the protein design procedure
-significently without any parallelization.</p></li>
+protein design, which is able to accelerate the protein design procedure
+significantly even without parallelization.</p></li>
 <li><p>An implementation of GSMA* on CUDA, which is able to continue the design
 process even if the system is out of memory.</p></li>
-<li><p>An alpha release of OpenCL implementation of GA*.  This is not package by
+<li><p>An alpha release of OpenCL implementation of GA*.  This is not packaged by
 default.  Advanced users with coding ability may want to try it in
 <code>native/additional</code> directory.</p></li>
-<li><p>A nice and clean build and package system based on CMake so you should not
-worry about the ugly compilation process of CUDA (<code>nvcc</code>) and Java Native
-Interface!</p></li>
+<li><p>A nice build/package system based on CMake so you should not worry about the
+ugly compilation process of CUDA (<code>nvcc</code>) and Java Native Interface!</p></li>
 </ul><h2>
 <a name="requirement" class="anchor" href="#requirement"><span class="octicon octicon-link"></span></a>Requirement</h2>
 
@@ -105,27 +104,27 @@ least 1.2.</p>
 <p>In order to run gOSPREY, a user must have the following installed:</p>
 
 <ul>
-<li><p><strong>A working Linux environment</strong></p></li>
-<li><p>A Java Development Kit 1.7 implementation</p></li>
-<li><p><a href="http://developer.nvidia.com/cuda">NVIDIA CUDA Software Development Kit</a></p></li>
-<li><p>a recent gcc/g++ release</p></li>
-<li><p>cmake 2.8+</p></li>
+<li><p>A <strong>Linux</strong> operating system with <strong>NVIDIA proprietary driver</strong></p></li>
+<li><p><a href="http://developer.nvidia.com/cuda">NVIDIA CUDA SDK</a></p></li>
+<li><p>A JDK 1.7 implementation</p></li>
+<li><p>A recent gcc/g++ release</p></li>
+<li><p>CMake 2.8+</p></li>
 </ul><h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <ol>
-<li><p>Check the environemnt.  Make sure you have CUDA installed on your Linux box.
-And make sure the <code>deviceQuery</code> utility from <code>1_Utilities/deviceQuery</code>
-shipped by CUDA SDK returns normally.</p></li>
+<li><p>Check your environment setting.  Make sure you have CUDA installed on your
+Linux box.  And make sure the <code>deviceQuery</code> utility from
+<code>1_Utilities/deviceQuery</code> shipped by CUDA SDK returns normally.</p></li>
 <li>
-<p>Download the source from github.  If you have <code>git</code> installed, you can
-<code>cd</code> into your working directory and perform:</p>
+<p>Download the source code from github.  If you have <code>git</code> installed, you can
+<code>cd</code> into your working directory and perform the clone operation:</p>
 
 <pre><code>$ cd ~/src
 $ git clone https://github.com/zhou13/gOSPREY.git
 </code></pre>
 
-<p>Otherwise, you need to download the tarball from the website and decompress
+<p>Alternatively, you can to download the tarball from the website and decompress
 it by yourself.</p>
 </li>
 <li>
@@ -145,7 +144,7 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 </code></pre>
 </li>
 <li>
-<p>Comiple gOSPREY and install the library:</p>
+<p>Compile gOSPREY and install its dynamic library:</p>
 
 <pre><code>$ make
 $ sudo make install
@@ -155,18 +154,21 @@ $ sudo make install
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Thanks for the CMake and jar package system, the use of gOSPREY is pretty easy.
-After the <code>make</code> in the installation procedure, a file called <code>osprey.jar</code> will
-be generated.  This contains all the Java class needed by gOSPREY.  You can
-copy/move this file to anyplace that make you feel comfortable.</p>
+After the <code>make install</code> in the installation procedure, a file called
+<code>osprey.jar</code> will be generated.  This contains all the Java classes needed by
+gOSPREY.  You can copy/move this file to any place that make you feel
+comfortable.</p>
 
 <p>Let's use <code>ppi_GPU</code> as an example. You can find it under <code>doc/example/ppi_GPU/</code>.
 Suppose you are still under the <code>build</code> directory.  Execute:</p>
 
 <pre><code>$ cd ../doc/example/ppi_GPU
-$ java -jar ../../../build/osprey.jar doDEE System.cfg DEE.cfg
+$ java -jar ../../../build/osprey.jar -t 8 doDEE System.cfg DEE.cfg
 </code></pre>
 
-<p>Hope that everything goes smooth for you!</p>
+<p>Here, <code>-t 8</code> will make gOSPREY compute the energy matrix in 8 threads on your CPU.</p>
+
+<p>Finally, hope that everything goes smooth for you!</p>
 
 <h2>
 <a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
@@ -186,7 +188,7 @@ numGPUWorkItem2 192
 shrinkRatio 1
 </code></pre>
 
-<p><code>enableAStarJava</code> determines whether the A* module implemented by origianl
+<p><code>enableAStarJava</code> determines whether the A* module implemented by original
 OSPREY will be enabled.  <code>enableAStarNativeC</code> determines whether the A*
 module implemented using native machine code through JNI with heuristic function
 optimization will be used.  <code>enableAStarCUDA</code> determines whether GA* will be
