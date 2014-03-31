@@ -5,7 +5,7 @@ Welcome to the website for the gOSPREY!
 gOSPREY is the abbreviation for <strong>O</strong>pen <strong>S</strong>ource
 <strong>P</strong>rotein <strong>RE</strong>design for <strong>Y</strong>ou on a
 <strong>G</strong>PU.  It enables the user to utilize a GPU to accelerate the
-procedure of protein design.
+procedure of protein design in a massive parallel fashion.
 
 gOSPREY is based on the software suite OSPREY, developed by the [Donald
 Lab](http://www.cs.duke.edu/donaldlab/osprey.php) from Duke University.  Here is
