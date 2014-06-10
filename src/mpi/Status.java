@@ -12,93 +12,95 @@ package mpi;
 
 public class Status extends Freeable {
 
-  public int index;
-  public int source;
-  public int tag;
+    public int index;
+    public int source;
+    public int tag;
 
-  int elements; 
+    int elements;
 
-  //protected int count; 
-  protected int object_count;
+    //protected int count;
+    protected int object_count;
 
 //  protected Status(long _handle) { handle = _handle;}
 
-  public Status() {alloc() ;}
-  private native void alloc() ;
+    public Status() {
+        alloc() ;
+    }
+    private native void alloc() ;
 
-  public void finalize() throws MPIException {
-      synchronized(MPI.class) {
-          MPI.freeList.addFirst(this) ;
-      }
-  }
+    public void finalize() throws MPIException {
+        synchronized(MPI.class) {
+            MPI.freeList.addFirst(this) ;
+        }
+    }
 
-  native void free() ;
+    native void free() ;
 
-  /**
-   * Get the number of received entries.
-   * <p>
-   * <table>
-   * <tr><td><tt> datatype </tt></td><td> datatype of each item in receive
-   *                                      buffer </tr>
-   * <tr><td><em> returns: </em></td><td> number of received entries </tr>
-   * </table>
-   * <p>
-   * Java binding of the MPI operation <tt>MPI_GET_COUNT</tt>.
-   */
+    /**
+     * Get the number of received entries.
+     * <p>
+     * <table>
+     * <tr><td><tt> datatype </tt></td><td> datatype of each item in receive
+     *                                      buffer </tr>
+     * <tr><td><em> returns: </em></td><td> number of received entries </tr>
+     * </table>
+     * <p>
+     * Java binding of the MPI operation <tt>MPI_GET_COUNT</tt>.
+     */
 
-  public int Get_count(Datatype datatype) throws MPIException {
-    
-    if (datatype.isObject())
-      return object_count;    // Is this correct?
-    else
-      return get_count(datatype);
-  }
+    public int Get_count(Datatype datatype) throws MPIException {
 
-  private native int get_count(Datatype datatype);
+        if (datatype.isObject())
+            return object_count;    // Is this correct?
+        else
+            return get_count(datatype);
+    }
 
-  /**
-   * Test if communication was cancelled.
-   * <p>
-   * <table>
-   * <tr><td><em> returns: </em></td><td> true if the operation was
-   *                                      succesfully cancelled,
-   *                                      false otherwise
-   * </table>
-   * <p>
-   * Java binding of the MPI operation <tt>MPI_TEST_CANCELLED</tt>.
-   */
+    private native int get_count(Datatype datatype);
 
-  public native boolean Test_cancelled() throws MPIException ;
+    /**
+     * Test if communication was cancelled.
+     * <p>
+     * <table>
+     * <tr><td><em> returns: </em></td><td> true if the operation was
+     *                                      succesfully cancelled,
+     *                                      false otherwise
+     * </table>
+     * <p>
+     * Java binding of the MPI operation <tt>MPI_TEST_CANCELLED</tt>.
+     */
 
-  /**
-   * Retrieve number of basic elements from status.
-   * <p>
-   * <table>
-   * <tr><td><tt> datatype </tt></td><td> datatype used by receive
-   *                                      operation </tr>
-   * <tr><td><em> returns: </em></td><td> number of received basic
-   *                                      elements </tr>
-   * </table>
-   * <p>
-   * Java binding of the MPI operation <tt>MPI_GET_ELEMENTS</tt>.
-   */
+    public native boolean Test_cancelled() throws MPIException ;
 
-  public int Get_elements(Datatype datatype) throws MPIException {
-    if(datatype.isObject())
-      return MPI.UNDEFINED;  // Is this correct?
-    else 
-      return get_elements(datatype) ;
-  }
+    /**
+     * Retrieve number of basic elements from status.
+     * <p>
+     * <table>
+     * <tr><td><tt> datatype </tt></td><td> datatype used by receive
+     *                                      operation </tr>
+     * <tr><td><em> returns: </em></td><td> number of received basic
+     *                                      elements </tr>
+     * </table>
+     * <p>
+     * Java binding of the MPI operation <tt>MPI_GET_ELEMENTS</tt>.
+     */
 
-  private native int get_elements(Datatype datatype);
+    public int Get_elements(Datatype datatype) throws MPIException {
+        if(datatype.isObject())
+            return MPI.UNDEFINED;  // Is this correct?
+        else
+            return get_elements(datatype) ;
+    }
 
-  private static native void init(); 
+    private native int get_elements(Datatype datatype);
 
-  protected long handle;
+    private static native void init();
 
-  static {
-    init();
-  }          
+    protected long handle;
+
+    static {
+        init();
+    }
 
 }
 

@@ -73,16 +73,16 @@ public class PerturbationSelector {
 
     //Now some parameters
 
-    public PerturbationSelector(int numMut, int mutRes2Strand[], int mutRes2StrandMutIndex[], 
-            int strandMut[][], boolean addWTRotamers, Molecule molec,
-            StrandRotamers[] strandRot, float minrmsd, String startPF, boolean onlyStart){
+    public PerturbationSelector(int numMut, int mutRes2Strand[], int mutRes2StrandMutIndex[],
+                                int strandMut[][], boolean addWTRotamers, Molecule molec,
+                                StrandRotamers[] strandRot, float minrmsd, String startPF, boolean onlyStart) {
 
         addWTRot = addWTRotamers;
 
         numMutable = numMut;
         flexMolResNum = new int[numMutable];
 
-        for(int pos=0; pos<numMutable; pos++){
+        for(int pos=0; pos<numMutable; pos++) {
             int str = mutRes2Strand[pos];
             int strResNum = strandMut[str][mutRes2StrandMutIndex[pos]];
             flexMolResNum[pos] = molec.strand[str].residue[strResNum].moleculeResidueNumber;
@@ -102,7 +102,7 @@ public class PerturbationSelector {
 
     //This function generates the set of possible perturbations for the molecule
     //and their states
-    public void generatePerturbations(Molecule m){
+    public void generatePerturbations(Molecule m) {
 
         final int numPertTypes = 8;
 
@@ -116,17 +116,16 @@ public class PerturbationSelector {
         //so they will be put before the other perturbations as the 2nd perturbation type
         if( startingPertFile.equalsIgnoreCase("none") )
             pertsByType[1] = new Perturbation[0];
-        else{
+        else {
 
-            try{
+            try {
 
                 BufferedReader br = new BufferedReader( new FileReader(startingPertFile) );
                 br.readLine();//Skip title line
 
                 pertsByType[1] = PertFileHandler.readPerts(br, m);
                 br.close();
-            }
-            catch(Exception e){
+            } catch(Exception e) {
                 System.err.println(e.getMessage());
                 System.exit(1);
             }
@@ -135,11 +134,10 @@ public class PerturbationSelector {
 
         int pertCount = 0;
 
-        if(onlyStarting){
+        if(onlyStarting) {
             m.perts = pertsByType[1];
             pertCount = m.perts.length;
-        }
-        else {//generate other perturbations unless only using those in the starting perturbation file
+        } else { //generate other perturbations unless only using those in the starting perturbation file
             pertsByType[2] = Perturbation.generateAll("SSNE", m, flexMolResNum, 4);
             pertsByType[3] = Perturbation.generateAll("SSCE", m, flexMolResNum, 4);
             pertsByType[4] = Perturbation.generateAll("LOOP CLOSURE ADJUSTMENT", m, flexMolResNum, 3);
@@ -148,12 +146,12 @@ public class PerturbationSelector {
             pertsByType[7] = ProlineFlip.generateAll(m, sRC);
 
             //Copy them all into m.perts
-            for(int a=0;a<numPertTypes;a++)
+            for(int a=0; a<numPertTypes; a++)
                 pertCount += pertsByType[a].length;
 
             m.perts = new Perturbation[pertCount];
             int start = 0;
-            for(int a=0;a<numPertTypes;a++){
+            for(int a=0; a<numPertTypes; a++) {
                 System.arraycopy(pertsByType[a], 0, m.perts, start, pertsByType[a].length);
                 start += pertsByType[a].length;
             }
@@ -164,17 +162,17 @@ public class PerturbationSelector {
     }
 
 
-    
+
     //Select the perturbations to be used from the set of possible perturbations
     //and load them into the molecule m, its residues, and the RC handlers
-    public void selectPerturbations(){
+    public void selectPerturbations() {
 
         //First define all the feasible perturbations and their states and successors
         generatePerturbations(m);
         m.findPerturbationSuccessors();
 
-      
-        for(int str=0; str<m.numberOfStrands; str++){
+
+        for(int str=0; str<m.numberOfStrands; str++) {
             if(addWTRot)
                 sRC[str].storeWTRotamers(m);
             sRC[str].addUnperturbedRCs(addWTRot);
@@ -185,28 +183,28 @@ public class PerturbationSelector {
 
         boolean proFlip[] = new boolean[numMutable];//Indicates with residues have a proline flip
 
-        for(int curPos=0; curPos<numMutable; curPos++){
+        for(int curPos=0; curPos<numMutable; curPos++) {
 
             //First find the perturbations affecting each residue
             Residue res = getResidue(curPos);
 
             res.pertStates = new int[1][];
-            
+
             ArrayList<Integer> pertList = new ArrayList<Integer>();
             //Perturbations affecting res
 
-            for( int pertNum=0; pertNum<m.perts.length; pertNum++){
+            for( int pertNum=0; pertNum<m.perts.length; pertNum++) {
                 Perturbation pert = m.perts[pertNum];
                 boolean affecting=false;
 
-                for( int b=0 ; b<pert.resAffected.length; b++){
+                for( int b=0 ; b<pert.resAffected.length; b++) {
                     if( pert.resAffected[b] == res.moleculeResidueNumber )
                         affecting = true;
                 }
 
-                for( int p2 : pert.successors ){
+                for( int p2 : pert.successors ) {
                     Perturbation pert2 = m.perts[p2];
-                    for( int b=0 ; b<pert2.resAffected.length; b++){
+                    for( int b=0 ; b<pert2.resAffected.length; b++) {
                         if( pert2.resAffected[b] == res.moleculeResidueNumber )
                             affecting = true;
                     }
@@ -218,8 +216,8 @@ public class PerturbationSelector {
 
             int resNumPerts = pertList.size();
 
-            if(resNumPerts > 0){
-            
+            if(resNumPerts > 0) {
+
                 res.perts = new int[resNumPerts];
                 for(int b=0; b<resNumPerts; b++)
                     res.perts[b] = pertList.get(b).intValue();
@@ -235,7 +233,7 @@ public class PerturbationSelector {
                 res.pertStates = new int[1][];
 
                 int state[] = new int[resNumPerts];//Start with the unperturbed state (denoted by all 0's)
-                
+
                 boolean isUnperturbed = true;//The first state is unperturbed (all 0's for perturbation states)
                 ArrayList<int[]> pertStateList = new ArrayList<int[]>();//Residue perturbation states
 
@@ -248,27 +246,26 @@ public class PerturbationSelector {
                 //So if we encounter such a state, we record it up to the last perturbation applied with nonzero parameter,
                 //call this partial state badState, and then don't consider any perturbation states that start with badState
 
-                while( ! done ){
+                while( ! done ) {
 
                     boolean valid = false;
 
-                    for(int a=0; a<badState.length; a++){
-                        if( state[a] != badState[a] ){
+                    for(int a=0; a<badState.length; a++) {
+                        if( state[a] != badState[a] ) {
                             valid = true;
                             break;
                         }
                     }
 
 
-                    if(isUnperturbed){
+                    if(isUnperturbed) {
                         pertStateList.add(state.clone());
 
                         //If there's a proline flip the second state will be unperturbed except for that flip; we make sure to keep it too
                         if( ! ( proFlip[curPos] && pertStateList.size() == 1 ) )
                             isUnperturbed = false;//Otherwise there are no more unperturbed state
 
-                    }
-                    else if(valid){
+                    } else if(valid) {
 
                         //Try to apply the perturbation state
                         res.pertStates[0] = state;
@@ -277,7 +274,7 @@ public class PerturbationSelector {
 
                         valid = sRC[res.strandNumber].applyPertState(m, res.strandResidueNumber, 0);
 
-                        if(valid){
+                        if(valid) {
                             boolean rama[] = rcheck.checkByAAType(m, res.moleculeResidueNumber);
 
                             if( ! ( rama[0] || rama[1] || rama[2] ) )//Bad state regardless of AA type
@@ -289,8 +286,8 @@ public class PerturbationSelector {
 
                         if(valid && ramaCheck)
                             pertStateList.add(state.clone());
-                        
-                        else if (!valid){
+
+                        else if (!valid) {
 
                             int lastPert = resNumPerts-1;
                             while( state[lastPert]==0 )
@@ -306,7 +303,7 @@ public class PerturbationSelector {
 
                     //Now find the next state
                     //We go through the states in order of the last perturbation, then the second to last, etc.
-                    for(int pertNum=resNumPerts-1; pertNum>=0; pertNum--){
+                    for(int pertNum=resNumPerts-1; pertNum>=0; pertNum--) {
 
                         state[pertNum]++;
 
@@ -328,8 +325,7 @@ public class PerturbationSelector {
                     res.pertStates[stateNum] = pertStateList.get(stateNum);
 
                 System.out.println( pertStateList.size() + " perturbation states considered for flexible residue " + curPos );
-            }
-            else//No perturbations at this residue
+            } else //No perturbations at this residue
                 res.pertStates = new int[1][0];//Unperturbed state
 
         }
@@ -348,7 +344,7 @@ public class PerturbationSelector {
         //Now apply the RMSD filter if desired (get rid of perturbation states whose
         //conformations are all within backbone heavy-atom RMSD min_rmsd of another's)
         //Also calculate Ramachandran acceptability for residue types
-        for(int curPos=0; curPos<numMutable; curPos++){
+        for(int curPos=0; curPos<numMutable; curPos++) {
 
             Residue res = getResidue(curPos);
 
@@ -363,21 +359,21 @@ public class PerturbationSelector {
                 startState = 1;
 
 
-            for(int state1=startState; state1<resNumStates; state1++){
+            for(int state1=startState; state1<resNumStates; state1++) {
 
 
-                if( !prunedPertStates[state1] ){//Apply perturbation state and do Ramachandran check
+                if( !prunedPertStates[state1] ) { //Apply perturbation state and do Ramachandran check
 
                     sRC[res.strandNumber].applyPertState(m, res.strandResidueNumber, state1);
                     ramaAllowedLong[state1] = rcheck.checkByAAType(m, res.moleculeResidueNumber);
 
-                    if( min_rmsd > 0 ){//Perturbation state valid and not removed by Ramachandran filter, so apply RMSD filter
+                    if( min_rmsd > 0 ) { //Perturbation state valid and not removed by Ramachandran filter, so apply RMSD filter
 
                         m.backupAtomCoord();
 
-                        for(int state2=state1+1; state2<resNumStates; state2++){
+                        for(int state2=state1+1; state2<resNumStates; state2++) {
 
-                            if( !prunedPertStates[state2] ){
+                            if( !prunedPertStates[state2] ) {
 
                                 sRC[res.strandNumber].applyPertState(m, res.strandResidueNumber, state2);
 
@@ -385,13 +381,13 @@ public class PerturbationSelector {
                                 String heavyAtoms[] = {"N","CA","C","O"};
 
                                 Perturbation lastPert = m.perts[res.perts[res.perts.length - 1]];
-                                for(int q=0; q<lastPert.resAffected.length; q++){
+                                for(int q=0; q<lastPert.resAffected.length; q++) {
                                     //We take the RMSD over all heavy atoms in residues affected by the last perturbation applied,
                                     //because removing the perturbation state will remove the relevant flexibility from all these residues
                                     Residue res2 = m.residue[lastPert.resAffected[q]];
-                                    for(int a=0;a<4;a++){
+                                    for(int a=0; a<4; a++) {
                                         int molAtNum = res2.getAtomNameToMolnum(heavyAtoms[a]);
-                                        for(int b=0;b<3;b++){
+                                        for(int b=0; b<3; b++) {
                                             float dev = m.actualCoordinates[3*molAtNum + b] - m.backupCoordinates[3*molAtNum + b];
                                             rmsd += dev*dev;
                                         }
@@ -400,7 +396,7 @@ public class PerturbationSelector {
 
                                 rmsd = (float)Math.sqrt(rmsd/(4*lastPert.resAffected.length));
 
-                                if(rmsd < min_rmsd){
+                                if(rmsd < min_rmsd) {
                                     prunedPertStates[state2] = true;
                                     numPruned++;
                                 }
@@ -429,31 +425,31 @@ public class PerturbationSelector {
         //Now generate all the perturbed RCs: all combinations of unpruned perturbation states
         //and rotamers (i.e. the unperturbed RCs already in place)
         //Add them to the unperturbed RCs in the RC handlers
-        for(int curPos=0; curPos<numMutable; curPos++){
+        for(int curPos=0; curPos<numMutable; curPos++) {
 
             Residue res = getResidue(curPos);
             int resNumStates = res.pertStates.length;
 
 
-            if(resNumStates > 1){//There is at least one perturbed state
-                
+            if(resNumStates > 1) { //There is at least one perturbed state
+
                 int[][] oldRCRots = sRC[res.strandNumber].RCRots[res.strandResidueNumber];
                 //These are the unperturbed RCs
 
                 int newRCRots[][] = new int[oldRCRots.length][];
                 int newRCPertStates[][] = new int[oldRCRots.length][];
 
-                for(int AA=0;AA<oldRCRots.length;AA++){
+                for(int AA=0; AA<oldRCRots.length; AA++) {
 
-                    if( oldRCRots[AA] != null ){//If this AA type is allowed at this position
+                    if( oldRCRots[AA] != null ) { //If this AA type is allowed at this position
 
                         boolean goodState[] = new boolean[resNumStates];//Indicates which perturbation states pass the Ramachandran filter for this residue type
                         int resGoodStates = 0;
 
-                        for( int stateNum=0; stateNum<resNumStates; stateNum++ ){
+                        for( int stateNum=0; stateNum<resNumStates; stateNum++ ) {
 
                             boolean flippedPro = false;//This perturbation state is a flipped-proline state
-                            if( m.perts[res.perts[res.perts.length-1]].type.equalsIgnoreCase("PROLINE FLIP") ){
+                            if( m.perts[res.perts[res.perts.length-1]].type.equalsIgnoreCase("PROLINE FLIP") ) {
                                 if( res.pertStates[stateNum][res.perts.length-1] == 1 )//A proline flip would be the last perturbation
                                     flippedPro = true;
                             }
@@ -464,19 +460,17 @@ public class PerturbationSelector {
 
 
                             if( /*( curPos < numSiteResidues ) &&*/ ( stateNum > 0 ) &&
-                                    ( (!proFlip[curPos]) || (!AAType.equalsIgnoreCase("pro")) ||  (stateNum>1)  ) ){
+                                                                    ( (!proFlip[curPos]) || (!AAType.equalsIgnoreCase("pro")) ||  (stateNum>1)  ) ) {
                                 //Active-site-residue perturbed RCs are Ramachandran filtered on a residue-type basis
                                 //We don't filter the unperturbed or any proline-flipped unperturbed states
 
-                                if( AAType.equalsIgnoreCase("gly") ){
+                                if( AAType.equalsIgnoreCase("gly") ) {
                                     if( ( ! ramaAllowed[curPos][stateNum][0] ) || flippedPro )
                                         goodState[stateNum] = false;
-                                }
-                                else if( AAType.equalsIgnoreCase("pro") ){
+                                } else if( AAType.equalsIgnoreCase("pro") ) {
                                     if( ! ramaAllowed[curPos][stateNum][1] )
                                         goodState[stateNum] = false;
-                                }
-                                else if ( ( ! ramaAllowed[curPos][stateNum][2] ) || flippedPro )
+                                } else if ( ( ! ramaAllowed[curPos][stateNum][2] ) || flippedPro )
                                     goodState[stateNum] = false;
                             }
 
@@ -486,10 +480,10 @@ public class PerturbationSelector {
 
                         newRCRots[AA] = new int[ oldRCRots[AA].length * resGoodStates ];
                         newRCPertStates[AA] = new int[ oldRCRots[AA].length * resGoodStates ];
-                        for( int rotNum=0; rotNum<oldRCRots[AA].length; rotNum++ ){
+                        for( int rotNum=0; rotNum<oldRCRots[AA].length; rotNum++ ) {
                             int b=0;
-                            for( int stateNum=0; stateNum<resNumStates; stateNum++){
-                                if( goodState[stateNum] ){
+                            for( int stateNum=0; stateNum<resNumStates; stateNum++) {
+                                if( goodState[stateNum] ) {
                                     newRCRots[AA][b*oldRCRots[AA].length + rotNum] = oldRCRots[AA][rotNum];//This ordering of RCs puts unperturbed ones first
                                     newRCPertStates[AA][b*oldRCRots[AA].length + rotNum] = stateNum;
                                     b++;
@@ -510,54 +504,54 @@ public class PerturbationSelector {
     }
 
 
-    
 
 
-    private boolean[][] getImpossiblePertStates(){
+
+    private boolean[][] getImpossiblePertStates() {
 
         boolean done = false;
         boolean prunedStates[][] = new boolean[numMutable][];//Which RCs are pruned
 
 
-        while( !done ){//We iterate until no more perturbation states can be removed
+        while( !done ) { //We iterate until no more perturbation states can be removed
 
             done = true;
 
-            for (int curPos=0; curPos<numMutable; curPos++){
+            for (int curPos=0; curPos<numMutable; curPos++) {
 
-                    Residue res = getResidue(curPos);
+                Residue res = getResidue(curPos);
 
-                    int resNumStates = res.pertStates.length;
+                int resNumStates = res.pertStates.length;
 
-                    if(prunedStates[curPos] == null)//This will happen in the first iteration
-                        prunedStates[curPos] = new boolean[resNumStates];
+                if(prunedStates[curPos] == null)//This will happen in the first iteration
+                    prunedStates[curPos] = new boolean[resNumStates];
 
-                    for(int curState=0; curState<resNumStates; curState++){
+                for(int curState=0; curState<resNumStates; curState++) {
 
-                        if( ! prunedStates[curPos][curState] ){
+                    if( ! prunedStates[curPos][curState] ) {
 
-                            for (int altPos=0; altPos<numMutable; altPos++){
+                        for (int altPos=0; altPos<numMutable; altPos++) {
 
-                                if( altPos != curPos ){
+                            if( altPos != curPos ) {
 
-                                    boolean prune = true;//Indicates no perturbation state compatible with curRC has been found yet at altPos
-                                    Residue res2 = getResidue(altPos);
+                                boolean prune = true;//Indicates no perturbation state compatible with curRC has been found yet at altPos
+                                Residue res2 = getResidue(altPos);
 
-                                    for(int altState=0; altState<res2.pertStates.length; altState++){
+                                for(int altState=0; altState<res2.pertStates.length; altState++) {
 
-                                        if( ! arePertStatesIncompatible(res, curState, res2, altState) )
-                                            prune = false;
-                                    }
-
-                                    prunedStates[curPos][curState] = prunedStates[curPos][curState] || prune;
+                                    if( ! arePertStatesIncompatible(res, curState, res2, altState) )
+                                        prune = false;
                                 }
+
+                                prunedStates[curPos][curState] = prunedStates[curPos][curState] || prune;
                             }
-
-                            if( prunedStates[curPos][curState] )//Iterate again if anything was pruned
-                                done = false;
-
                         }
+
+                        if( prunedStates[curPos][curState] )//Iterate again if anything was pruned
+                            done = false;
+
                     }
+                }
 
             }
 
@@ -570,7 +564,7 @@ public class PerturbationSelector {
 
 
 
-    private boolean[][] removePertStates(Residue res, int numPruned, boolean prunedPertStates[], boolean ramaAllowedLong[][]){
+    private boolean[][] removePertStates(Residue res, int numPruned, boolean prunedPertStates[], boolean ramaAllowedLong[][]) {
         //Removes the perturbation states indicated by true values in prunedPertStates from res
         //There are numPruned pruned states
         //We also remove the corresponding arrays from ramaAllowedLong and return the answer if ramaAllowedLong != null
@@ -586,12 +580,12 @@ public class PerturbationSelector {
 
         if(ramaAllowedLong != null)
             ramaAllowed = new boolean[resNumStates][3];
-        
-        int newState = 0;
-        for(int oldState=0; oldState<res.pertStates.length; oldState++){
 
-            if( ! prunedPertStates[oldState] ){
-                
+        int newState = 0;
+        for(int oldState=0; oldState<res.pertStates.length; oldState++) {
+
+            if( ! prunedPertStates[oldState] ) {
+
                 System.arraycopy( res.pertStates[oldState], 0, newPertStates[newState], 0, resNumPerts );
                 if(ramaAllowedLong != null)
                     System.arraycopy( ramaAllowedLong[oldState], 0, ramaAllowed[newState], 0, 3);
@@ -606,19 +600,19 @@ public class PerturbationSelector {
 
 
 
-    private Residue getResidue(int curPos){//Get the residue at a given flexible position
+    private Residue getResidue(int curPos) { //Get the residue at a given flexible position
         return m.residue[flexMolResNum[curPos]];
     }
 
 
 
     //Check parametric incompatibility of a pair of perturbation states
-    public boolean arePertStatesIncompatible(Residue firstRes, int pertState1, Residue secondRes, int pertState2 ){
+    public boolean arePertStatesIncompatible(Residue firstRes, int pertState1, Residue secondRes, int pertState2 ) {
 
         //This loop is the same as in RotamerSearch.isParametricallyIncompatible
-        for(int p1=0;p1<firstRes.perts.length;p1++){//Check all the perturbations of firstRes in this perturbation state for compatibility
-            for(int p2=0;p2<secondRes.perts.length;p2++){
-                if(firstRes.perts[p1] == secondRes.perts[p2]){//The residues share a perturbation
+        for(int p1=0; p1<firstRes.perts.length; p1++) { //Check all the perturbations of firstRes in this perturbation state for compatibility
+            for(int p2=0; p2<secondRes.perts.length; p2++) {
+                if(firstRes.perts[p1] == secondRes.perts[p2]) { //The residues share a perturbation
                     if(firstRes.pertStates[pertState1][p1] != secondRes.pertStates[pertState2][p2])//The states of this perturbation don't match for the given RCs
                         return true;//So the perturbation states are parametrically incompatible
                 }
@@ -629,35 +623,35 @@ public class PerturbationSelector {
     }
 
 
-    private int countTrue(boolean[] x){//Count how many values in the boolean array are true
+    private int countTrue(boolean[] x) { //Count how many values in the boolean array are true
 
         int count=0;
 
-        for(int a=0; a<x.length;a++){
+        for(int a=0; a<x.length; a++) {
             if(x[a])
                 count++;
         }
 
         return count;
     }
-        
-   
-        /* Might steric-check perturbation states (BB only) to reduce number
-         * Consider looping through positions, AA types, rotamers, perturbations states and checking for feasible RCs:
-         * boolean goodRCs[][][][];//Indices: position (in active site), amino-acid type, perturbation state, rotamer
-         * However, if this is just a steric check that can be done during energy precomputations
-         *
-         * If needed, a more stringent sorting system can
-         * 1. Use trainable parameters to score amino acid-perturbation combinations according to known mutant-WT structure pairs
-         * 2. Look at energies (quick contact score or actual rigid energy), and/or
-         * 3. Incorporate these into a score that is calculated for each RC (e.g. in float RCscores[][][][])
-         * RCs with the same perturbation states can be partially averaged (perturbation states can be scored
-         * too) and then the top n RCs can be taken where n is specified by the user
-         * The issue with energetics is it'll get rid of conformations already well pruned by DEE
-         * RMSD checks are complementary to DEE
-         * For example score RCs based on energies
-         * Then weighted-sum with perturbation scores
-         * Generate a perturbation file
-         */
+
+
+    /* Might steric-check perturbation states (BB only) to reduce number
+     * Consider looping through positions, AA types, rotamers, perturbations states and checking for feasible RCs:
+     * boolean goodRCs[][][][];//Indices: position (in active site), amino-acid type, perturbation state, rotamer
+     * However, if this is just a steric check that can be done during energy precomputations
+     *
+     * If needed, a more stringent sorting system can
+     * 1. Use trainable parameters to score amino acid-perturbation combinations according to known mutant-WT structure pairs
+     * 2. Look at energies (quick contact score or actual rigid energy), and/or
+     * 3. Incorporate these into a score that is calculated for each RC (e.g. in float RCscores[][][][])
+     * RCs with the same perturbation states can be partially averaged (perturbation states can be scored
+     * too) and then the top n RCs can be taken where n is specified by the user
+     * The issue with energetics is it'll get rid of conformations already well pruned by DEE
+     * RMSD checks are complementary to DEE
+     * For example score RCs based on energies
+     * Then weighted-sum with perturbation scores
+     * Generate a perturbation file
+     */
 
 }

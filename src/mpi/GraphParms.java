@@ -11,7 +11,7 @@
 package mpi;
 
 public class GraphParms {
-	public int [] index;
-	public int [] edges;
+    public int [] index;
+    public int [] edges;
 }
 

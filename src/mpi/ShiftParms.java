@@ -11,6 +11,6 @@
 package mpi;
 
 public class ShiftParms {
-	public int rank_source;
-	public int rank_dest;
+    public int rank_source;
+    public int rank_dest;
 }

@@ -12,66 +12,68 @@ package mpi;
 //import mpi.*;
 
 public class Op extends Freeable {
-  private final static int NULL  = 0;
-  private final static int MAX   = 1;
-  private final static int MIN   = 2;
-  private final static int SUM   = 3;
-  private final static int PROD  = 4;
-  private final static int LAND  = 5;
-  private final static int BAND  = 6;
-  private final static int LOR   = 7;
-  private final static int BOR   = 8;
-  private final static int LXOR  = 9;
-  private final static int BXOR  =10;
-  private final static int MINLOC=11;
-  private final static int MAXLOC=12;
+    private final static int NULL  = 0;
+    private final static int MAX   = 1;
+    private final static int MIN   = 2;
+    private final static int SUM   = 3;
+    private final static int PROD  = 4;
+    private final static int LAND  = 5;
+    private final static int BAND  = 6;
+    private final static int LOR   = 7;
+    private final static int BOR   = 8;
+    private final static int LXOR  = 9;
+    private final static int BXOR  =10;
+    private final static int MINLOC=11;
+    private final static int MAXLOC=12;
 
-  private static native void init();
+    private static native void init();
 
-  private User_function uf = null ;
+    private User_function uf = null ;
 
-  protected Op(int Type) { GetOp(Type);}
+    protected Op(int Type) {
+        GetOp(Type);
+    }
 
-  /**
-   * Bind a user-defined global reduction operation to an <tt>Op</tt> object.
-   * <p>
-   * <table>
-   * <tr><td><tt> function </tt></td><td> user defined function </tr>
-   * <tr><td><tt> commute  </tt></td><td> <tt>true</tt> if commutative,
-   *                                      <tt>false</tt> otherwise </tr>
-   * </table>
-   * <p>
-   * Java binding of the MPI operation <tt>MPI_OP_CREATE</tt>.
-   */
+    /**
+     * Bind a user-defined global reduction operation to an <tt>Op</tt> object.
+     * <p>
+     * <table>
+     * <tr><td><tt> function </tt></td><td> user defined function </tr>
+     * <tr><td><tt> commute  </tt></td><td> <tt>true</tt> if commutative,
+     *                                      <tt>false</tt> otherwise </tr>
+     * </table>
+     * <p>
+     * Java binding of the MPI operation <tt>MPI_OP_CREATE</tt>.
+     */
 
-  public Op(User_function function, boolean commute) throws MPIException {
-    uf = function;
-  }
-  
-  protected boolean isUser() {
-    return uf != null ;
-  }
+    public Op(User_function function, boolean commute) throws MPIException {
+        uf = function;
+    }
 
-  public final void Call(Object invec, int inoffset,
-                         Object outvec, int outoffset,
-                         int count, Datatype datatype) {
-    uf.Call(invec, inoffset, outvec, outoffset, count, datatype);
-  }
+    protected boolean isUser() {
+        return uf != null ;
+    }
 
-  private native void GetOp(int Type);
+    public final void Call(Object invec, int inoffset,
+                           Object outvec, int outoffset,
+                           int count, Datatype datatype) {
+        uf.Call(invec, inoffset, outvec, outoffset, count, datatype);
+    }
 
-  protected long handle ;
+    private native void GetOp(int Type);
 
-  public void finalize() throws MPIException {
-      synchronized(MPI.class) {
-          MPI.freeList.addFirst(this) ;
-      }
-  }
+    protected long handle ;
 
-  native void free() ;
+    public void finalize() throws MPIException {
+        synchronized(MPI.class) {
+            MPI.freeList.addFirst(this) ;
+        }
+    }
 
-  static {
-    init();
-  }
+    native void free() ;
+
+    static {
+        init();
+    }
 }
 

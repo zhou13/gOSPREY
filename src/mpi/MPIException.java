@@ -11,7 +11,11 @@
 package mpi;
 
 public class MPIException extends Exception {
-  public MPIException() {super() ;}
-  public MPIException(String message) {super(message) ;}
+    public MPIException() {
+        super() ;
+    }
+    public MPIException(String message) {
+        super(message) ;
+    }
 }
 

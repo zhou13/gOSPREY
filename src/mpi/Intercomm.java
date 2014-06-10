@@ -13,60 +13,62 @@ package mpi;
 
 public class Intercomm extends Comm {
 
-  protected Intercomm(long handle) {super(handle) ;}
+    protected Intercomm(long handle) {
+        super(handle) ;
+    }
 
-  public Object clone() {
-    return new Intercomm(super.dup());
-  }
+    public Object clone() {
+        return new Intercomm(super.dup());
+    }
 
-  // Inter-Communication
+    // Inter-Communication
 
-  /**
-   * Size of remote group.
-   * <p>
-   * <table>
-   * <tr><td><em> returns: </em></td><td> number of process in remote group
-   *                                      of this communicator </tr>
-   * </table>
-   * <p>
-   * Java binding of the MPI operation <tt>MPI_COMM_REMOTE_SIZE</tt>.
-   */
+    /**
+     * Size of remote group.
+     * <p>
+     * <table>
+     * <tr><td><em> returns: </em></td><td> number of process in remote group
+     *                                      of this communicator </tr>
+     * </table>
+     * <p>
+     * Java binding of the MPI operation <tt>MPI_COMM_REMOTE_SIZE</tt>.
+     */
 
-  public native int Remote_size() throws MPIException ;
+    public native int Remote_size() throws MPIException ;
 
-  /**
-   * Return the remote group.
-   * <p>
-   * <table>
-   * <tr><td><em> returns: </em></td><td> remote group of this
-   *                                      communicator </tr>
-   * </table>
-   * <p>
-   * Java binding of the MPI operation <tt>MPI_COMM_REMOTE_GROUP</tt>.
-   */
+    /**
+     * Return the remote group.
+     * <p>
+     * <table>
+     * <tr><td><em> returns: </em></td><td> remote group of this
+     *                                      communicator </tr>
+     * </table>
+     * <p>
+     * Java binding of the MPI operation <tt>MPI_COMM_REMOTE_GROUP</tt>.
+     */
 
-  public Group Remote_group() throws MPIException {
-    return new Group(remote_group());
-  }
+    public Group Remote_group() throws MPIException {
+        return new Group(remote_group());
+    }
 
-  private native long remote_group();
+    private native long remote_group();
 
-  /**
-   * Create an inter-communicator.
-   * <p>
-   * <table>
-   * <tr><td><tt> high     </tt></td><td> true if the local group has higher
-   *                                      ranks in combined group </tr>
-   * <tr><td><em> returns: </em></td><td> new intra-communicator </tr>
-   * </table>
-   * <p>
-   * Java binding of the MPI operation <tt>MPI_INTERCOMM_MERGE</tt>.
-   */
+    /**
+     * Create an inter-communicator.
+     * <p>
+     * <table>
+     * <tr><td><tt> high     </tt></td><td> true if the local group has higher
+     *                                      ranks in combined group </tr>
+     * <tr><td><em> returns: </em></td><td> new intra-communicator </tr>
+     * </table>
+     * <p>
+     * Java binding of the MPI operation <tt>MPI_INTERCOMM_MERGE</tt>.
+     */
 
-  public Intracomm Merge(boolean high) throws MPIException {
-    return new Intracomm(merge(high)) ;
-  }
+    public Intracomm Merge(boolean high) throws MPIException {
+        return new Intracomm(merge(high)) ;
+    }
 
-  private native long merge(boolean high);
+    private native long merge(boolean high);
 }
 

@@ -76,7 +76,7 @@ public class RamachandranChecker {
     static float denCutoff = 0.02f;//Cutoff density for being allowed
 
     private RamachandranChecker() {
-        
+
     }
 
     public static RamachandranChecker getInstance() {
@@ -88,21 +88,21 @@ public class RamachandranChecker {
     }
 
 
-    public void readInputFiles(String[] fileNames){//Filenames in order: gly, pro, general, pre-pro
+    public void readInputFiles(String[] fileNames) { //Filenames in order: gly, pro, general, pre-pro
 
         tables = new float[4][180][180];
 
-        for(int a=0;a<4;a++){
+        for(int a=0; a<4; a++) {
 
-            try{
+            try {
                 BufferedReader br = new BufferedReader( new FileReader( fileNames[a] ) );
                 String line = br.readLine();
 
                 while( line.charAt(0) == '#' )
                     line = br.readLine();
 
-                for(int phiBin=0; phiBin<180; phiBin++){
-                    for(int psiBin=0; psiBin<180; psiBin++){
+                for(int phiBin=0; phiBin<180; phiBin++) {
+                    for(int psiBin=0; psiBin<180; psiBin++) {
 
                         StringTokenizer st = new StringTokenizer(line," ");
 
@@ -116,8 +116,7 @@ public class RamachandranChecker {
                 }
 
                 br.close();
-            }
-            catch(IOException e){
+            } catch(IOException e) {
                 System.err.println( "Error reading Ramachandran plot file " + fileNames[a] );
                 System.err.println(e.getMessage());
                 System.exit(1);
@@ -127,7 +126,7 @@ public class RamachandranChecker {
     }
 
 
-    public boolean[] checkByAAType(Molecule m, int resNum){
+    public boolean[] checkByAAType(Molecule m, int resNum) {
         //Return the acceptability at {gly, pro, other AA types} of a given residue's BB dihedrals
         //resNum = molecule residue number in m
         //Looks at actualCoordinates
@@ -137,15 +136,15 @@ public class RamachandranChecker {
         Residue res = m.residue[resNum];
 
         if( ! ( m.checkNBonded(resNum) && m.checkCBonded(resNum)
-                && m.strand[res.strandNumber].isProtein ) ){//Phi or psi will not be defined so we cannot rule against them
-            for(int a=0;a<3;a++)
+                && m.strand[res.strandNumber].isProtein ) ) { //Phi or psi will not be defined so we cannot rule against them
+            for(int a=0; a<3; a++)
                 ans[a] = true;
             return ans;
         }
 
         float phiPsi[] = getPhiPsi(m, resNum);
 
-        for(int a=0;a<3;a++)
+        for(int a=0; a<3; a++)
             ans[a] = checkAngles(phiPsi[0], phiPsi[1], a);
 
         return ans;
@@ -153,7 +152,7 @@ public class RamachandranChecker {
 
 
     //Same but for prePro
-    public boolean checkPrePro(Molecule m, int resNum){
+    public boolean checkPrePro(Molecule m, int resNum) {
 
         if(!m.checkNBonded(resNum))
             return true;
@@ -164,9 +163,9 @@ public class RamachandranChecker {
         return checkAngles(phiPsi[0], phiPsi[1], 3);
     }
 
-    
+
     //Returns {phi,psi}.  resNum is a molecule residue number.
-    public float[] getPhiPsi(Molecule m, int resNum){
+    public float[] getPhiPsi(Molecule m, int resNum) {
 
         Residue res = m.residue[resNum];
         float ans[] = new float[2];
@@ -185,7 +184,7 @@ public class RamachandranChecker {
 
 
 
-    public boolean checkAngles(float phi, float psi, int plotNum){
+    public boolean checkAngles(float phi, float psi, int plotNum) {
 
         int phiBin = (int)((phi+180)/2);
         int psiBin = (int)((psi+180)/2);
@@ -198,4 +197,4 @@ public class RamachandranChecker {
 
 
 
- }
+}

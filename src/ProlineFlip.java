@@ -69,7 +69,7 @@ public class ProlineFlip extends Perturbation {
     static boolean DOWN = false;//Pucker options
 
 
-    public ProlineFlip(Molecule molec,int resList[]){
+    public ProlineFlip(Molecule molec,int resList[]) {
 
         type="PROLINE FLIP";
         m=molec;
@@ -77,43 +77,43 @@ public class ProlineFlip extends Perturbation {
     }
 
 
-    public boolean doPerturbationMotion(float param){
+    public boolean doPerturbationMotion(float param) {
 
         Residue res = m.residue[resAffected[0]];
 
-        if( ( param == 1 ) && (res.name.equalsIgnoreCase("PRO")) ){//Do the flip
+        if( ( param == 1 ) && (res.name.equalsIgnoreCase("PRO")) ) { //Do the flip
 
             res.pucker = !(res.pucker);//Change the pucker
             return m.idealizeProRing(res);//Idealize the ring with the new pucker
         }
-        
+
         return true;
     }
 
 
-    public void setDefaultParams(){
+    public void setDefaultParams() {
         float mp[] = {0f,1f};
         minParams = mp.clone();
         maxParams = mp.clone();
     }
 
-    
 
-    public static ProlineFlip[] generateAll( Molecule m, StrandRotamers strandRot[] ){
+
+    public static ProlineFlip[] generateAll( Molecule m, StrandRotamers strandRot[] ) {
         //Generate all the proline flips possible for a given molecule at the positions where proline is allowable
         //strandRot is an array of StrandRotamers objects for the strands in m
         ArrayList<Integer> resList = new ArrayList<Integer>();
 
-        for( int resNum=0; resNum<m.residue.length; resNum++ ){
+        for( int resNum=0; resNum<m.residue.length; resNum++ ) {
             Residue res = m.residue[resNum];
 
             if( strandRot[res.strandNumber].checkAllowable( res.strandResidueNumber , "PRO" ) )
-                    resList.add(resNum);
+                resList.add(resNum);
         }
 
         ProlineFlip[] ans = new ProlineFlip[resList.size()];
 
-        for( int a=0; a<resList.size(); a++ ){
+        for( int a=0; a<resList.size(); a++ ) {
             int aff[] = { resList.get(a) };
             ProlineFlip pf = new ProlineFlip( m, aff );
             pf.setDefaultParams();

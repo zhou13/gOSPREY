@@ -57,17 +57,17 @@ import java.util.*;
 
 public class PertFileHandler {
 
-    public static void readPertFile(String fileName, Molecule m, StrandRotamers strandRot[]){
+    public static void readPertFile(String fileName, Molecule m, StrandRotamers strandRot[]) {
         //Read the perturbation file and sets up the perturbations and residue conformations indicated in it
 
-       /* int sysStrNum = sysLR.strandNumber;
-        int ligStrNum = -1;
-        int ligAANum = -1;
+        /* int sysStrNum = sysLR.strandNumber;
+         int ligStrNum = -1;
+         int ligAANum = -1;
 
-        if( ligROT != null ){
-            ligStrNum = ligROT.strandNumber;
-            ligAANum = ligROT.getIndexOfNthAllowable(0, 0);
-        }*/
+         if( ligROT != null ){
+             ligStrNum = ligROT.strandNumber;
+             ligAANum = ligROT.getIndexOfNthAllowable(0, 0);
+         }*/
 
         int numStrands = m.numberOfStrands;//This should also be strandRot.length
 
@@ -75,7 +75,7 @@ public class PertFileHandler {
         //Perturbations must be listed in the order they'll be applied.
         //They should be in as few non-overlapping layers as possible
         //with larger ones coming first, in order to minimize extra RCs from indirect effects
-        try{
+        try {
 
             BufferedReader br=new BufferedReader(new FileReader(fileName));
             StringTokenizer st;
@@ -86,7 +86,7 @@ public class PertFileHandler {
             int numResToRead = 0;//Number of residues whose information needs to be read (residues affected by perturbations)
             int numResRead = 0;//Number of residues whose information has been read
 
-            
+
              This code built Residue.perts only from perturbations directly affecting each residue:
              *
              *
@@ -113,17 +113,17 @@ public class PertFileHandler {
             int RCPertStates[][][][] = new int[numStrands][][][];
             //int RCRotsLig[][][] = null, RCPertStatesLig[][][] = null, resRCCount[] = null, RCInfo[][] = null;
 
-            for(int str=0; str<numStrands; str++){
+            for(int str=0; str<numStrands; str++) {
                 RCRots[str] = new int[m.strand[str].numberOfResidues][((StrandRCs)strandRot[str]).getNumAATypes()][];
                 RCPertStates[str] = new int[m.strand[str].numberOfResidues][((StrandRCs)strandRot[str]).getNumAATypes()][];
             }
 
-            while(br.readLine() != null){//Read residue perturbation states and RCs.  Skipping the "RES" line
+            while(br.readLine() != null) { //Read residue perturbation states and RCs.  Skipping the "RES" line
 
                 String inputNumber = br.readLine().trim();
                 int molResNum = m.mapPDBresNumToMolResNum(inputNumber);
 
-                if(molResNum != -1){//Don't read perturbation information for residues that aren't in the system
+                if(molResNum != -1) { //Don't read perturbation information for residues that aren't in the system
                     //(for example if we're only considering one member of a complex and the perturbation file is for the whole complex)
 
                     Residue res = m.residue[molResNum];
@@ -142,14 +142,14 @@ public class PertFileHandler {
                     st = new StringTokenizer(br.readLine()," ");
                     res.perts = new int[st.countTokens() - 1];
                     st.nextToken();//"PERTURBATIONS"
-                    for(int a=0;a<res.perts.length;a++)
+                    for(int a=0; a<res.perts.length; a++)
                         res.perts[a] = Integer.valueOf(st.nextToken());
 
                     res.pertStates = new int[numStates][res.perts.length];
 
-                    for(int a=0;a<numStates;a++){//Read perturbation states
+                    for(int a=0; a<numStates; a++) { //Read perturbation states
                         st = new StringTokenizer(br.readLine()," ");
-                        for(int b=0;b<res.perts.length;b++)
+                        for(int b=0; b<res.perts.length; b++)
                             res.pertStates[a][b] = Integer.valueOf(st.nextToken());
                     }
 
@@ -162,7 +162,7 @@ public class PertFileHandler {
 
                     int numRCsRead = 0;
 
-                    for(int a=0;a<numRCs;a++){//Read RCs
+                    for(int a=0; a<numRCs; a++) { //Read RCs
                         st = new StringTokenizer(br.readLine()," ");
 
                         String AAName = st.nextToken();
@@ -178,13 +178,13 @@ public class PertFileHandler {
 
 
                     //Separate RCs according to their AA type
-                    for(int curAA=0; curAA<numAATypes; curAA++){
+                    for(int curAA=0; curAA<numAATypes; curAA++) {
                         RCRots[strandNumber][strResNum][curAA] = new int[resRCCount[curAA]];
                         RCPertStates[strandNumber][strResNum][curAA] = new int[resRCCount[curAA]];
                     }
 
                     int rcind[] = new int[numAATypes];
-                    for(int a=0;a<numRCs;a++){
+                    for(int a=0; a<numRCs; a++) {
                         RCRots[strandNumber][strResNum][RCInfo[a][0]][rcind[RCInfo[a][0]]] = RCInfo[a][1];
                         RCPertStates[strandNumber][strResNum][RCInfo[a][0]][rcind[RCInfo[a][0]]] = RCInfo[a][2];
                         rcind[RCInfo[a][0]]++;
@@ -198,7 +198,7 @@ public class PertFileHandler {
             //if(numResToRead != numResRead)
             //    throw new Exception("Information given for "+numResRead+" residues; should be "+numResToRead);
 
-            for(int str=0; str<numStrands; str++){
+            for(int str=0; str<numStrands; str++) {
                 ((StrandRCs)strandRot[str]).RCRots = RCRots[str];
                 ((StrandRCs)strandRot[str]).RCPertStates = RCPertStates[str];
             }
@@ -208,11 +208,11 @@ public class PertFileHandler {
 
             for(Residue res : m.residue )//Assign each residue's affected perturbations
                 m.assignAffectedPerts(res);
-            
+
             br.close();
         }
 
-        catch(Exception e){
+        catch(Exception e) {
             System.out.println("Error reading perturbation file:");
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -221,49 +221,49 @@ public class PertFileHandler {
     }
 
 
-    
+
     public static Perturbation[] readPerts(BufferedReader br, Molecule m) throws Exception {
 
-            int numPerts = Integer.valueOf(br.readLine().trim());
-            Perturbation[] perts = new Perturbation[numPerts];
-            //int resNumPerts[] = new int[m.residue.length];//Number of perturbations for each residue
+        int numPerts = Integer.valueOf(br.readLine().trim());
+        Perturbation[] perts = new Perturbation[numPerts];
+        //int resNumPerts[] = new int[m.residue.length];//Number of perturbations for each residue
 
-            StringTokenizer st;
+        StringTokenizer st;
 
-            for(int a=0;a<numPerts;a++){//Read perturbations
-                String pertType = br.readLine();
-                st = new StringTokenizer(br.readLine()," ");
-                int numAffectedRes = st.countTokens();
-                int affectedRes[] = new int[numAffectedRes];
+        for(int a=0; a<numPerts; a++) { //Read perturbations
+            String pertType = br.readLine();
+            st = new StringTokenizer(br.readLine()," ");
+            int numAffectedRes = st.countTokens();
+            int affectedRes[] = new int[numAffectedRes];
 
-                for(int b=0;b<numAffectedRes;b++){
-                    String inputNumber = st.nextToken();
-                    affectedRes[b] = m.mapPDBresNumToMolResNum(inputNumber);
-                    //resNumPerts[affectedRes[b]]++;
-                }
-
-                perts[a] = Perturbation.generate(pertType, m, affectedRes, br);
-                st = new StringTokenizer(br.readLine()," ");
-                int numStates = Integer.valueOf(st.nextToken());
-                perts[a].maxParams = new float[numStates];
-                perts[a].minParams = new float[numStates];
-
-                for(int b=0;b<numStates;b++){
-                    st = new StringTokenizer(br.readLine()," ");
-                    if(st.countTokens() != 2)
-                        throw new java.lang.Exception("Bad formatting of perturbation "+a);
-                    perts[a].minParams[b] = Float.valueOf(st.nextToken());
-                    perts[a].maxParams[b] = Float.valueOf(st.nextToken());
-                }
+            for(int b=0; b<numAffectedRes; b++) {
+                String inputNumber = st.nextToken();
+                affectedRes[b] = m.mapPDBresNumToMolResNum(inputNumber);
+                //resNumPerts[affectedRes[b]]++;
             }
 
-            return perts;
+            perts[a] = Perturbation.generate(pertType, m, affectedRes, br);
+            st = new StringTokenizer(br.readLine()," ");
+            int numStates = Integer.valueOf(st.nextToken());
+            perts[a].maxParams = new float[numStates];
+            perts[a].minParams = new float[numStates];
+
+            for(int b=0; b<numStates; b++) {
+                st = new StringTokenizer(br.readLine()," ");
+                if(st.countTokens() != 2)
+                    throw new java.lang.Exception("Bad formatting of perturbation "+a);
+                perts[a].minParams[b] = Float.valueOf(st.nextToken());
+                perts[a].maxParams[b] = Float.valueOf(st.nextToken());
+            }
+        }
+
+        return perts;
     }
 
-    
+
 
     public static void writePertFile(String fileName, Molecule m, PrunedRotamers<Boolean> eliminatedRCAtPos,
-            StrandRotamers strandRot[], int strandMut[][], boolean screenOutput ){
+                                     StrandRotamers strandRot[], int strandMut[][], boolean screenOutput ) {
         //Generates a perturbation file based on the perturbations, states, and RCs in m, sysLR, and ligROT
         //If screenOutput is true, then writes a "P" after every pruned
         //perturbation, perturbation state, residue perturbation state, or RC
@@ -281,9 +281,9 @@ public class PertFileHandler {
         //int ligNum = -1;
         //if( ligROT != null)
         //    ligNum = m.strand[ligROT.strandNumber].residue[0].moleculeResidueNumber;
-        
-        
-        if(screenOutput){//Check what's pruned
+
+
+        if(screenOutput) { //Check what's pruned
 
             prunedPerts = new boolean[m.perts.length];
             prunedPertStates = new boolean[m.perts.length][];
@@ -291,20 +291,20 @@ public class PertFileHandler {
             prunedRCs = new boolean[m.residue.length][][];
 
 
-            for(int pertNum=0;pertNum<m.perts.length;pertNum++){//Initialize the non-RC ones to true
+            for(int pertNum=0; pertNum<m.perts.length; pertNum++) { //Initialize the non-RC ones to true
                 prunedPerts[pertNum] = true;
                 prunedPertStates[pertNum] = new boolean[m.perts[pertNum].maxParams.length];
-                for(int state=0;state<prunedPertStates[pertNum].length;state++)
+                for(int state=0; state<prunedPertStates[pertNum].length; state++)
                     prunedPertStates[pertNum][state] = true;
             }
-            for(int pos=0; pos<m.residue.length; pos++){
+            for(int pos=0; pos<m.residue.length; pos++) {
                 Residue res = m.residue[pos];
 
-                if(res.perts != null){
+                if(res.perts != null) {
                     curStrandRCs = (StrandRCs)strandRot[res.strandNumber];
                     prunedResPertStates[pos] = new boolean[res.pertStates.length];
                     prunedRCs[pos] = new boolean[curStrandRCs.getNumAATypes()][];
-                    for(int state=0;state<prunedResPertStates[pos].length;state++)
+                    for(int state=0; state<prunedResPertStates[pos].length; state++)
                         prunedResPertStates[pos][state] = true;
                 }
             }
@@ -312,29 +312,29 @@ public class PertFileHandler {
             int flexPos = 0;//position among flexible residues
             int flexPosInStrand = 0;//Position among flexible residues in the strand
 
-            for(int pos=0; pos<m.residue.length; pos++){//pos is a molecule residue number
+            for(int pos=0; pos<m.residue.length; pos++) { //pos is a molecule residue number
                 Residue res = m.residue[pos];
                 int posInStrand = res.strandResidueNumber;
 
                 if(posInStrand==0)
                     flexPosInStrand=0;
 
-                if(res.perts != null){
+                if(res.perts != null) {
                     curStrandRCs = (StrandRCs)strandRot[res.strandNumber];
 
-                    for(int AA=0;AA<curStrandRCs.getNumAllowable(posInStrand);AA++){
+                    for(int AA=0; AA<curStrandRCs.getNumAllowable(posInStrand); AA++) {
                         int curAA = curStrandRCs.getIndexOfNthAllowable(posInStrand,AA);
 
                         int numRCs = curStrandRCs.getNumRCs(posInStrand, curAA);
                         prunedRCs[pos][curAA] = new boolean[numRCs];
 
-                        for(int RC=0; RC<numRCs; RC++){
+                        for(int RC=0; RC<numRCs; RC++) {
                             boolean isPruned = eliminatedRCAtPos.get(flexPos, curAA, RC);
                             prunedRCs[pos][curAA][RC] = isPruned;
-                            if(!isPruned){
+                            if(!isPruned) {
                                 int resPertState = curStrandRCs.RCPertStates[posInStrand][curAA][RC];
                                 prunedResPertStates[pos][resPertState] = false;
-                                for(int a=0;a<res.pertStates[resPertState].length;a++){//Loop over perturbations of this residue
+                                for(int a=0; a<res.pertStates[resPertState].length; a++) { //Loop over perturbations of this residue
                                     int pertNum = res.perts[a];
                                     int pertState = res.pertStates[resPertState][a];
                                     prunedPertStates[pertNum][pertState] = false;
@@ -346,34 +346,34 @@ public class PertFileHandler {
                     }
                 }
 
-                if( strandMut[res.strandNumber][flexPosInStrand] == posInStrand){
+                if( strandMut[res.strandNumber][flexPosInStrand] == posInStrand) {
                     flexPos++;
                     flexPosInStrand++;
                 }
 
             }
         }
-        
 
 
-        try{
+
+        try {
             BufferedWriter bw=new BufferedWriter(new FileWriter(fileName));
             bw.append("PERTURBATIONS");
             bw.newLine();
             bw.append(String.valueOf(m.perts.length));
             bw.newLine();
 
-            for(int pertNum=0;pertNum<m.perts.length;pertNum++){//Perturbation info
+            for(int pertNum=0; pertNum<m.perts.length; pertNum++) { //Perturbation info
                 Perturbation pert = m.perts[pertNum];
                 bw.append(pert.type);
 
-                if(screenOutput){
+                if(screenOutput) {
                     if(prunedPerts[pertNum])
                         bw.append(" P");
                 }
                 bw.newLine();
 
-                for(int rc=0;rc<pert.resAffected.length;rc++){
+                for(int rc=0; rc<pert.resAffected.length; rc++) {
                     int molResNum=pert.resAffected[rc];
                     bw.append(m.residue[molResNum].getResNumber()+" ");
                 }
@@ -384,9 +384,9 @@ public class PertFileHandler {
 
                 bw.append(pert.maxParams.length+" states");
                 bw.newLine();
-                for(int state=0;state<pert.maxParams.length;state++){
+                for(int state=0; state<pert.maxParams.length; state++) {
                     bw.append(pert.minParams[state]+" "+pert.maxParams[state]);
-                    if(screenOutput){
+                    if(screenOutput) {
                         if(prunedPertStates[pertNum][state])
                             bw.append(" P");
                     }
@@ -394,11 +394,11 @@ public class PertFileHandler {
                 }
             }
 
-            for(int pos=0;pos<m.residue.length;pos++){//Residue perturbation state, RC info
+            for(int pos=0; pos<m.residue.length; pos++) { //Residue perturbation state, RC info
                 Residue res=m.residue[pos];
                 int posInStrand = res.strandResidueNumber;
 
-                if( res.perts.length > 0 ){
+                if( res.perts.length > 0 ) {
                     curStrandRCs = (StrandRCs)strandRot[res.strandNumber];
 
                     bw.append("RES");
@@ -408,22 +408,22 @@ public class PertFileHandler {
 
                     if(screenOutput)
                         bw.append(res.pertStates.length + " states " +
-                            curStrandRCs.getTotNumRCs(posInStrand) + " RCs");
+                                  curStrandRCs.getTotNumRCs(posInStrand) + " RCs");
                     else//We will not print unperturbed RCs in this case
                         bw.append(res.pertStates.length + " states " +
-                            curStrandRCs.getTotNumPerturbedRCs(posInStrand) + " RCs");
+                                  curStrandRCs.getTotNumPerturbedRCs(posInStrand) + " RCs");
                     bw.newLine();
 
                     bw.append("PERTURBATIONS ");
-                    for(int a=0;a<res.perts.length;a++)
+                    for(int a=0; a<res.perts.length; a++)
                         bw.append(res.perts[a] + " ");
                     bw.newLine();
 
-                    for(int state=0;state<res.pertStates.length;state++){
-                        for(int pertInd=0;pertInd<res.pertStates[state].length;pertInd++)
+                    for(int state=0; state<res.pertStates.length; state++) {
+                        for(int pertInd=0; pertInd<res.pertStates[state].length; pertInd++)
                             bw.append(res.pertStates[state][pertInd] + " ");
 
-                        if(screenOutput){
+                        if(screenOutput) {
                             if(prunedResPertStates[pos][state])
                                 bw.append("P");
                         }
@@ -433,24 +433,24 @@ public class PertFileHandler {
                     bw.append("RCs");
                     bw.newLine();
 
-                    for(int AA=0;AA<curStrandRCs.getNumAllowable(posInStrand);AA++){
+                    for(int AA=0; AA<curStrandRCs.getNumAllowable(posInStrand); AA++) {
                         int curAA = curStrandRCs.getIndexOfNthAllowable(posInStrand,AA);
                         String AAName = curStrandRCs.rl.getAAName(curAA);
 
-                        for(int curRC=0; curRC<curStrandRCs.RCRots[posInStrand][curAA].length; curRC++){
+                        for(int curRC=0; curRC<curStrandRCs.RCRots[posInStrand][curAA].length; curRC++) {
 
-                            if( ( curStrandRCs.RCPertStates[posInStrand][curAA][curRC] != 0 ) && ( ! screenOutput ) ){
+                            if( ( curStrandRCs.RCPertStates[posInStrand][curAA][curRC] != 0 ) && ( ! screenOutput ) ) {
                                 //If the perturbation file is to be loaded later don't include unperturbed RCs...StrandRCs.addUnperturbedRCs will add those
                                 bw.append( AAName + " " + curStrandRCs.RCRots[posInStrand][curAA][curRC] + " "
-                                    + curStrandRCs.RCPertStates[posInStrand][curAA][curRC] );
+                                           + curStrandRCs.RCPertStates[posInStrand][curAA][curRC] );
                                 bw.newLine();
                             }
-                            
-                            else if(screenOutput)
-                            {//Print the information for all RCs if this is screening output
+
+                            else if(screenOutput) {
+                                //Print the information for all RCs if this is screening output
                                 bw.append( AAName + " " + curStrandRCs.RCRots[posInStrand][curAA][curRC] + " "
-                                    + curStrandRCs.RCPertStates[posInStrand][curAA][curRC] );
-                                
+                                           + curStrandRCs.RCPertStates[posInStrand][curAA][curRC] );
+
                                 if(prunedRCs[pos][curAA][curRC])
                                     bw.append(" P");
 
@@ -464,7 +464,7 @@ public class PertFileHandler {
             bw.close();
         }
 
-        catch(IOException e){
+        catch(IOException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }

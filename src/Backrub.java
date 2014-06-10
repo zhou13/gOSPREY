@@ -66,8 +66,8 @@ public class Backrub extends Perturbation {
     static float defaultMaxParams[] = {2.5f};
     static float defaultMinParams[] = {-2.5f};
 
-    
-    public Backrub(Molecule molec,int resList[]){
+
+    public Backrub(Molecule molec,int resList[]) {
 
         type="Backrub";
         m=molec;
@@ -76,14 +76,14 @@ public class Backrub extends Perturbation {
     }
 
 
-    public void setDefaultParams(){
+    public void setDefaultParams() {
         minParams = defaultMinParams.clone();
         maxParams = defaultMaxParams.clone();
     }
 
 
 
-    public boolean doPerturbationMotion(float param){//Apply the perturbation
+    public boolean doPerturbationMotion(float param) { //Apply the perturbation
         //Use an arbitrary param (primary backrub angle in degrees)
         //Don't store rotation matrices or translations
 
@@ -99,11 +99,11 @@ public class Backrub extends Perturbation {
 
 
 
-    public void calcTransRot(float param, float rm[][][]){//calculate rotation matrices for a given perturbation parameter, put them in rm
+    public void calcTransRot(float param, float rm[][][]) { //calculate rotation matrices for a given perturbation parameter, put them in rm
 //rm should be 3X3X3
 
         Atom[] Calphas=new Atom[3];
-        for(int a=0;a<3;a++){
+        for(int a=0; a<3; a++) {
             Calphas[a]=m.residue[resAffected[a]].getAtomByName("CA");
         }
 
@@ -112,7 +112,7 @@ public class Backrub extends Perturbation {
 
 
         float x[][]=new float[3][3];//Calpha coordinates
-        for(int a=0;a<3;a++)
+        for(int a=0; a<3; a++)
             x[a] = m.getActualCoord(Calphas[a].moleculeAtomNumber);
 
         float O1Coord[] = m.getActualCoord(O1.moleculeAtomNumber);
@@ -123,7 +123,7 @@ public class Backrub extends Perturbation {
         //Used for the secondary peptide rotations)
         float rotax[]=r.subtract(x[2],x[0]);//vector from 1st to second Calpha: primary rotation axis
 
-        //Create the primary rotation matrix.  This can be used to rotate about either anchor CA.  
+        //Create the primary rotation matrix.  This can be used to rotate about either anchor CA.
         r.getRotMatrix(rotax[0],rotax[1],rotax[2],param,rm[1]);
 
         //Get first corrective peptide rotation matrix
@@ -141,7 +141,7 @@ public class Backrub extends Perturbation {
         Atom newO2 = new Atom("O",O2Coord[0],O2Coord[1],O2Coord[2]);
 
         //We need these atoms to put into getSmallRotAngle, which uses the Atom.coord array
-        
+
         float theta;
         float M[][] = new float[3][3];
 
@@ -164,7 +164,7 @@ public class Backrub extends Perturbation {
     }
 
 
-    public void applyTransRot(float rm[][][]){
+    public void applyTransRot(float rm[][][]) {
 
 
         //All the rotation are about anchor-point CAs, so order is not important here like for the shear
@@ -177,34 +177,34 @@ public class Backrub extends Perturbation {
         //Only rotate the amide group
         int amide[] = m.residue[resAffected[2]].getAtomList(true,false,false,false);
         m.rotateAtomList( amide, rm[2], m.actualCoordinates[3*CA2AtNum],
-                m.actualCoordinates[3*CA2AtNum+1], m.actualCoordinates[3*CA2AtNum+2], false);
+                          m.actualCoordinates[3*CA2AtNum+1], m.actualCoordinates[3*CA2AtNum+2], false);
 
 
         //Rotate the carbonyl
         int carbonyl[] = m.residue[resAffected[1]].getAtomList(false, false, false, true);
         m.rotateAtomList( carbonyl, rm[2], m.actualCoordinates[3*CA2AtNum],
-                m.actualCoordinates[3*CA2AtNum+1], m.actualCoordinates[3*CA2AtNum+2], false);
+                          m.actualCoordinates[3*CA2AtNum+1], m.actualCoordinates[3*CA2AtNum+2], false);
 
         //Apply the primary rotation only to the alpha carbon and sidechain
         int nonAmideCarbonyl[] = m.residue[resAffected[1]].getAtomList(false, true, true, false);
         m.rotateAtomList( nonAmideCarbonyl, rm[1], m.actualCoordinates[3*CA0AtNum],
-                m.actualCoordinates[3*CA0AtNum+1], m.actualCoordinates[3*CA0AtNum+2], false);
+                          m.actualCoordinates[3*CA0AtNum+1], m.actualCoordinates[3*CA0AtNum+2], false);
 
         //Rotate the amide group
         amide = m.residue[resAffected[1]].getAtomList(true,false,false,false);
         m.rotateAtomList( amide, rm[0], m.actualCoordinates[3*CA0AtNum],
-                m.actualCoordinates[3*CA0AtNum+1], m.actualCoordinates[3*CA0AtNum+2], false);
+                          m.actualCoordinates[3*CA0AtNum+1], m.actualCoordinates[3*CA0AtNum+2], false);
 
 
         //Just rotate the carbonyl group
         carbonyl = m.residue[resAffected[0]].getAtomList(false, false, false, true);
         m.rotateAtomList( carbonyl, rm[0], m.actualCoordinates[3*CA0AtNum],
-                m.actualCoordinates[3*CA0AtNum+1], m.actualCoordinates[3*CA0AtNum+2], false);
+                          m.actualCoordinates[3*CA0AtNum+1], m.actualCoordinates[3*CA0AtNum+2], false);
 
     }
 
 
-    public float getStepSizeForMinimizer(){//Return a step size for the minimizer to use when optimizing this perturbation
+    public float getStepSizeForMinimizer() { //Return a step size for the minimizer to use when optimizing this perturbation
         //This could potentially be improved
         return 0.5f;
     }
@@ -212,23 +212,23 @@ public class Backrub extends Perturbation {
 
     //Get the small rotation angle that will rotate atom pp1 around the axis defined by atoms (pp2,a3), so that pp1 will be as close as possible to atom a4
     //Adapted from Backrubs to use only Atom.coord arrays (needed for the setup of the calculations here)
-    private float getSmallRotAngle(Atom pp1, Atom pp2, Atom a3, Atom a4, Backrubs b){
+    private float getSmallRotAngle(Atom pp1, Atom pp2, Atom a3, Atom a4, Backrubs b) {
 
-            Atom pp3 = b.projectPointLine(a3, pp2, pp1);
-            Atom pp4 = b.projectPointPlane(a3, pp2, pp3, a4);
-            Atom closestPoint = b.getClosestPoint(pp3,pp1,pp4);
-            return (float)closestPoint.angle(pp1, pp3);
+        Atom pp3 = b.projectPointLine(a3, pp2, pp1);
+        Atom pp4 = b.projectPointPlane(a3, pp2, pp3, a4);
+        Atom closestPoint = b.getClosestPoint(pp3,pp1,pp4);
+        return (float)closestPoint.angle(pp1, pp3);
     }
 
 
     //This is almost the same as Shear.setParams, but it uses backrub static fields so it's separate
-    public static void setParams(String s){
+    public static void setParams(String s) {
 
-        if(!s.equalsIgnoreCase("none")){
+        if(!s.equalsIgnoreCase("none")) {
             StringTokenizer st = new StringTokenizer(s);
             int numStates = st.countTokens()/2;
 
-            if( ( numStates*2 != st.countTokens() ) || numStates == 0 ){//odd number of tokens or no parameter values provided
+            if( ( numStates*2 != st.countTokens() ) || numStates == 0 ) { //odd number of tokens or no parameter values provided
                 System.err.println("Badly formulated backrub parameters: using single default state, -2.5 to 2.5.");
                 return;
             }
@@ -237,7 +237,7 @@ public class Backrub extends Perturbation {
             float min1 = Float.valueOf(st.nextToken());
             float max1 = Float.valueOf(st.nextToken());
 
-            if( min1 + max1 != 0 ){//The first (unperturbed) state must be centered at 0
+            if( min1 + max1 != 0 ) { //The first (unperturbed) state must be centered at 0
                 System.err.println("First backrub state (unperturbed) must be centered at 0: using -2.5 to 2.5");
                 min1 = -2.5f;
                 max1 = 2.5f;
@@ -249,7 +249,7 @@ public class Backrub extends Perturbation {
             defaultMinParams[0] = min1;
             defaultMaxParams[0] = max1;
 
-            for(int state=1; state<numStates; state++){
+            for(int state=1; state<numStates; state++) {
                 defaultMinParams[state] = Float.valueOf(st.nextToken());
                 defaultMaxParams[state] = Float.valueOf(st.nextToken());
             }

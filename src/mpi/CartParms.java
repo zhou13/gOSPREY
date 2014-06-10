@@ -11,8 +11,8 @@
 package mpi;
 
 public class CartParms {
-	public int [] dims;
-	public boolean [] periods;
-	public int [] coords;
+    public int [] dims;
+    public boolean [] periods;
+    public int [] coords;
 }
 

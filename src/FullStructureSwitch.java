@@ -70,7 +70,7 @@ public class FullStructureSwitch extends Perturbation {
     //from the experimental structure before computation may be fine)
 
     int numProteinFlexRes;//Number of flexible protein residues (the last affected residue
-        //may be a non-protein ligand but the others will count)
+    //may be a non-protein ligand but the others will count)
 
     int numStructs;//Number of structures
 
@@ -79,8 +79,8 @@ public class FullStructureSwitch extends Perturbation {
     ArrayList< ArrayList < HashMap < String, float[]>>> flexBB = new ArrayList<ArrayList<HashMap<String,float[]>>>();//Alternate flexible-residue backbones
 
 
-    
-    public FullStructureSwitch(Molecule m, int resList[], BufferedReader br){
+
+    public FullStructureSwitch(Molecule m, int resList[], BufferedReader br) {
 
         resAffected = resList;//All flexible residues
         type = "FULL STRUCTURE SWITCH";
@@ -98,16 +98,16 @@ public class FullStructureSwitch extends Perturbation {
         if( resAffected[0] != 0 )
             numSections++;
 
-        for( int a=1; a<numProteinFlexRes; a++){
-                if( resAffected[a] > resAffected[a-1] + 1 )
-                    numSections++;
+        for( int a=1; a<numProteinFlexRes; a++) {
+            if( resAffected[a] > resAffected[a-1] + 1 )
+                numSections++;
         }
 
         if( resAffected[numProteinFlexRes-1] != m.residue.length - 1 )
             numSections++;
 
 
-        try{
+        try {
             PDBList = br.readLine();//This line will contain the list of alternate PDB files
             StringTokenizer st = new StringTokenizer(PDBList," ");
             numStructs = st.countTokens() + 1;
@@ -116,13 +116,13 @@ public class FullStructureSwitch extends Perturbation {
             templateCoord = new float[numStructs][numSections][];
             Molecule m2;
 
-            for( int structIndex=0; structIndex<numStructs; structIndex++){
+            for( int structIndex=0; structIndex<numStructs; structIndex++) {
 
                 ArrayList < HashMap < String, float[]>> structBB = new ArrayList< HashMap < String, float[]>>();
 
                 if(structIndex == 0)
                     m2 = m;
-                else{
+                else {
                     FileInputStream is = new FileInputStream( st.nextToken() );
                     m2 = new Molecule();
                     new PDBChemModel(m2,is);
@@ -130,7 +130,7 @@ public class FullStructureSwitch extends Perturbation {
 
                 int section=0;
 
-                if( resAffected[0] != 0 ){
+                if( resAffected[0] != 0 ) {
                     int secLength = 3*m2.residue[resAffected[0]].atom[0].moleculeAtomNumber;
                     templateCoord[structIndex][0] = new float[secLength];
                     System.arraycopy( m2.actualCoordinates, 0, templateCoord[structIndex][0], 0, secLength );
@@ -143,11 +143,11 @@ public class FullStructureSwitch extends Perturbation {
                     curIndex = 3*m2.residue[resAffected[0]+1].atom[0].moleculeAtomNumber;//current index in m.actualCoordinates
 
 
-                for( int a=1; a<numProteinFlexRes; a++){
+                for( int a=1; a<numProteinFlexRes; a++) {
 
                     int molResNum = resAffected[a];
 
-                    if( molResNum > resAffected[a-1] + 1 ){//There is a template section before this residue
+                    if( molResNum > resAffected[a-1] + 1 ) { //There is a template section before this residue
                         int secLength = 3*m2.residue[resAffected[a]].atom[0].moleculeAtomNumber - curIndex;
                         templateCoord[structIndex][section] = new float[secLength];
                         System.arraycopy( m2.actualCoordinates, curIndex, templateCoord[structIndex][section], 0, secLength );
@@ -164,7 +164,7 @@ public class FullStructureSwitch extends Perturbation {
                 }
 
                 //Change the final template section
-                if( curIndex != -1){
+                if( curIndex != -1) {
                     int secLength = m2.actualCoordinates.length - curIndex;
                     templateCoord[structIndex][section] = new float[secLength];
                     System.arraycopy( m2.actualCoordinates, curIndex, templateCoord[structIndex][section], 0, secLength );
@@ -172,8 +172,7 @@ public class FullStructureSwitch extends Perturbation {
 
                 flexBB.add(structBB);
             }
-        }
-        catch(Exception e){
+        } catch(Exception e) {
             System.err.println();
             e.printStackTrace();
         }
@@ -185,10 +184,10 @@ public class FullStructureSwitch extends Perturbation {
     //Override applyPerturbation and undo in order to handle the template changes
 
     @Override
-    public boolean applyPerturbation(float param){
+    public boolean applyPerturbation(float param) {
         //The parameter need to be an integer less than templateCoord.length
 
-        if( param == 0 ){
+        if( param == 0 ) {
             curParam = 0;
             return true;
         }
@@ -205,11 +204,11 @@ public class FullStructureSwitch extends Perturbation {
     }
 
 
-        //This contains the sidechain idealization and chi1 adjustments, unlike the default version
-    public boolean doPerturbationMotion(float param){
+    //This contains the sidechain idealization and chi1 adjustments, unlike the default version
+    public boolean doPerturbationMotion(float param) {
 
         int structIndex = (int)param;
-        if( structIndex < 0 || structIndex >= templateCoord.length ){
+        if( structIndex < 0 || structIndex >= templateCoord.length ) {
             System.err.println("Bad full structure switch parameter: " + structIndex + ".  Perturbation state ignored." );
             return false;
         }
@@ -218,7 +217,7 @@ public class FullStructureSwitch extends Perturbation {
 
         int section = 0;
 
-        if( resAffected[0] != 0 ){
+        if( resAffected[0] != 0 ) {
             System.arraycopy( templateCoord[structIndex][0], 0, m.actualCoordinates, 0, templateCoord[structIndex][0].length );
             section++;
         }
@@ -229,11 +228,11 @@ public class FullStructureSwitch extends Perturbation {
             curIndex = 3*m.residue[resAffected[0] + 1].atom[0].moleculeAtomNumber;//current index in m.actualCoordinates
 
 
-        for( int a=1; a<numProteinFlexRes; a++){
+        for( int a=1; a<numProteinFlexRes; a++) {
 
             int molResNum = resAffected[a];
 
-            if( molResNum > resAffected[a-1] + 1 ){//There is a template section before this residue
+            if( molResNum > resAffected[a-1] + 1 ) { //There is a template section before this residue
                 System.arraycopy( templateCoord[structIndex][section], 0, m.actualCoordinates, curIndex, templateCoord[structIndex][section].length  );
                 section++;
             }
@@ -263,7 +262,7 @@ public class FullStructureSwitch extends Perturbation {
 
 
     @Override
-    public void undo(){
+    public void undo() {
 
         if(curParam==0)//Nothing to do
             return;
@@ -272,22 +271,21 @@ public class FullStructureSwitch extends Perturbation {
     }
 
 
-    public void setDefaultParams(){
+    public void setDefaultParams() {
 
         minParams = new float[numStructs];
         maxParams = new float[numStructs];
 
-        for(int a=0;a<numStructs;a++)
+        for(int a=0; a<numStructs; a++)
             minParams[a] = maxParams[a] = a;
     }
 
 
-    public void writeExtraInfo( BufferedWriter bw ){
-        try{
+    public void writeExtraInfo( BufferedWriter bw ) {
+        try {
             bw.append(PDBList);
             bw.newLine();
-        }
-        catch(IOException e){
+        } catch(IOException e) {
             System.err.println(e.getMessage());
         }
     }

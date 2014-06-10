@@ -11,22 +11,26 @@
 package mpi;
 //import mpi.*;
 
-public class Errhandler{
-  public final static int FATAL = 1;
-  public final static int RETURN = 0;
+public class Errhandler {
+    public final static int FATAL = 1;
+    public final static int RETURN = 0;
 
-  private static native void init();
+    private static native void init();
 
-  //public Errhandler() {}
-  public Errhandler(int Type) { GetErrhandler(Type);}
-  public Errhandler(long _handle) { handle = _handle;}  
+    //public Errhandler() {}
+    public Errhandler(int Type) {
+        GetErrhandler(Type);
+    }
+    public Errhandler(long _handle) {
+        handle = _handle;
+    }
 
-  protected native void GetErrhandler(int Type);
-  
-  protected long handle;
+    protected native void GetErrhandler(int Type);
 
-  static {
-    init();
-  }
+    protected long handle;
+
+    static {
+        init();
+    }
 
 }

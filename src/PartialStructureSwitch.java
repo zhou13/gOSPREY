@@ -65,7 +65,7 @@ public class PartialStructureSwitch extends Perturbation {
 
     //lowest-RMSD loop closure
 
-    
+
     ArrayList< float[]> params = new ArrayList< float[]>();//Perturbation parameters for predecessors and current perturbation
     //Indices: 1. Which set of parameters this is ("parameter state" index) 2. Which perturbation (predecessors in order, then current)
 
@@ -94,7 +94,7 @@ public class PartialStructureSwitch extends Perturbation {
 
     ArrayList< float[]> ligCoord = new ArrayList< float[]>();//Ligand coordinates.  First index: parameter state.  Second index: Coordinates
 
-    
+
     int ligResNum = -1;//Molecule residue number for the ligand; -1 if the ligand is not affected by this perturbation or if there is none
     //We only need this is the ligand is not protein
 
@@ -104,7 +104,7 @@ public class PartialStructureSwitch extends Perturbation {
     //in a two-anchor section switched without a tripeptide closure
 
 
-    PartialStructureSwitch(Molecule m, int resList[], BufferedReader br){
+    PartialStructureSwitch(Molecule m, int resList[], BufferedReader br) {
 
 
 
@@ -112,11 +112,10 @@ public class PartialStructureSwitch extends Perturbation {
         type = "PARTIAL STRUCTURE SWITCH";
         this.m = m;
 
-        if( m.strand[ m.residue[ resAffected [resAffected.length - 1] ].strandNumber ].isProtein ){
+        if( m.strand[ m.residue[ resAffected [resAffected.length - 1] ].strandNumber ].isProtein ) {
             numProtRes = resAffected.length;
             nonProtLig = false;
-        }
-        else{
+        } else {
             numProtRes = resAffected.length - 1;
             nonProtLig = true;
             ligResNum = resAffected[resAffected.length-1];
@@ -132,17 +131,16 @@ public class PartialStructureSwitch extends Perturbation {
         int sizeSoFar = 1;
         Residue lastRes = m.residue[resAffected[0]];
 
-        for( int a=1; a<resAffected.length; a++ ){
+        for( int a=1; a<resAffected.length; a++ ) {
 
             Residue thisRes = m.residue[resAffected[a]];
 
             if( ( thisRes.strandNumber == lastRes.strandNumber )
                     && ( thisRes.strandResidueNumber == lastRes.strandResidueNumber + 1)
-                    && ( m.checkNBonded(resAffected[a]) ) ){//If thisRes and lastRes are connected they go in the same section
+                    && ( m.checkNBonded(resAffected[a]) ) ) { //If thisRes and lastRes are connected they go in the same section
 
                 sizeSoFar++;
-            }
-            else{
+            } else {
                 sectionSizes.add( sizeSoFar );
                 sectionStarts.add( a );
                 sizeSoFar = 1;
@@ -153,10 +151,10 @@ public class PartialStructureSwitch extends Perturbation {
         }
 
         sectionSizes.add(sizeSoFar);
-        
+
 
         //Now read in the alternate structures
-        try{
+        try {
 
             /*The extra information for this perturbation is as follows:
              - Number of structures (1 line; includes original): [number] structures
@@ -164,7 +162,7 @@ public class PartialStructureSwitch extends Perturbation {
              (including for the ligand, since it might be different: i.e. it shouldn't just say "LIG")
 
 
-*
+            *
              Example entry for this perturbation:
 
             PARTIAL STRUCTURE SWITCH
@@ -185,7 +183,7 @@ public class PartialStructureSwitch extends Perturbation {
             String line = br.readLine();
 
             StringTokenizer st = new StringTokenizer(line," ");
-            if( st.countTokens() != 2 ){
+            if( st.countTokens() != 2 ) {
                 System.err.println("Error reading partial structure switch number of structures: " + line);
                 System.exit(1);
             }
@@ -201,12 +199,12 @@ public class PartialStructureSwitch extends Perturbation {
             //Store the affected residues & anchor atoms from the different structures (store all coordinates for the non-protein residues; backbones for flexible residues)
 
             //We reserve structure # 0 for the unperturbed state
-            for( int structIndex=1; structIndex<numStructs; structIndex++){
+            for( int structIndex=1; structIndex<numStructs; structIndex++) {
 
                 structInfo[structIndex-1] = br.readLine();
-                
+
                 st = new StringTokenizer(structInfo[structIndex-1]," ");
-                if( st.countTokens() != resAffected.length+1 ){
+                if( st.countTokens() != resAffected.length+1 ) {
                     System.err.println("Error reading partial structure switch structure information: " + structInfo[structIndex-1]);
                     System.exit(1);
                 }
@@ -226,7 +224,7 @@ public class PartialStructureSwitch extends Perturbation {
                 for(int a=0; a<resAffected.length; a++)
                     resAffected2[a] = m2.mapPDBresNumToMolResNum( Integer.valueOf(st.nextToken()) );
 
-                for( int sec=0; sec<numSections; sec++ ){
+                for( int sec=0; sec<numSections; sec++ ) {
 
                     ChainSection cs = new ChainSection();
 
@@ -239,11 +237,11 @@ public class PartialStructureSwitch extends Perturbation {
                     cs.anchor = new Atom[3];
                     cs.twoAnchors = false;
 
-                    if( m.strand[beginRes.strandNumber].isProtein ){//isProtein flags are not set for m2 but the same strands should be protein as in m
+                    if( m.strand[beginRes.strandNumber].isProtein ) { //isProtein flags are not set for m2 but the same strands should be protein as in m
 
                         cs.isProtein = true;
 
-                        for(int a=cs.startRes; a<cs.startRes+cs.numRes ;a++)//Store backbone information
+                        for(int a=cs.startRes; a<cs.startRes+cs.numRes ; a++) //Store backbone information
                             cs.backbones.add( storeResBB( m2.residue[resAffected2[a]], m2 ) );
 
                         boolean beginResNTerm = ! m2.checkNBonded(resAffected2[cs.startRes]);//beginRes is at the N terminus
@@ -252,14 +250,14 @@ public class PartialStructureSwitch extends Perturbation {
                         //Now get anchors
                         //Note that the Atom.coord arrays and m2.actualCoordinate arrays are the same for m2
                         //So we can use atoms directly from m2 as anchor atoms
-                        if( ! beginResNTerm ){
+                        if( ! beginResNTerm ) {
                             cs.anchor[0] = beginRes.getAtomByName("N");
                             Residue prevRes = m2.residue[ resAffected2[cs.startRes] - 1 ];
                             cs.anchor[1] = prevRes.getAtomByName("C");
                             cs.anchor[2] = prevRes.getAtomByName("CA");
                         }
 
-                        if( ! endResCTerm ){
+                        if( ! endResCTerm ) {
                             cs.anchor2 = new Atom[3];
                             cs.anchor2[0] = endRes.getAtomByName("C");
                             Residue nextRes = m2.residue[ resAffected2[cs.startRes + cs.numRes - 1] + 1 ];
@@ -268,36 +266,34 @@ public class PartialStructureSwitch extends Perturbation {
                         }
 
 
-                        if( beginResNTerm && endResCTerm ){
+                        if( beginResNTerm && endResCTerm ) {
                             nonCovalentAnchor = true;
-                        }
-                        else if ( beginResNTerm && ( ! endResCTerm )  ){
+                        } else if ( beginResNTerm && ( ! endResCTerm )  ) {
                             cs.anchor = cs.anchor2;
-                        }
-                        else if ( ! ( beginResNTerm || endResCTerm ) ){//Need both anchors
+                        } else if ( ! ( beginResNTerm || endResCTerm ) ) { //Need both anchors
 
                             cs.twoAnchors = true;
 
-                            if( cs.numRes < 3 && useTC ){//We can't do a tripeptide closure with less than 3 residues
+                            if( cs.numRes < 3 && useTC ) { //We can't do a tripeptide closure with less than 3 residues
                                 System.err.println( "Tripeptide closure not used for partial structure switch: too few residues in section "
-                                        + sec + " of " + PDBList[structIndex] );
+                                                    + sec + " of " + PDBList[structIndex] );
                                 useTC = false;
                             }
 
                             if (useTC) {
-                                
+
                                 //We will need a tripeptide closure
                                 cs.tcRes = new int[3];//These will be the 3 residues with the lowest CA B-factors in the section
                                 float B[] = new float[3];
 
 
-                                for(int a=0;a<3;a++){
+                                for(int a=0; a<3; a++) {
                                     cs.tcRes[a] = cs.startRes+a;
                                     B[a] = m2.residue[resAffected2[cs.startRes+a]].getAtomByName("CA").BFactor;
                                 }
 
 
-                                for(int a=cs.startRes+3; a<cs.startRes + cs.numRes; a++){
+                                for(int a=cs.startRes+3; a<cs.startRes + cs.numRes; a++) {
 
                                     int worst = 0;//Which of the three residues in tcRes (0, 1, or 2) has the worst (biggest) B-factor
                                     if( ( B[2] >= B[1] ) && ( B[2] >= B[0] ) )
@@ -307,7 +303,7 @@ public class PartialStructureSwitch extends Perturbation {
 
                                     float newB = m2.residue[resAffected2[a]].getAtomByName("CA").BFactor;
 
-                                    if( newB < B[worst] ){
+                                    if( newB < B[worst] ) {
                                         B[worst] = newB;
                                         cs.tcRes[worst] = a;
                                     }
@@ -317,27 +313,26 @@ public class PartialStructureSwitch extends Perturbation {
                                 Arrays.sort(cs.tcRes);//tcRes needs to be in ascending order
 
                                 int tcMolResNum[] = new int[3];
-                                for(int a=0;a<3;a++)
+                                for(int a=0; a<3; a++)
                                     tcMolResNum[a] = resAffected[cs.tcRes[a]];//Molecule residue number in the original molecule
 
                                 cs.tc = new TripeptideClosure( m2, tcMolResNum );
                             }
                         }
 
-                    }
-                    else{
+                    } else {
                         cs.isProtein = false;
                         cs.twoAnchors = false;//This will be the ligand and won't require two anchors
 
                         int numAtoms=0;
 
-                        for(int a=cs.startRes; a<cs.startRes+cs.numRes ;a++)
+                        for(int a=cs.startRes; a<cs.startRes+cs.numRes ; a++)
                             numAtoms += m2.residue[resAffected2[a]].numberOfAtoms;
 
                         cs.coord = new float[3*numAtoms];
                         int place=0;
 
-                        for(int a=cs.startRes; a<cs.startRes+cs.numRes ;a++){//Store coordinates
+                        for(int a=cs.startRes; a<cs.startRes+cs.numRes ; a++) { //Store coordinates
                             int firstAtNum = m2.residue[resAffected2[a]].atom[0].moleculeAtomNumber;
                             int coordCount = 3*m2.residue[resAffected2[a]].numberOfAtoms;
                             System.arraycopy(m2.actualCoordinates, 3*firstAtNum, cs.coord, place, coordCount);
@@ -350,14 +345,14 @@ public class PartialStructureSwitch extends Perturbation {
 
 
 
-                    if( nonCovalentAnchor ){
+                    if( nonCovalentAnchor ) {
 
                         float centroid[] = new float[3];
                         int numAtoms = 0;
-                        for( int a=cs.startRes; a<cs.startRes+cs.numRes; a++ ){
+                        for( int a=cs.startRes; a<cs.startRes+cs.numRes; a++ ) {
                             Residue res = m2.residue[resAffected2[a]];
 
-                            for( Atom at : res.atom ){
+                            for( Atom at : res.atom ) {
                                 centroid = rm.add(centroid, at.coord);
                                 numAtoms++;
                             }
@@ -368,11 +363,11 @@ public class PartialStructureSwitch extends Perturbation {
                         //Create an anchor consisting of the three closest CAs to this section's centroid unaffected by this perturbation
                         float dist[] = {Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY};
 
-                        for( Strand str : m2.strand ){
+                        for( Strand str : m2.strand ) {
 
-                            if( m.strand[str.number].isProtein ){//Again we assume the same residues are protein in m2 and m
+                            if( m.strand[str.number].isProtein ) { //Again we assume the same residues are protein in m2 and m
 
-                                for( Residue res : str.residue ){
+                                for( Residue res : str.residue ) {
 
                                     int worst = 0;//Which of the three distances in dist (0, 1, or 2) is largest (i.e. worst)
                                     if( ( dist[2] >= dist[1] ) && ( dist[2] >= dist[0] ) )
@@ -384,7 +379,7 @@ public class PartialStructureSwitch extends Perturbation {
                                     Atom CA = res.getAtomByName("CA");
                                     float checkDist = rm.norm( rm.subtract( CA.coord, centroid ) );
 
-                                    if( checkDist < dist[worst] ){
+                                    if( checkDist < dist[worst] ) {
                                         cs.anchor[worst] = CA;
                                         dist[worst] = checkDist;
                                     }
@@ -402,8 +397,7 @@ public class PartialStructureSwitch extends Perturbation {
                 }
 
             }
-        }
-        catch(Exception e){
+        } catch(Exception e) {
             System.err.println(e.getMessage());
             e.printStackTrace();
         }
@@ -411,39 +405,39 @@ public class PartialStructureSwitch extends Perturbation {
 
 
 
-    public boolean doPerturbationMotion(float param){
+    public boolean doPerturbationMotion(float param) {
 
-        if( param < 0 || param >= sections.length ){
+        if( param < 0 || param >= sections.length ) {
             System.err.println("Bad partial structure switch parameter: " + param + ".  Ignoring perturbation state.");
             return false;
         }
 
-        
+
         int state = -1;//If the predecessors & this perturbation have been in this state before this will indicate which set of known parameters this is
 
-        for( int a=0; ( a<params.size() ) && ( state == -1 ); a++ ){
+        for( int a=0; ( a<params.size() ) && ( state == -1 ); a++ ) {
 
             state = a;
 
-            for( int b=0; b<predecessors.length; b++ ){
-                if( params.get(state)[b] != m.perts[predecessors[b]].curParam ){//Predecessor parameters
+            for( int b=0; b<predecessors.length; b++ ) {
+                if( params.get(state)[b] != m.perts[predecessors[b]].curParam ) { //Predecessor parameters
                     state = -1;
                     break;
                 }
             }
 
-            if(state != -1){
+            if(state != -1) {
                 if( params.get(state)[predecessors.length] != param )
                     state = -1;
             }
 
         }
 
-        if(state == -1){//New state
+        if(state == -1) { //New state
             boolean outcome = placeRes(param);
             if(!outcome)//placement failed
                 return false;
-            
+
             state = params.size() - 1;
         }
 
@@ -460,8 +454,8 @@ public class PartialStructureSwitch extends Perturbation {
 
 
 
-    public boolean placeRes(float param){
-    //Places the affected residues from the alternate structure indicated by param
+    public boolean placeRes(float param) {
+        //Places the affected residues from the alternate structure indicated by param
         //in the molecule m and stores their coordinates in flexBB, ligCoords
         //If a residue has other stuff in the strand it is placed based on that
         //Any others are aligned using their closest three atoms
@@ -472,26 +466,26 @@ public class PartialStructureSwitch extends Perturbation {
         ArrayList < HashMap < String, float[]>> stateBB = new ArrayList < HashMap < String, float[]>>();
         //The array list of hashmaps representing the backbone coordinates for all residues in this parameter state
 
-        for(int sec=0; sec<sections[structIndex].length; sec++){
+        for(int sec=0; sec<sections[structIndex].length; sec++) {
             ChainSection cs = sections[structIndex][sec];
 
             float[][] anchorStarts = new float[3][3];//Anchor coordinates from alternate structure
             float[][] anchorTargets = new float[3][3];//Anchor coordinates from cuurent structure
-            
-            for(int a=0;a<3;a++){
+
+            for(int a=0; a<3; a++) {
                 anchorStarts[a] = cs.anchor[a].coord.clone();
                 anchorTargets[a] = m.getActualCoord( m.residue[cs.anchor[a].moleculeResidueNumber].getAtomByName(cs.anchor[a].name).moleculeAtomNumber );
             }
 
             float matrix1[][] = rm.getSuperposingRotMatrix( rm.subtract( anchorStarts[1], anchorStarts[0] ),
-                    rm.subtract( anchorTargets[1], anchorTargets[0] ),
-                    rm.subtract( anchorStarts[2], anchorStarts[0] ),
-                    rm.subtract( anchorTargets[2], anchorTargets[0] ) );
+                                rm.subtract( anchorTargets[1], anchorTargets[0] ),
+                                rm.subtract( anchorStarts[2], anchorStarts[0] ),
+                                rm.subtract( anchorTargets[2], anchorTargets[0] ) );
             //Matrix based on first anchor
             //The transformation consists of subtracting anchorStarts[0], applying matrix1, and then adding anchorTargets[0]
 
 
-            if(cs.twoAnchors){//Need to handle the second anchor and the tripeptide closure
+            if(cs.twoAnchors) { //Need to handle the second anchor and the tripeptide closure
                 //As currently implemented, this will only happen in protein strands, so we only handle the protein case
 
 
@@ -500,21 +494,21 @@ public class PartialStructureSwitch extends Perturbation {
                 float[][] anchor2Starts = new float[3][3];//Anchor coordinates from alternate structure
                 float[][] anchor2Targets = new float[3][3];//Anchor coordinates from cuurent structure
 
-                for(int a=0;a<3;a++){
+                for(int a=0; a<3; a++) {
                     anchor2Starts[a] = cs.anchor2[a].coord.clone();
                     anchor2Targets[a] = m.getActualCoord( m.residue[cs.anchor2[a].moleculeResidueNumber].getAtomByName(cs.anchor2[a].name).moleculeAtomNumber );
                 }
 
                 float matrix2[][] = rm.getSuperposingRotMatrix( rm.subtract( anchor2Starts[1], anchor2Starts[0] ),
-                    rm.subtract( anchor2Targets[1], anchor2Targets[0] ),
-                    rm.subtract( anchor2Starts[2], anchor2Starts[0] ),
-                    rm.subtract( anchor2Targets[2], anchor2Targets[0] ) );
+                                    rm.subtract( anchor2Targets[1], anchor2Targets[0] ),
+                                    rm.subtract( anchor2Starts[2], anchor2Starts[0] ),
+                                    rm.subtract( anchor2Targets[2], anchor2Targets[0] ) );
 
 
 
 
-                for(int a=0; a<cs.numRes; a++){
-                    
+                for(int a=0; a<cs.numRes; a++) {
+
                     //Some of these atoms will be moved again by the tripeptide closure if useTC == true
 
                     HashMap<String, float[]> resBB = new HashMap<String, float[]>();
@@ -522,9 +516,9 @@ public class PartialStructureSwitch extends Perturbation {
                     float newCoord[];
 
 
-                    for( String s : cs.backbones.get(a).keySet() ){
+                    for( String s : cs.backbones.get(a).keySet() ) {
 
-                        if(useTC){
+                        if(useTC) {
 
                             if( a + cs.startRes < cs.tcRes[1] )//Translate and rotate residues before the middle of the closure using the first anchor
                                 newCoord = transformEntry( cs.backbones.get(a), s, matrix1, anchorStarts[0], anchorTargets[0] );
@@ -536,8 +530,7 @@ public class PartialStructureSwitch extends Perturbation {
                                 newCoord = transformEntry( cs.backbones.get(a), s, matrix2, anchor2Starts[0], anchor2Targets[0] );
                             else
                                 newCoord = transformEntry( cs.backbones.get(a), s, matrix1, anchorStarts[0], anchorTargets[0] );
-                        }
-                        else{
+                        } else {
                             //Find the rotated and translated coordinates for each residue using both anchors
                             //Then average them weighted by the distance to each anchor
                             //If the two sets of transformed coordinates for any atom are farther apart than anchorDiffTol then the perturbation fails
@@ -545,9 +538,9 @@ public class PartialStructureSwitch extends Perturbation {
                             float[] newCoord1 = transformEntry( cs.backbones.get(a), s, matrix1, anchorStarts[0], anchorTargets[0] );
                             float[] newCoord2 = transformEntry( cs.backbones.get(a), s, matrix2, anchor2Starts[0], anchor2Targets[0] );
 
-                            if ( rm.norm( rm.subtract(newCoord1, newCoord2)) > anchorDiffTol ){
+                            if ( rm.norm( rm.subtract(newCoord1, newCoord2)) > anchorDiffTol ) {
                                 System.err.println("Error: Partial structure switch to " + PDBList[structIndex]
-                                + " failed, section " + sec + ".  Ignoring perturbation state." );
+                                                   + " failed, section " + sec + ".  Ignoring perturbation state." );
                                 return false;
                             }
 
@@ -568,7 +561,7 @@ public class PartialStructureSwitch extends Perturbation {
 
 
 
-                if(useTC){
+                if(useTC) {
 
                     //Calculate the tripeptide closure
                     float firstN[] = stateBB.get( cs.tcRes[0] ).get("N");//Coordinates of the first closure residue's N (as transformed in the loop that just finished)
@@ -589,14 +582,13 @@ public class PartialStructureSwitch extends Perturbation {
                     float r_soln_c[][][] = new float[16][3][3];
 
                     int numSoln = cs.tc.solve_3pep_poly( firstN, firstCA, lastCA,
-                            lastC, r_soln_n, r_soln_a, r_soln_c );
+                                                         lastC, r_soln_n, r_soln_a, r_soln_c );
 
-                    if( numSoln == 0 ){//Tripeptide closure failed
+                    if( numSoln == 0 ) { //Tripeptide closure failed
                         System.err.println("Error: Tripeptide closure for partial structure switch to " + PDBList[structIndex]
-                                + " failed, section " + sec + ".  Ignoring perturbation state.");
+                                           + " failed, section " + sec + ".  Ignoring perturbation state.");
                         return false;
-                    }
-                    else{
+                    } else {
 
                         //Find the tripeptide closure solution that changes the conformation of the alternate structure the least
                         //This will be done by a least-squares comparison to the coordinates before closure
@@ -604,7 +596,7 @@ public class PartialStructureSwitch extends Perturbation {
                         int bestSoln = -1;
                         float bestSum = Float.POSITIVE_INFINITY;
 
-                        for(int soln=0; soln<numSoln; soln++){
+                        for(int soln=0; soln<numSoln; soln++) {
 
                             float sum = rm.normsq( rm.subtract( firstC, r_soln_c[soln][0] ) );
                             sum += rm.normsq( rm.subtract( midN, r_soln_n[soln][1] ) );
@@ -625,21 +617,21 @@ public class PartialStructureSwitch extends Perturbation {
 
 
                         float matrix3[][] = rm.getSuperposingRotMatrix( rm.subtract( midCA, firstCA ), rm.subtract( r_soln_a[bestSoln][1], firstCA),
-                            rm.subtract( midN, firstCA ), rm.subtract( r_soln_n[bestSoln][1], firstCA) );
+                                            rm.subtract( midN, firstCA ), rm.subtract( r_soln_n[bestSoln][1], firstCA) );
 
                         float matrix4[][] = rm.getSuperposingRotMatrix( rm.subtract( midC, lastCA ), rm.subtract( r_soln_c[bestSoln][1], lastCA),
-                            rm.subtract( lastN, lastCA ), rm.subtract( r_soln_n[bestSoln][2], lastCA) );
+                                            rm.subtract( lastN, lastCA ), rm.subtract( r_soln_n[bestSoln][2], lastCA) );
 
 
 
-                        for(int b=cs.tcRes[0]; b<=cs.tcRes[2]; b++){
+                        for(int b=cs.tcRes[0]; b<=cs.tcRes[2]; b++) {
                             //Loop through each residue within the tripeptide closure region
                             //b is an index in resAffected
                             HashMap<String, float[]> resBB = stateBB.get(b);
 
                             float newCoord[];
 
-                            for( String s : resBB.keySet() ){
+                            for( String s : resBB.keySet() ) {
 
 
                                 int whichTransformation = 0;
@@ -650,24 +642,22 @@ public class PartialStructureSwitch extends Perturbation {
                                     whichTransformation = 3;
                                 else if ( b > cs.tcRes[1] && b < cs.tcRes[2] )
                                     whichTransformation = 4;
-                                else if ( b == cs.tcRes[1] ){
+                                else if ( b == cs.tcRes[1] ) {
                                     if( s.equalsIgnoreCase("C") || s.equalsIgnoreCase("O") )
                                         whichTransformation = 4;
                                     else
                                         whichTransformation = 3;
-                                }
-                                else if(b == cs.tcRes[0] && (s.equalsIgnoreCase("C") || s.equalsIgnoreCase("O") ) )
-                                     whichTransformation = 3;
+                                } else if(b == cs.tcRes[0] && (s.equalsIgnoreCase("C") || s.equalsIgnoreCase("O") ) )
+                                    whichTransformation = 3;
                                 else if(b == cs.tcRes[2] && (s.equalsIgnoreCase("N") || s.equalsIgnoreCase("H") ) )
                                     whichTransformation = 4;
                                 //Otherwise there is no transformation
 
 
-                                if(whichTransformation == 3){
+                                if(whichTransformation == 3) {
                                     newCoord = transformEntry( resBB, s, matrix3, firstCA, newFirstCA );
                                     resBB.put(s, newCoord);
-                                }
-                                else if(whichTransformation == 4){
+                                } else if(whichTransformation == 4) {
                                     newCoord = transformEntry( resBB, s, matrix4, lastCA, newLastCA );
                                     resBB.put(s, newCoord);
                                 }
@@ -676,23 +666,21 @@ public class PartialStructureSwitch extends Perturbation {
                     }
                 }
 
-            }
-            else{//Just put everything in place using the first anchor
+            } else { //Just put everything in place using the first anchor
 
-                if(cs.isProtein){
-                    for(int a=0;a<cs.backbones.size();a++){//Translate and rotate each residue
+                if(cs.isProtein) {
+                    for(int a=0; a<cs.backbones.size(); a++) { //Translate and rotate each residue
                         HashMap<String, float[]> resBB = new HashMap<String, float[]>();
-                        for( String s : cs.backbones.get(a).keySet() ){
+                        for( String s : cs.backbones.get(a).keySet() ) {
                             float newCoord[] = transformEntry( cs.backbones.get(a), s, matrix1, anchorStarts[0], anchorTargets[0] );
                             resBB.put(s, newCoord );
                         }
                         stateBB.add(resBB);
                     }
-                }
-                else{
+                } else {
                     float stateLigCoord[] = new float[cs.coord.length];
                     float x[] = new float[3];
-                    for(int a=0; a<cs.coord.length; a+=3){//Translate and rotate each atom
+                    for(int a=0; a<cs.coord.length; a+=3) { //Translate and rotate each atom
                         System.arraycopy(cs.coord, a, x, 0, 3);
                         x = transform ( x, matrix1, anchorStarts[0], anchorTargets[0] );
                         System.arraycopy(x, 0, stateLigCoord, a, 3);
@@ -711,7 +699,7 @@ public class PartialStructureSwitch extends Perturbation {
         //Store parameters
         params.add(new float[predecessors.length+1]);
 
-        for(int b=0;b<predecessors.length;b++)
+        for(int b=0; b<predecessors.length; b++)
             params.get(state)[b] = m.perts[predecessors[b]].curParam;
 
         params.get(state)[predecessors.length] = param;
@@ -727,14 +715,14 @@ public class PartialStructureSwitch extends Perturbation {
 
 
 
-    private float[] transform( float[] x, float[][] mtx, float[] anchorStart, float[] anchorTarget ){
-            //This transformation is used heavily by placeRes
-            //We subtract anchorStart from x, rotate it using mtx, and then add anchorTarget
+    private float[] transform( float[] x, float[][] mtx, float[] anchorStart, float[] anchorTarget ) {
+        //This transformation is used heavily by placeRes
+        //We subtract anchorStart from x, rotate it using mtx, and then add anchorTarget
         return rm.add( rm.applyRotMatrix( mtx, rm.subtract(x, anchorStart ) ), anchorTarget );
     }
 
 
-    private float[] transformEntry( HashMap<String, float[]> hm, String s, float[][] mtx, float[] anchorStart, float[] anchorTarget ){
+    private float[] transformEntry( HashMap<String, float[]> hm, String s, float[][] mtx, float[] anchorStart, float[] anchorTarget ) {
         //Transforms an entry from a backbone coordinate hashmap
         //Works like transform for a set of coordinates, but just rotates a vector (i.e. the "CACB" entry)
 
@@ -745,12 +733,12 @@ public class PartialStructureSwitch extends Perturbation {
     }
 
 
-    public void setDefaultParams(){
+    public void setDefaultParams() {
 
         minParams = new float[numStructs];
         maxParams = new float[numStructs];
 
-        for(int a=0;a<numStructs;a++)
+        for(int a=0; a<numStructs; a++)
             minParams[a] = maxParams[a] = a;
     }
 
@@ -783,17 +771,16 @@ public class PartialStructureSwitch extends Perturbation {
 
 
     @Override
-    public void writeExtraInfo( BufferedWriter bw ){
+    public void writeExtraInfo( BufferedWriter bw ) {
 
-        try{
+        try {
             bw.append(numStructs + " structures");
             bw.newLine();
-            for(int a=0;a<numStructs-1;a++){
+            for(int a=0; a<numStructs-1; a++) {
                 bw.append(structInfo[a]);
                 bw.newLine();
             }
-        }
-        catch(IOException e){
+        } catch(IOException e) {
             System.err.println(e.getMessage());
         }
     }

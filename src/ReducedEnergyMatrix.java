@@ -59,7 +59,7 @@ public class ReducedEnergyMatrix {
     // the min energy matrix: the last column contains the intra-energy for each rotamer; the last row
     // contains the shell-residue energy for each rotamer
 
-    
+
     int numTotalNodes;//the total number of possible rotamers for the given mutation
 
 
@@ -67,28 +67,28 @@ public class ReducedEnergyMatrix {
         return RedEmat;
     }
 
-    public ReducedEnergyMatrix(float[][] a){
+    public ReducedEnergyMatrix(float[][] a) {
         RedEmat = a;
     }
 
-    public float getPairwiseE(int index1, int index2){
+    public float getPairwiseE(int index1, int index2) {
         return RedEmat[index1][index2];
     }
 
-    public float getIntraE(int index){//the intra-energy is in the last column
+    public float getIntraE(int index) { //the intra-energy is in the last column
         return RedEmat[index][numTotalNodes];
     }
 
-    public float getShellRotE(int index){
+    public float getShellRotE(int index) {
         float shlRotE = 0.0f;
         //Skip the first energy which is the intra-rot energy still
-        for(int i=numTotalNodes; i<RedEmat.length;i++){
-                shlRotE += RedEmat[i][index];
+        for(int i=numTotalNodes; i<RedEmat.length; i++) {
+            shlRotE += RedEmat[i][index];
         }
         return shlRotE;
     }
 
-    public float getIntraAndShellE(int index){
+    public float getIntraAndShellE(int index) {
         return getIntraE(index) + getShellRotE(index);
     }
 

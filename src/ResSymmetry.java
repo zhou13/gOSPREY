@@ -63,7 +63,7 @@
 public class ResSymmetry {
 
 
-    public static int getSymmetry(String resName){
+    public static int getSymmetry(String resName) {
         //For the given residue type, specify the number of symmetric forms that could cause
         //heavy-atom name ambiguity
 
@@ -73,16 +73,16 @@ public class ResSymmetry {
                 resName.equalsIgnoreCase("ARG") ||
                 resName.equalsIgnoreCase("VAL") ||
                 resName.equalsIgnoreCase("TYR") )
-            
+
             return 2;
-        
+
         else
             return 1;
     }
 
 
 
-    public static String getPermutedAtomName( String atomName, String resName, int s ){
+    public static String getPermutedAtomName( String atomName, String resName, int s ) {
         //In residue resName,
         //give the name of the atom to which atomName is permuted in symmetry state # s
 
@@ -90,37 +90,37 @@ public class ResSymmetry {
             return atomName;
 
 
-        if( s == 1 ){
+        if( s == 1 ) {
 
             String stem = getStem(atomName);
 
-            if( resName.equalsIgnoreCase("ASP") ){
+            if( resName.equalsIgnoreCase("ASP") ) {
                 //Switch OD1, OD2
 
                 if( atomName.equalsIgnoreCase("OD1") )
                     return "OD2";
                 else if(atomName.equalsIgnoreCase("OD2"));
-                    return "OD1";
+                return "OD1";
             }
 
 
-            if( resName.equalsIgnoreCase("GLU") ){
+            if( resName.equalsIgnoreCase("GLU") ) {
                 //Switch OE1, OE2
 
                 if( atomName.equalsIgnoreCase("OE1") )
                     return "OE2";
                 else if(atomName.equalsIgnoreCase("OE2"));
-                    return "OE1";
+                return "OE1";
             }
 
 
 
 
-            if( resName.equalsIgnoreCase("PHE") || resName.equalsIgnoreCase("TYR") ){
+            if( resName.equalsIgnoreCase("PHE") || resName.equalsIgnoreCase("TYR") ) {
                 //Ring-flipping symmetry
                 //Involves gamma and delta hydrogens and carbons
 
-                if( stem.endsWith("D") || stem.endsWith("E") ){
+                if( stem.endsWith("D") || stem.endsWith("E") ) {
 
                     if( getFirstDigit( atomName ) == '1' )
                         return atomName.replaceFirst("1", "2");
@@ -133,10 +133,10 @@ public class ResSymmetry {
 
 
 
-            if( resName.equalsIgnoreCase("ARG") ){
+            if( resName.equalsIgnoreCase("ARG") ) {
                 //Switch eta nitrogens and their hydrogens
 
-                if( stem.equalsIgnoreCase("NH") || stem.equalsIgnoreCase("HH") ){
+                if( stem.equalsIgnoreCase("NH") || stem.equalsIgnoreCase("HH") ) {
 
                     if( getFirstDigit( atomName ) == '1' )
                         return atomName.replaceFirst("1", "2");
@@ -147,10 +147,10 @@ public class ResSymmetry {
 
 
 
-            if( resName.equalsIgnoreCase("VAL") ){
+            if( resName.equalsIgnoreCase("VAL") ) {
                 //Switch gamma carbons and their hydrogens
 
-                if( stem.endsWith("G") ){
+                if( stem.endsWith("G") ) {
 
                     if( getFirstDigit( atomName ) == '1' )
                         return atomName.replaceFirst("1", "2");
@@ -174,10 +174,10 @@ public class ResSymmetry {
 
 
 
-    public static String getStem(String s){
+    public static String getStem(String s) {
         //Get the "stem" of an atom name (the part consisting of letters rather than digits)
         String stem = "";
-        for(int a=0; a<s.length(); a++){
+        for(int a=0; a<s.length(); a++) {
             char c = s.charAt(a);
             if( Character.isLetter(c) )
                 stem = stem + c;
@@ -186,9 +186,9 @@ public class ResSymmetry {
     }
 
 
-    public static char getFirstDigit(String s){
+    public static char getFirstDigit(String s) {
 
-        for(int a=0; a<s.length(); a++){
+        for(int a=0; a<s.length(); a++) {
             char c = s.charAt(a);
             if( Character.isDigit(c ) )
                 return c;
