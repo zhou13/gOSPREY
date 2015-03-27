@@ -106,7 +106,7 @@ Let's use `ppi_GPU` as an example. You can find it under `doc/example/ppi_GPU/`.
 Suppose you are still under the `build` directory.  Execute:
 
     $ cd ../doc/example/ppi_GPU
-    $ java -jar ../../../build/osprey.jar -t 8 doDEE System.cfg DEE.cfg
+    $ java -jar ../../../build/osprey.jar -t 8 -c KStar.cfg doDEE System.cfg DEE.cfg
 
 Here, `-t 8` will make gOSPREY compute the energy matrix in 8 threads on your CPU.
 
