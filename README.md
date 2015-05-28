@@ -47,7 +47,7 @@ Requirement
 In order to use the function of GPU acceleration, the user must own a
 CUDA-compatible video card, with the
 [Compute-Capability](http://docs.nvidia.com/cuda/cuda-c-programming-guide/) at
-least 1.2.
+least 2.0.
 
 ### Software Dependency
 In order to run gOSPREY, a user must have the following installed:

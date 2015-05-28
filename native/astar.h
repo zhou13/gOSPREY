@@ -111,7 +111,6 @@ static uint64_t wall_time_elapsed(void)
 }
 #endif
 
-#define UNUSED(x) (void)(x)
 #define STATIC_ASSERT(e) typedef char _STATIC_ASSERT[(e)?1:-1]
 
 #define swap(x, y) ({ \
