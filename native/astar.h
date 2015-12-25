@@ -114,7 +114,7 @@ static uint64_t wall_time_elapsed(void)
 #define GCC_VERSION (__GNUC__ * 10000 \
                      + __GNUC_MINOR__ * 100 \
                      + __GNUC_PATCHLEVEL__)
-#if GCC_VERSION > 40500
+#if GCC_VERSION > 40800
 #define STATIC_ASSERT(e) typedef char _STATIC_ASSERT[(e)?1:-1]
 #else
 #define STATIC_ASSERT(e)
